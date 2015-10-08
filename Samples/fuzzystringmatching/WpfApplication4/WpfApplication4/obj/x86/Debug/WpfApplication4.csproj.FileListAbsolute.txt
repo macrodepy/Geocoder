@@ -1,0 +1,14 @@
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\WpfApplication4\bin\Debug\WpfApplication4.exe
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\WpfApplication4\bin\Debug\WpfApplication4.pdb
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\WpfApplication4\bin\Debug\FuzzyString.dll
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\WpfApplication4\bin\Debug\FuzzyString.pdb
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\WpfApplication4\obj\x86\Debug\WpfApplication4.csprojResolveAssemblyReference.cache
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\WpfApplication4\obj\x86\Debug\MainWindow.baml
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\WpfApplication4\obj\x86\Debug\MainWindow.g.cs
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\WpfApplication4\obj\x86\Debug\App.g.cs
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\WpfApplication4\obj\x86\Debug\WpfApplication4_MarkupCompile.cache
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\WpfApplication4\obj\x86\Debug\WpfApplication4.g.resources
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\WpfApplication4\obj\x86\Debug\WpfApplication4.Properties.Resources.resources
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\WpfApplication4\obj\x86\Debug\WpfApplication4.csproj.GenerateResource.Cache
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\WpfApplication4\obj\x86\Debug\WpfApplication4.exe
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\WpfApplication4\obj\x86\Debug\WpfApplication4.pdb

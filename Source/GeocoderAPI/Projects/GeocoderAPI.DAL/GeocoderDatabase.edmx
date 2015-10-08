@@ -1,0 +1,1214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CITYPOLYGONHIERARCHY">
+          <Key>
+            <PropertyRef Name="IL_ID" />
+          </Key>
+          <Property Name="IL_ID" Type="number" Precision="16" Scale="0" Nullable="false" />
+          <Property Name="IL" Type="char" MaxLength="1" />
+          <Property Name="ILCE" Type="char" MaxLength="1" />
+          <Property Name="ISGEO" Type="char" MaxLength="1" />
+          <Property Name="LOVTOWN" Type="char" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6005: The data type 'sdo_geometry' is currently not supported for the target Entity Framework version; the column 'GEOLOC' in the table 'MUSTAFALOCAL.GEOLOC_IL' was excluded.
+warning 6005: The data type 'sdo_geometry' is currently not supported for the target Entity Framework version; the column 'GEOMBR' in the table 'MUSTAFALOCAL.GEOLOC_IL' was excluded.-->
+        <EntityType Name="GEOLOC_IL">
+          <Key>
+            <PropertyRef Name="MI_PRINX" />
+          </Key>
+          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="IL_ADI" Type="varchar2" MaxLength="4000" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="MI_PRINX" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="MI_STYLE" Type="varchar2" MaxLength="254" />
+          <Property Name="ULKE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="BOLGE_ID" Type="number" Precision="20" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6005: The data type 'sdo_geometry' is currently not supported for the target Entity Framework version; the column 'GEOLOC' in the table 'MUSTAFALOCAL.GEOLOC_ILCE' was excluded.
+warning 6005: The data type 'sdo_geometry' is currently not supported for the target Entity Framework version; the column 'GEOMBR' in the table 'MUSTAFALOCAL.GEOLOC_ILCE' was excluded.-->
+        <EntityType Name="GEOLOC_ILCE">
+          <Key>
+            <PropertyRef Name="MI_PRINX" />
+          </Key>
+          <Property Name="ILCE_ID" Type="number" Precision="16" Scale="0" />
+          <Property Name="IL_ID" Type="number" Precision="16" Scale="0" />
+          <Property Name="ILCE_ADI" Type="varchar2" MaxLength="64" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="IL_ILCE" Type="varchar2" MaxLength="120" />
+          <Property Name="MI_PRINX" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="MI_STYLE" Type="varchar2" MaxLength="254" />
+          <Property Name="ZONE" Type="number" Precision="1" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6005: The data type 'sdo_geometry' is currently not supported for the target Entity Framework version; the column 'GEOLOC' in the table 'MUSTAFALOCAL.GEOLOC_MAHALLE' was excluded.
+warning 6005: The data type 'sdo_geometry' is currently not supported for the target Entity Framework version; the column 'GEOMBR' in the table 'MUSTAFALOCAL.GEOLOC_MAHALLE' was excluded.
+warning 6013: The table/view 'MUSTAFALOCAL.GEOLOC_MAHALLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="GEOLOC_MAHALLE">
+          <Property Name="BELDE_ID" Type="number" Precision="16" Scale="0" />
+          <Property Name="MAHALLE_ID" Type="number" Precision="16" Scale="0" />
+          <Property Name="ILCE_ID" Type="number" Precision="16" Scale="0" />
+          <Property Name="MAHALLE_ADI" Type="varchar2" MaxLength="4000" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="POSTA_KODU" Type="number" Precision="5" Scale="0" />
+          <Property Name="TYPE" Type="number" Precision="10" Scale="0" />
+          <Property Name="MI_PRINX" Type="number" Precision="10" Scale="0" />
+          <Property Name="MI_STYLE" Type="varchar2" MaxLength="254" />
+        </EntityType>-->
+        <EntityType Name="HINTCITYGEOCITYCR">
+          <Key>
+            <PropertyRef Name="HINTCITYID" />
+            <PropertyRef Name="IL_ID" />
+          </Key>
+          <Property Name="HINTCITYID" Type="guid raw" Nullable="false" />
+          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="IL_ADI" Type="varchar2" MaxLength="100" />
+          <Property Name="GEOLOC_IL_ID" Type="number" Precision="16" Scale="0" />
+          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
+          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
+          <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="HINTERLAND_SUBFIELDS">
+          <Key>
+            <PropertyRef Name="HINTERLANDID" />
+          </Key>
+          <Property Name="HINTERLANDID" Type="guid raw" Nullable="false" />
+          <Property Name="MOBILE" Type="char" MaxLength="1" />
+          <Property Name="MOBILE_DAYS" Type="char" MaxLength="7" />
+          <Property Name="AA" Type="char" MaxLength="1" />
+          <Property Name="AT" Type="char" MaxLength="1" />
+          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
+          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
+          <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
+        </EntityType>
+        <EntityType Name="HINTTOWNGEOTOWNCR">
+          <Key>
+            <PropertyRef Name="HINTTOWNID" />
+            <PropertyRef Name="ILCE_ID" />
+          </Key>
+          <Property Name="HINTCITYID" Type="guid raw" />
+          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="GEOLOC_IL_ID" Type="number" Precision="16" Scale="0" />
+          <Property Name="HINTTOWNID" Type="guid raw" Nullable="false" />
+          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="ILCE_ADI" Type="varchar2" MaxLength="100" />
+          <Property Name="GEOLOC_ILCE_ID" Type="number" Precision="16" Scale="0" />
+          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
+          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
+          <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="IDARI_SINIR_YOL">
+          <Key>
+            <PropertyRef Name="MAHALLE_ID" />
+            <PropertyRef Name="YOL_ID" />
+          </Key>
+          <Property Name="IL_ADI" Type="varchar2" MaxLength="4000" />
+          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="ILCE_ADI" Type="varchar2" MaxLength="4000" />
+          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="MAHALLE_ADI" Type="varchar2" MaxLength="4000" />
+          <Property Name="MAHALLE_ID" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="YOL_ID" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="IL">
+          <Key>
+            <PropertyRef Name="IL_ID" />
+          </Key>
+          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="IL_ADI" Type="varchar2" MaxLength="4000" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="ILCE">
+          <Key>
+            <PropertyRef Name="ILCE_ID" />
+          </Key>
+          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="ILCE_ADI" Type="varchar2" MaxLength="4000" />
+          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="KAPI">
+          <Key>
+            <PropertyRef Name="KAPI_ID" />
+          </Key>
+          <Property Name="KAPI_ADI" Type="varchar2" MaxLength="4000" />
+          <Property Name="KAPI_ID" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="KAPI_NO" Type="varchar2" MaxLength="4000" />
+          <Property Name="MAHALLE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="POSTA_KODU" Type="varchar2" MaxLength="10" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YOL_ID" Type="number" Precision="20" Scale="0" />
+        </EntityType>
+        <EntityType Name="LOVPOLYGONLEVEL">
+          <Key>
+            <PropertyRef Name="LOVPOLYGONLEVELID" />
+          </Key>
+          <Property Name="LOVPOLYGONLEVELID" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar2" MaxLength="128" />
+          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="LOVPOLYGONTYPE">
+          <Key>
+            <PropertyRef Name="LOVPOLYGONTYPEID" />
+          </Key>
+          <Property Name="LOVPOLYGONTYPEID" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar2" MaxLength="128" />
+          <Property Name="CODE" Type="nvarchar2" MaxLength="16" />
+          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="MAHALLE">
+          <Key>
+            <PropertyRef Name="MAHALLE_ID" />
+          </Key>
+          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="MAHALLE_ADI" Type="varchar2" MaxLength="4000" />
+          <Property Name="MAHALLE_ID" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="TYPE" Type="number" Precision="1" Scale="0" />
+          <Property Name="POSTA_KODU" Type="varchar2" MaxLength="5" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="MAHALLEAREA">
+          <Key>
+            <PropertyRef Name="MAHALLEID" />
+          </Key>
+          <Property Name="MAHALLEID" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="PARAMAREA" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
+          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
+          <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
+        </EntityType>
+        <EntityType Name="MAP_DATA30">
+          <Key>
+            <PropertyRef Name="MAPDATAID" />
+          </Key>
+          <Property Name="MAPDATAID" Type="guid raw" Nullable="false" />
+          <Property Name="SONUC" Type="varchar2" MaxLength="4000" />
+          <Property Name="SONUC_ILCELI" Type="varchar2" MaxLength="4000" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="MAHALLE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="YOL_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="POI_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="NAME" Type="varchar2" MaxLength="4000" />
+          <Property Name="NAME_FULL" Type="varchar2" MaxLength="4000" />
+          <Property Name="LOVDATAPRIORITY" Type="number" Precision="38" Scale="0" />
+          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
+          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
+          <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MUSTAFALOCAL.MAP_POIARAS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="MAP_POIARAS">
+          <Property Name="MAPDATAID" Type="guid raw" />
+          <Property Name="SONUC" Type="varchar2" MaxLength="4000" />
+          <Property Name="SONUC_ILCELI" Type="varchar2" MaxLength="4000" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="MAHALLE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="YOL_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="POI_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="NAME" Type="varchar2" MaxLength="4000" />
+          <Property Name="NAME_FULL" Type="varchar2" MaxLength="4000" />
+          <Property Name="LOVDATAPRIORITY" Type="number" Precision="38" Scale="0" />
+          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
+          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
+          <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
+        </EntityType>-->
+        <EntityType Name="MAP_POIINFO">
+          <Key>
+            <PropertyRef Name="MAPDATAID" />
+          </Key>
+          <Property Name="MAPDATAID" Type="guid raw" Nullable="false" />
+          <Property Name="SONUC" Type="varchar2" MaxLength="4000" />
+          <Property Name="SONUC_ILCELI" Type="varchar2" MaxLength="4000" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="MAHALLE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="YOL_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="POI_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="NAME" Type="varchar2" MaxLength="4000" />
+          <Property Name="NAME_FULL" Type="varchar2" MaxLength="4000" />
+          <Property Name="LOVDATAPRIORITY" Type="number" Precision="38" Scale="0" />
+          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
+          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
+          <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MUSTAFALOCAL.MDRT_4F10$' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="MDRT_4F10$">
+          <Property Name="NODE_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="NODE_LEVEL" Type="number" Precision="38" Scale="0" />
+          <Property Name="INFO" Type="blob" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MUSTAFALOCAL.MDRT_4F19$' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="MDRT_4F19$">
+          <Property Name="NODE_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="NODE_LEVEL" Type="number" Precision="38" Scale="0" />
+          <Property Name="INFO" Type="blob" />
+        </EntityType>-->
+        <EntityType Name="POI_ARAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="STANDARD_NAME" Type="varchar2" MaxLength="4000" />
+          <Property Name="TYPE" Type="number" Precision="38" Scale="0" />
+          <Property Name="SUB_TYPE" Type="number" Precision="38" Scale="0" />
+          <Property Name="PLACE_NAME" Type="varchar2" MaxLength="4000" />
+          <Property Name="STREET_NAME" Type="varchar2" MaxLength="4000" />
+          <Property Name="STREET_TYPE" Type="varchar2" MaxLength="4000" />
+          <Property Name="HSN" Type="varchar2" MaxLength="4000" />
+          <Property Name="POSTAL_CODE" Type="varchar2" MaxLength="5" />
+          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="MAHALLE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITCREATEUNITID" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
+          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
+          <Property Name="APPLICATIONID" Type="number" Precision="6" Scale="0" />
+        </EntityType>
+        <EntityType Name="POI_INFO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="STANDARD_NAME" Type="varchar2" MaxLength="4000" />
+          <Property Name="TYPE" Type="number" Precision="38" Scale="0" />
+          <Property Name="SUB_TYPE" Type="number" Precision="38" Scale="0" />
+          <Property Name="PLACE_NAME" Type="varchar2" MaxLength="4000" />
+          <Property Name="STREET_NAME" Type="varchar2" MaxLength="4000" />
+          <Property Name="STREET_TYPE" Type="varchar2" MaxLength="4000" />
+          <Property Name="HSN" Type="varchar2" MaxLength="4000" />
+          <Property Name="POSTAL_CODE" Type="varchar2" MaxLength="5" />
+          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="MAHALLE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITCREATEUNITID" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
+          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
+          <Property Name="APPLICATIONID" Type="number" Precision="6" Scale="0" />
+        </EntityType>
+        <EntityType Name="TOWNPOLYGONHIERARCHY">
+          <Key>
+            <PropertyRef Name="ILCE_ID" />
+          </Key>
+          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="ILCE_ADI" Type="varchar2" MaxLength="4000" />
+          <Property Name="SEARCH" Type="char" MaxLength="1" />
+          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
+          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
+          <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
+        </EntityType>
+        <EntityType Name="YOL">
+          <Key>
+            <PropertyRef Name="YOL_ID" />
+          </Key>
+          <Property Name="YOL_ID" Type="number" Precision="16" Scale="0" Nullable="false" />
+          <Property Name="YOL_ADI" Type="varchar2" MaxLength="4000" />
+          <Property Name="YOL_SINIFI" Type="number" Precision="3" Scale="0" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MUSTAFALOCAL.V_UNIT_SEARCH' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="V_UNIT_SEARCH">
+          <Property Name="MAPDATAID" Type="guid raw" />
+          <Property Name="SONUC" Type="varchar2" MaxLength="4000" />
+          <Property Name="SONUC_ILCELI" Type="varchar2" MaxLength="4000" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="MAHALLE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="YOL_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
+          <Property Name="POI_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="NAME" Type="varchar2" MaxLength="4000" />
+          <Property Name="NAME_FULL" Type="varchar2" MaxLength="4000" />
+          <Property Name="LOVDATAPRIORITY" Type="number" Precision="38" Scale="0" />
+          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
+          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
+          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
+          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
+          <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
+        </EntityType>-->
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="CITYPOLYGONHIERARCHY" EntityType="Self.CITYPOLYGONHIERARCHY" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="GEOLOC_IL" EntityType="Self.GEOLOC_IL" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="GEOLOC_ILCE" EntityType="Self.GEOLOC_ILCE" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="HINTCITYGEOCITYCR" EntityType="Self.HINTCITYGEOCITYCR" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="HINTERLAND_SUBFIELDS" EntityType="Self.HINTERLAND_SUBFIELDS" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="HINTTOWNGEOTOWNCR" EntityType="Self.HINTTOWNGEOTOWNCR" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="IDARI_SINIR_YOL" EntityType="Self.IDARI_SINIR_YOL" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="IL" EntityType="Self.IL" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="ILCE" EntityType="Self.ILCE" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="KAPI" EntityType="Self.KAPI" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="LOVPOLYGONLEVEL" EntityType="Self.LOVPOLYGONLEVEL" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="LOVPOLYGONTYPE" EntityType="Self.LOVPOLYGONTYPE" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="MAHALLE" EntityType="Self.MAHALLE" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="MAHALLEAREA" EntityType="Self.MAHALLEAREA" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="MAP_DATA30" EntityType="Self.MAP_DATA30" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="MAP_POIINFO" EntityType="Self.MAP_POIINFO" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="POI_ARAS" EntityType="Self.POI_ARAS" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="POI_INFO" EntityType="Self.POI_INFO" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="TOWNPOLYGONHIERARCHY" EntityType="Self.TOWNPOLYGONHIERARCHY" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="YOL" EntityType="Self.YOL" Schema="MUSTAFALOCAL" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CITYPOLYGONHIERARCHY">
+          <Key>
+            <PropertyRef Name="IL_ID" />
+          </Key>
+          <Property Name="IL_ID" Type="Int64" Nullable="false" />
+          <Property Name="IL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ILCE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ISGEO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="LOVTOWN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="GEOLOC_IL">
+          <Key>
+            <PropertyRef Name="MI_PRINX" />
+          </Key>
+          <Property Name="IL_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="IL_ADI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="MI_PRINX" Type="Int64" Nullable="false" />
+          <Property Name="MI_STYLE" Type="String" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Name="ULKE_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="BOLGE_ID" Type="Decimal" Precision="20" Scale="0" />
+        </EntityType>
+        <EntityType Name="GEOLOC_ILCE">
+          <Key>
+            <PropertyRef Name="MI_PRINX" />
+          </Key>
+          <Property Name="ILCE_ID" Type="Int64" />
+          <Property Name="IL_ID" Type="Int64" />
+          <Property Name="ILCE_ADI" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="IL_ILCE" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="MI_PRINX" Type="Int64" Nullable="false" />
+          <Property Name="MI_STYLE" Type="String" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Name="ZONE" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="HINTCITYGEOCITYCR">
+          <Key>
+            <PropertyRef Name="HINTCITYID" />
+            <PropertyRef Name="IL_ID" />
+          </Key>
+          <Property Name="HINTCITYID" Type="Guid" Nullable="false" />
+          <Property Name="IL_ID" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="IL_ADI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GEOLOC_IL_ID" Type="Int64" />
+          <Property Name="AUDIT_CREATE_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="Int32" />
+          <Property Name="AUDITCREATEUNITID" Type="Int16" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="Int32" />
+          <Property Name="AUDITMODIFYUNITID" Type="Int16" />
+          <Property Name="AUDIT_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="APPLICATION_VERSION" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="APPLICATIONID" Type="Int16" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="HINTERLAND_SUBFIELDS">
+          <Key>
+            <PropertyRef Name="HINTERLANDID" />
+          </Key>
+          <Property Name="HINTERLANDID" Type="Guid" Nullable="false" />
+          <Property Name="MOBILE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MOBILE_DAYS" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="AA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="AT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="AUDIT_CREATE_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="Int32" />
+          <Property Name="AUDITCREATEUNITID" Type="Int16" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="Int32" />
+          <Property Name="AUDITMODIFYUNITID" Type="Int16" />
+          <Property Name="AUDIT_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="APPLICATION_VERSION" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="APPLICATIONID" Type="Int16" />
+        </EntityType>
+        <EntityType Name="HINTTOWNGEOTOWNCR">
+          <Key>
+            <PropertyRef Name="HINTTOWNID" />
+            <PropertyRef Name="ILCE_ID" />
+          </Key>
+          <Property Name="HINTCITYID" Type="Guid" />
+          <Property Name="IL_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="GEOLOC_IL_ID" Type="Int64" />
+          <Property Name="HINTTOWNID" Type="Guid" Nullable="false" />
+          <Property Name="ILCE_ID" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="ILCE_ADI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GEOLOC_ILCE_ID" Type="Int64" />
+          <Property Name="AUDIT_CREATE_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="Int32" />
+          <Property Name="AUDITCREATEUNITID" Type="Int16" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="Int32" />
+          <Property Name="AUDITMODIFYUNITID" Type="Int16" />
+          <Property Name="AUDIT_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="APPLICATION_VERSION" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="APPLICATIONID" Type="Int16" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="IDARI_SINIR_YOL">
+          <Key>
+            <PropertyRef Name="MAHALLE_ID" />
+            <PropertyRef Name="YOL_ID" />
+          </Key>
+          <Property Name="IL_ADI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="IL_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="ILCE_ADI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="ILCE_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="MAHALLE_ADI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="MAHALLE_ID" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="YOL_ID" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="IL">
+          <Key>
+            <PropertyRef Name="IL_ID" />
+          </Key>
+          <Property Name="IL_ID" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="IL_ADI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ILCE">
+          <Key>
+            <PropertyRef Name="ILCE_ID" />
+          </Key>
+          <Property Name="IL_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="ILCE_ADI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="ILCE_ID" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="KAPI">
+          <Key>
+            <PropertyRef Name="KAPI_ID" />
+          </Key>
+          <Property Name="KAPI_ADI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="KAPI_ID" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="KAPI_NO" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="MAHALLE_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="POSTA_KODU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YOL_ID" Type="Decimal" Precision="20" Scale="0" />
+        </EntityType>
+        <EntityType Name="LOVPOLYGONLEVEL">
+          <Key>
+            <PropertyRef Name="LOVPOLYGONLEVELID" />
+          </Key>
+          <Property Name="LOVPOLYGONLEVELID" Type="Int16" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="AUDIT_CREATE_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="Int32" />
+          <Property Name="AUDITCREATEUNITID" Type="Int16" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="Int32" />
+          <Property Name="AUDITMODIFYUNITID" Type="Int16" />
+          <Property Name="AUDIT_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LOVPOLYGONTYPE">
+          <Key>
+            <PropertyRef Name="LOVPOLYGONTYPEID" />
+          </Key>
+          <Property Name="LOVPOLYGONTYPEID" Type="Int16" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="CODE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="AUDIT_CREATE_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="Int32" />
+          <Property Name="AUDITCREATEUNITID" Type="Int16" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="Int32" />
+          <Property Name="AUDITMODIFYUNITID" Type="Int16" />
+          <Property Name="AUDIT_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MAHALLE">
+          <Key>
+            <PropertyRef Name="MAHALLE_ID" />
+          </Key>
+          <Property Name="ILCE_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="MAHALLE_ADI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="MAHALLE_ID" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="TYPE" Type="Boolean" />
+          <Property Name="POSTA_KODU" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MAHALLEAREA">
+          <Key>
+            <PropertyRef Name="MAHALLEID" />
+          </Key>
+          <Property Name="MAHALLEID" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="PARAMAREA" Type="Int32" />
+          <Property Name="AUDIT_CREATE_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="Int32" />
+          <Property Name="AUDITCREATEUNITID" Type="Int16" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="Int32" />
+          <Property Name="AUDITMODIFYUNITID" Type="Int16" />
+          <Property Name="AUDIT_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="APPLICATION_VERSION" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="APPLICATIONID" Type="Int16" />
+        </EntityType>
+        <EntityType Name="MAP_DATA30">
+          <Key>
+            <PropertyRef Name="MAPDATAID" />
+          </Key>
+          <Property Name="MAPDATAID" Type="Guid" Nullable="false" />
+          <Property Name="SONUC" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="SONUC_ILCELI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="MAHALLE_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="YOL_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ILCE_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="IL_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="POI_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NAME" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="NAME_FULL" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="LOVDATAPRIORITY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="AUDIT_CREATE_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="Int32" />
+          <Property Name="AUDITCREATEUNITID" Type="Int16" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="Int32" />
+          <Property Name="AUDITMODIFYUNITID" Type="Int16" />
+          <Property Name="AUDIT_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="APPLICATION_VERSION" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="APPLICATIONID" Type="Int16" />
+        </EntityType>
+        <EntityType Name="MAP_POIINFO">
+          <Key>
+            <PropertyRef Name="MAPDATAID" />
+          </Key>
+          <Property Name="MAPDATAID" Type="Guid" Nullable="false" />
+          <Property Name="SONUC" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="SONUC_ILCELI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="MAHALLE_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="YOL_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ILCE_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="IL_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="POI_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NAME" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="NAME_FULL" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="LOVDATAPRIORITY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="AUDIT_CREATE_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="Int32" />
+          <Property Name="AUDITCREATEUNITID" Type="Int16" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="Int32" />
+          <Property Name="AUDITMODIFYUNITID" Type="Int16" />
+          <Property Name="AUDIT_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="APPLICATION_VERSION" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="APPLICATIONID" Type="Int16" />
+        </EntityType>
+        <EntityType Name="POI_ARAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="STANDARD_NAME" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="TYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SUB_TYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLACE_NAME" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="STREET_NAME" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="STREET_TYPE" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="HSN" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="POSTAL_CODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="IL_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="ILCE_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="MAHALLE_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="AUDIT_CREATE_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="Int32" />
+          <Property Name="AUDITCREATEUNITID" Type="Int32" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="Int32" />
+          <Property Name="AUDITMODIFYUNITID" Type="Int32" />
+          <Property Name="AUDIT_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="APPLICATION_VERSION" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="APPLICATIONID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="POI_INFO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="STANDARD_NAME" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="TYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SUB_TYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLACE_NAME" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="STREET_NAME" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="STREET_TYPE" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="HSN" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="POSTAL_CODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="IL_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="ILCE_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="MAHALLE_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="AUDIT_CREATE_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="Int32" />
+          <Property Name="AUDITCREATEUNITID" Type="Int32" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="Int32" />
+          <Property Name="AUDITMODIFYUNITID" Type="Int32" />
+          <Property Name="AUDIT_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="APPLICATION_VERSION" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="APPLICATIONID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TOWNPOLYGONHIERARCHY">
+          <Key>
+            <PropertyRef Name="ILCE_ID" />
+          </Key>
+          <Property Name="IL_ID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="ILCE_ID" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="ILCE_ADI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="SEARCH" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="AUDIT_CREATE_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITCREATEDBY" Type="Int32" />
+          <Property Name="AUDITCREATEUNITID" Type="Int16" />
+          <Property Name="AUDIT_MODIFY_DATE" Type="DateTime" Precision="6" />
+          <Property Name="AUDITMODIFIEDBY" Type="Int32" />
+          <Property Name="AUDITMODIFYUNITID" Type="Int16" />
+          <Property Name="AUDIT_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="APPLICATION_VERSION" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="APPLICATIONID" Type="Int16" />
+        </EntityType>
+        <EntityType Name="YOL">
+          <Key>
+            <PropertyRef Name="YOL_ID" />
+          </Key>
+          <Property Name="YOL_ID" Type="Int64" Nullable="false" />
+          <Property Name="YOL_ADI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="YOL_SINIFI" Type="Byte" />
+          <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="GeocoderEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CITYPOLYGONHIERARCHY" EntityType="Self.CITYPOLYGONHIERARCHY" />
+          <EntitySet Name="GEOLOC_IL" EntityType="Self.GEOLOC_IL" />
+          <EntitySet Name="GEOLOC_ILCE" EntityType="Self.GEOLOC_ILCE" />
+          <EntitySet Name="HINTCITYGEOCITYCR" EntityType="Self.HINTCITYGEOCITYCR" />
+          <EntitySet Name="HINTERLAND_SUBFIELDS" EntityType="Self.HINTERLAND_SUBFIELDS" />
+          <EntitySet Name="HINTTOWNGEOTOWNCR" EntityType="Self.HINTTOWNGEOTOWNCR" />
+          <EntitySet Name="IDARI_SINIR_YOL" EntityType="Self.IDARI_SINIR_YOL" />
+          <EntitySet Name="IL" EntityType="Self.IL" />
+          <EntitySet Name="ILCE" EntityType="Self.ILCE" />
+          <EntitySet Name="KAPI" EntityType="Self.KAPI" />
+          <EntitySet Name="LOVPOLYGONLEVEL" EntityType="Self.LOVPOLYGONLEVEL" />
+          <EntitySet Name="LOVPOLYGONTYPE" EntityType="Self.LOVPOLYGONTYPE" />
+          <EntitySet Name="MAHALLE" EntityType="Self.MAHALLE" />
+          <EntitySet Name="MAHALLEAREA" EntityType="Self.MAHALLEAREA" />
+          <EntitySet Name="MAP_DATA30" EntityType="Self.MAP_DATA30" />
+          <EntitySet Name="MAP_POIINFO" EntityType="Self.MAP_POIINFO" />
+          <EntitySet Name="POI_ARAS" EntityType="Self.POI_ARAS" />
+          <EntitySet Name="POI_INFO" EntityType="Self.POI_INFO" />
+          <EntitySet Name="TOWNPOLYGONHIERARCHY" EntityType="Self.TOWNPOLYGONHIERARCHY" />
+          <EntitySet Name="YOL" EntityType="Self.YOL" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="GeocoderEntities">
+          <EntitySetMapping Name="CITYPOLYGONHIERARCHY">
+            <EntityTypeMapping TypeName="Model.CITYPOLYGONHIERARCHY">
+              <MappingFragment StoreEntitySet="CITYPOLYGONHIERARCHY">
+                <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+                <ScalarProperty Name="IL" ColumnName="IL" />
+                <ScalarProperty Name="ILCE" ColumnName="ILCE" />
+                <ScalarProperty Name="ISGEO" ColumnName="ISGEO" />
+                <ScalarProperty Name="LOVTOWN" ColumnName="LOVTOWN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEOLOC_IL">
+            <EntityTypeMapping TypeName="Model.GEOLOC_IL">
+              <MappingFragment StoreEntitySet="GEOLOC_IL">
+                <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+                <ScalarProperty Name="IL_ADI" ColumnName="IL_ADI" />
+                <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+                <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+                <ScalarProperty Name="MI_PRINX" ColumnName="MI_PRINX" />
+                <ScalarProperty Name="MI_STYLE" ColumnName="MI_STYLE" />
+                <ScalarProperty Name="ULKE_ID" ColumnName="ULKE_ID" />
+                <ScalarProperty Name="BOLGE_ID" ColumnName="BOLGE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEOLOC_ILCE">
+            <EntityTypeMapping TypeName="Model.GEOLOC_ILCE">
+              <MappingFragment StoreEntitySet="GEOLOC_ILCE">
+                <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+                <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+                <ScalarProperty Name="ILCE_ADI" ColumnName="ILCE_ADI" />
+                <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+                <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+                <ScalarProperty Name="IL_ILCE" ColumnName="IL_ILCE" />
+                <ScalarProperty Name="MI_PRINX" ColumnName="MI_PRINX" />
+                <ScalarProperty Name="MI_STYLE" ColumnName="MI_STYLE" />
+                <ScalarProperty Name="ZONE" ColumnName="ZONE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HINTCITYGEOCITYCR">
+            <EntityTypeMapping TypeName="Model.HINTCITYGEOCITYCR">
+              <MappingFragment StoreEntitySet="HINTCITYGEOCITYCR">
+                <ScalarProperty Name="HINTCITYID" ColumnName="HINTCITYID" />
+                <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+                <ScalarProperty Name="IL_ADI" ColumnName="IL_ADI" />
+                <ScalarProperty Name="GEOLOC_IL_ID" ColumnName="GEOLOC_IL_ID" />
+                <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+                <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+                <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+                <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+                <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+                <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+                <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+                <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+                <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HINTERLAND_SUBFIELDS">
+            <EntityTypeMapping TypeName="Model.HINTERLAND_SUBFIELDS">
+              <MappingFragment StoreEntitySet="HINTERLAND_SUBFIELDS">
+                <ScalarProperty Name="HINTERLANDID" ColumnName="HINTERLANDID" />
+                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                <ScalarProperty Name="MOBILE_DAYS" ColumnName="MOBILE_DAYS" />
+                <ScalarProperty Name="AA" ColumnName="AA" />
+                <ScalarProperty Name="AT" ColumnName="AT" />
+                <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+                <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+                <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+                <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+                <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+                <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+                <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+                <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+                <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HINTTOWNGEOTOWNCR">
+            <EntityTypeMapping TypeName="Model.HINTTOWNGEOTOWNCR">
+              <MappingFragment StoreEntitySet="HINTTOWNGEOTOWNCR">
+                <ScalarProperty Name="HINTCITYID" ColumnName="HINTCITYID" />
+                <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+                <ScalarProperty Name="GEOLOC_IL_ID" ColumnName="GEOLOC_IL_ID" />
+                <ScalarProperty Name="HINTTOWNID" ColumnName="HINTTOWNID" />
+                <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+                <ScalarProperty Name="ILCE_ADI" ColumnName="ILCE_ADI" />
+                <ScalarProperty Name="GEOLOC_ILCE_ID" ColumnName="GEOLOC_ILCE_ID" />
+                <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+                <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+                <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+                <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+                <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+                <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+                <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+                <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+                <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IDARI_SINIR_YOL">
+            <EntityTypeMapping TypeName="Model.IDARI_SINIR_YOL">
+              <MappingFragment StoreEntitySet="IDARI_SINIR_YOL">
+                <ScalarProperty Name="IL_ADI" ColumnName="IL_ADI" />
+                <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+                <ScalarProperty Name="ILCE_ADI" ColumnName="ILCE_ADI" />
+                <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+                <ScalarProperty Name="MAHALLE_ADI" ColumnName="MAHALLE_ADI" />
+                <ScalarProperty Name="MAHALLE_ID" ColumnName="MAHALLE_ID" />
+                <ScalarProperty Name="YOL_ID" ColumnName="YOL_ID" />
+                <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+                <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IL">
+            <EntityTypeMapping TypeName="Model.IL">
+              <MappingFragment StoreEntitySet="IL">
+                <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+                <ScalarProperty Name="IL_ADI" ColumnName="IL_ADI" />
+                <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+                <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ILCE">
+            <EntityTypeMapping TypeName="Model.ILCE">
+              <MappingFragment StoreEntitySet="ILCE">
+                <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+                <ScalarProperty Name="ILCE_ADI" ColumnName="ILCE_ADI" />
+                <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+                <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+                <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KAPI">
+            <EntityTypeMapping TypeName="Model.KAPI">
+              <MappingFragment StoreEntitySet="KAPI">
+                <ScalarProperty Name="KAPI_ADI" ColumnName="KAPI_ADI" />
+                <ScalarProperty Name="KAPI_ID" ColumnName="KAPI_ID" />
+                <ScalarProperty Name="KAPI_NO" ColumnName="KAPI_NO" />
+                <ScalarProperty Name="MAHALLE_ID" ColumnName="MAHALLE_ID" />
+                <ScalarProperty Name="POSTA_KODU" ColumnName="POSTA_KODU" />
+                <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+                <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+                <ScalarProperty Name="YOL_ID" ColumnName="YOL_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOVPOLYGONLEVEL">
+            <EntityTypeMapping TypeName="Model.LOVPOLYGONLEVEL">
+              <MappingFragment StoreEntitySet="LOVPOLYGONLEVEL">
+                <ScalarProperty Name="LOVPOLYGONLEVELID" ColumnName="LOVPOLYGONLEVELID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+                <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+                <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+                <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+                <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+                <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+                <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOVPOLYGONTYPE">
+            <EntityTypeMapping TypeName="Model.LOVPOLYGONTYPE">
+              <MappingFragment StoreEntitySet="LOVPOLYGONTYPE">
+                <ScalarProperty Name="LOVPOLYGONTYPEID" ColumnName="LOVPOLYGONTYPEID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+                <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+                <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+                <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+                <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+                <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+                <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MAHALLE">
+            <EntityTypeMapping TypeName="Model.MAHALLE">
+              <MappingFragment StoreEntitySet="MAHALLE">
+                <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+                <ScalarProperty Name="MAHALLE_ADI" ColumnName="MAHALLE_ADI" />
+                <ScalarProperty Name="MAHALLE_ID" ColumnName="MAHALLE_ID" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="POSTA_KODU" ColumnName="POSTA_KODU" />
+                <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+                <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MAHALLEAREA">
+            <EntityTypeMapping TypeName="Model.MAHALLEAREA">
+              <MappingFragment StoreEntitySet="MAHALLEAREA">
+                <ScalarProperty Name="MAHALLEID" ColumnName="MAHALLEID" />
+                <ScalarProperty Name="PARAMAREA" ColumnName="PARAMAREA" />
+                <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+                <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+                <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+                <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+                <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+                <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+                <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+                <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+                <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MAP_DATA30">
+            <EntityTypeMapping TypeName="Model.MAP_DATA30">
+              <MappingFragment StoreEntitySet="MAP_DATA30">
+                <ScalarProperty Name="MAPDATAID" ColumnName="MAPDATAID" />
+                <ScalarProperty Name="SONUC" ColumnName="SONUC" />
+                <ScalarProperty Name="SONUC_ILCELI" ColumnName="SONUC_ILCELI" />
+                <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+                <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+                <ScalarProperty Name="MAHALLE_ID" ColumnName="MAHALLE_ID" />
+                <ScalarProperty Name="YOL_ID" ColumnName="YOL_ID" />
+                <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+                <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+                <ScalarProperty Name="POI_ID" ColumnName="POI_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="NAME_FULL" ColumnName="NAME_FULL" />
+                <ScalarProperty Name="LOVDATAPRIORITY" ColumnName="LOVDATAPRIORITY" />
+                <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+                <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+                <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+                <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+                <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+                <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+                <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+                <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+                <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MAP_POIINFO">
+            <EntityTypeMapping TypeName="Model.MAP_POIINFO">
+              <MappingFragment StoreEntitySet="MAP_POIINFO">
+                <ScalarProperty Name="MAPDATAID" ColumnName="MAPDATAID" />
+                <ScalarProperty Name="SONUC" ColumnName="SONUC" />
+                <ScalarProperty Name="SONUC_ILCELI" ColumnName="SONUC_ILCELI" />
+                <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+                <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+                <ScalarProperty Name="MAHALLE_ID" ColumnName="MAHALLE_ID" />
+                <ScalarProperty Name="YOL_ID" ColumnName="YOL_ID" />
+                <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+                <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+                <ScalarProperty Name="POI_ID" ColumnName="POI_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="NAME_FULL" ColumnName="NAME_FULL" />
+                <ScalarProperty Name="LOVDATAPRIORITY" ColumnName="LOVDATAPRIORITY" />
+                <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+                <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+                <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+                <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+                <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+                <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+                <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+                <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+                <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POI_ARAS">
+            <EntityTypeMapping TypeName="Model.POI_ARAS">
+              <MappingFragment StoreEntitySet="POI_ARAS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="STANDARD_NAME" ColumnName="STANDARD_NAME" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="SUB_TYPE" ColumnName="SUB_TYPE" />
+                <ScalarProperty Name="PLACE_NAME" ColumnName="PLACE_NAME" />
+                <ScalarProperty Name="STREET_NAME" ColumnName="STREET_NAME" />
+                <ScalarProperty Name="STREET_TYPE" ColumnName="STREET_TYPE" />
+                <ScalarProperty Name="HSN" ColumnName="HSN" />
+                <ScalarProperty Name="POSTAL_CODE" ColumnName="POSTAL_CODE" />
+                <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+                <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+                <ScalarProperty Name="MAHALLE_ID" ColumnName="MAHALLE_ID" />
+                <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+                <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+                <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+                <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+                <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+                <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+                <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+                <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+                <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+                <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+                <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POI_INFO">
+            <EntityTypeMapping TypeName="Model.POI_INFO">
+              <MappingFragment StoreEntitySet="POI_INFO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="STANDARD_NAME" ColumnName="STANDARD_NAME" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="SUB_TYPE" ColumnName="SUB_TYPE" />
+                <ScalarProperty Name="PLACE_NAME" ColumnName="PLACE_NAME" />
+                <ScalarProperty Name="STREET_NAME" ColumnName="STREET_NAME" />
+                <ScalarProperty Name="STREET_TYPE" ColumnName="STREET_TYPE" />
+                <ScalarProperty Name="HSN" ColumnName="HSN" />
+                <ScalarProperty Name="POSTAL_CODE" ColumnName="POSTAL_CODE" />
+                <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+                <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+                <ScalarProperty Name="MAHALLE_ID" ColumnName="MAHALLE_ID" />
+                <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+                <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+                <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+                <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+                <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+                <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+                <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+                <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+                <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+                <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+                <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TOWNPOLYGONHIERARCHY">
+            <EntityTypeMapping TypeName="Model.TOWNPOLYGONHIERARCHY">
+              <MappingFragment StoreEntitySet="TOWNPOLYGONHIERARCHY">
+                <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+                <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+                <ScalarProperty Name="ILCE_ADI" ColumnName="ILCE_ADI" />
+                <ScalarProperty Name="SEARCH" ColumnName="SEARCH" />
+                <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+                <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+                <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+                <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+                <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+                <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+                <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+                <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+                <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YOL">
+            <EntityTypeMapping TypeName="Model.YOL">
+              <MappingFragment StoreEntitySet="YOL">
+                <ScalarProperty Name="YOL_ID" ColumnName="YOL_ID" />
+                <ScalarProperty Name="YOL_ADI" ColumnName="YOL_ADI" />
+                <ScalarProperty Name="YOL_SINIFI" ColumnName="YOL_SINIFI" />
+                <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+                <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

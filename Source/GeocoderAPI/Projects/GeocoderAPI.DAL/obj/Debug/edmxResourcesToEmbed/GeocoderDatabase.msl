@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="GeocoderEntities">
+    <EntitySetMapping Name="CITYPOLYGONHIERARCHY">
+      <EntityTypeMapping TypeName="Model.CITYPOLYGONHIERARCHY">
+        <MappingFragment StoreEntitySet="CITYPOLYGONHIERARCHY">
+          <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+          <ScalarProperty Name="IL" ColumnName="IL" />
+          <ScalarProperty Name="ILCE" ColumnName="ILCE" />
+          <ScalarProperty Name="ISGEO" ColumnName="ISGEO" />
+          <ScalarProperty Name="LOVTOWN" ColumnName="LOVTOWN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEOLOC_IL">
+      <EntityTypeMapping TypeName="Model.GEOLOC_IL">
+        <MappingFragment StoreEntitySet="GEOLOC_IL">
+          <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+          <ScalarProperty Name="IL_ADI" ColumnName="IL_ADI" />
+          <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+          <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+          <ScalarProperty Name="MI_PRINX" ColumnName="MI_PRINX" />
+          <ScalarProperty Name="MI_STYLE" ColumnName="MI_STYLE" />
+          <ScalarProperty Name="ULKE_ID" ColumnName="ULKE_ID" />
+          <ScalarProperty Name="BOLGE_ID" ColumnName="BOLGE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEOLOC_ILCE">
+      <EntityTypeMapping TypeName="Model.GEOLOC_ILCE">
+        <MappingFragment StoreEntitySet="GEOLOC_ILCE">
+          <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+          <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+          <ScalarProperty Name="ILCE_ADI" ColumnName="ILCE_ADI" />
+          <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+          <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+          <ScalarProperty Name="IL_ILCE" ColumnName="IL_ILCE" />
+          <ScalarProperty Name="MI_PRINX" ColumnName="MI_PRINX" />
+          <ScalarProperty Name="MI_STYLE" ColumnName="MI_STYLE" />
+          <ScalarProperty Name="ZONE" ColumnName="ZONE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HINTCITYGEOCITYCR">
+      <EntityTypeMapping TypeName="Model.HINTCITYGEOCITYCR">
+        <MappingFragment StoreEntitySet="HINTCITYGEOCITYCR">
+          <ScalarProperty Name="HINTCITYID" ColumnName="HINTCITYID" />
+          <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+          <ScalarProperty Name="IL_ADI" ColumnName="IL_ADI" />
+          <ScalarProperty Name="GEOLOC_IL_ID" ColumnName="GEOLOC_IL_ID" />
+          <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+          <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+          <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+          <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+          <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+          <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+          <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+          <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HINTERLAND_SUBFIELDS">
+      <EntityTypeMapping TypeName="Model.HINTERLAND_SUBFIELDS">
+        <MappingFragment StoreEntitySet="HINTERLAND_SUBFIELDS">
+          <ScalarProperty Name="HINTERLANDID" ColumnName="HINTERLANDID" />
+          <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+          <ScalarProperty Name="MOBILE_DAYS" ColumnName="MOBILE_DAYS" />
+          <ScalarProperty Name="AA" ColumnName="AA" />
+          <ScalarProperty Name="AT" ColumnName="AT" />
+          <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+          <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+          <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+          <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+          <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+          <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+          <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+          <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HINTTOWNGEOTOWNCR">
+      <EntityTypeMapping TypeName="Model.HINTTOWNGEOTOWNCR">
+        <MappingFragment StoreEntitySet="HINTTOWNGEOTOWNCR">
+          <ScalarProperty Name="HINTCITYID" ColumnName="HINTCITYID" />
+          <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+          <ScalarProperty Name="GEOLOC_IL_ID" ColumnName="GEOLOC_IL_ID" />
+          <ScalarProperty Name="HINTTOWNID" ColumnName="HINTTOWNID" />
+          <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+          <ScalarProperty Name="ILCE_ADI" ColumnName="ILCE_ADI" />
+          <ScalarProperty Name="GEOLOC_ILCE_ID" ColumnName="GEOLOC_ILCE_ID" />
+          <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+          <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+          <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+          <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+          <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+          <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+          <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+          <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IDARI_SINIR_YOL">
+      <EntityTypeMapping TypeName="Model.IDARI_SINIR_YOL">
+        <MappingFragment StoreEntitySet="IDARI_SINIR_YOL">
+          <ScalarProperty Name="IL_ADI" ColumnName="IL_ADI" />
+          <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+          <ScalarProperty Name="ILCE_ADI" ColumnName="ILCE_ADI" />
+          <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+          <ScalarProperty Name="MAHALLE_ADI" ColumnName="MAHALLE_ADI" />
+          <ScalarProperty Name="MAHALLE_ID" ColumnName="MAHALLE_ID" />
+          <ScalarProperty Name="YOL_ID" ColumnName="YOL_ID" />
+          <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+          <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IL">
+      <EntityTypeMapping TypeName="Model.IL">
+        <MappingFragment StoreEntitySet="IL">
+          <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+          <ScalarProperty Name="IL_ADI" ColumnName="IL_ADI" />
+          <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+          <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ILCE">
+      <EntityTypeMapping TypeName="Model.ILCE">
+        <MappingFragment StoreEntitySet="ILCE">
+          <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+          <ScalarProperty Name="ILCE_ADI" ColumnName="ILCE_ADI" />
+          <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+          <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+          <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KAPI">
+      <EntityTypeMapping TypeName="Model.KAPI">
+        <MappingFragment StoreEntitySet="KAPI">
+          <ScalarProperty Name="KAPI_ADI" ColumnName="KAPI_ADI" />
+          <ScalarProperty Name="KAPI_ID" ColumnName="KAPI_ID" />
+          <ScalarProperty Name="KAPI_NO" ColumnName="KAPI_NO" />
+          <ScalarProperty Name="MAHALLE_ID" ColumnName="MAHALLE_ID" />
+          <ScalarProperty Name="POSTA_KODU" ColumnName="POSTA_KODU" />
+          <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+          <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+          <ScalarProperty Name="YOL_ID" ColumnName="YOL_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOVPOLYGONLEVEL">
+      <EntityTypeMapping TypeName="Model.LOVPOLYGONLEVEL">
+        <MappingFragment StoreEntitySet="LOVPOLYGONLEVEL">
+          <ScalarProperty Name="LOVPOLYGONLEVELID" ColumnName="LOVPOLYGONLEVELID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+          <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+          <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+          <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+          <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+          <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+          <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOVPOLYGONTYPE">
+      <EntityTypeMapping TypeName="Model.LOVPOLYGONTYPE">
+        <MappingFragment StoreEntitySet="LOVPOLYGONTYPE">
+          <ScalarProperty Name="LOVPOLYGONTYPEID" ColumnName="LOVPOLYGONTYPEID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+          <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+          <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+          <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+          <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+          <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+          <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MAHALLE">
+      <EntityTypeMapping TypeName="Model.MAHALLE">
+        <MappingFragment StoreEntitySet="MAHALLE">
+          <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+          <ScalarProperty Name="MAHALLE_ADI" ColumnName="MAHALLE_ADI" />
+          <ScalarProperty Name="MAHALLE_ID" ColumnName="MAHALLE_ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="POSTA_KODU" ColumnName="POSTA_KODU" />
+          <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+          <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MAHALLEAREA">
+      <EntityTypeMapping TypeName="Model.MAHALLEAREA">
+        <MappingFragment StoreEntitySet="MAHALLEAREA">
+          <ScalarProperty Name="MAHALLEID" ColumnName="MAHALLEID" />
+          <ScalarProperty Name="PARAMAREA" ColumnName="PARAMAREA" />
+          <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+          <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+          <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+          <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+          <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+          <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+          <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+          <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MAP_DATA30">
+      <EntityTypeMapping TypeName="Model.MAP_DATA30">
+        <MappingFragment StoreEntitySet="MAP_DATA30">
+          <ScalarProperty Name="MAPDATAID" ColumnName="MAPDATAID" />
+          <ScalarProperty Name="SONUC" ColumnName="SONUC" />
+          <ScalarProperty Name="SONUC_ILCELI" ColumnName="SONUC_ILCELI" />
+          <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+          <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+          <ScalarProperty Name="MAHALLE_ID" ColumnName="MAHALLE_ID" />
+          <ScalarProperty Name="YOL_ID" ColumnName="YOL_ID" />
+          <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+          <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+          <ScalarProperty Name="POI_ID" ColumnName="POI_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="NAME_FULL" ColumnName="NAME_FULL" />
+          <ScalarProperty Name="LOVDATAPRIORITY" ColumnName="LOVDATAPRIORITY" />
+          <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+          <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+          <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+          <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+          <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+          <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+          <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+          <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MAP_POIINFO">
+      <EntityTypeMapping TypeName="Model.MAP_POIINFO">
+        <MappingFragment StoreEntitySet="MAP_POIINFO">
+          <ScalarProperty Name="MAPDATAID" ColumnName="MAPDATAID" />
+          <ScalarProperty Name="SONUC" ColumnName="SONUC" />
+          <ScalarProperty Name="SONUC_ILCELI" ColumnName="SONUC_ILCELI" />
+          <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+          <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+          <ScalarProperty Name="MAHALLE_ID" ColumnName="MAHALLE_ID" />
+          <ScalarProperty Name="YOL_ID" ColumnName="YOL_ID" />
+          <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+          <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+          <ScalarProperty Name="POI_ID" ColumnName="POI_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="NAME_FULL" ColumnName="NAME_FULL" />
+          <ScalarProperty Name="LOVDATAPRIORITY" ColumnName="LOVDATAPRIORITY" />
+          <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+          <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+          <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+          <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+          <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+          <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+          <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+          <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POI_ARAS">
+      <EntityTypeMapping TypeName="Model.POI_ARAS">
+        <MappingFragment StoreEntitySet="POI_ARAS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="STANDARD_NAME" ColumnName="STANDARD_NAME" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="SUB_TYPE" ColumnName="SUB_TYPE" />
+          <ScalarProperty Name="PLACE_NAME" ColumnName="PLACE_NAME" />
+          <ScalarProperty Name="STREET_NAME" ColumnName="STREET_NAME" />
+          <ScalarProperty Name="STREET_TYPE" ColumnName="STREET_TYPE" />
+          <ScalarProperty Name="HSN" ColumnName="HSN" />
+          <ScalarProperty Name="POSTAL_CODE" ColumnName="POSTAL_CODE" />
+          <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+          <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+          <ScalarProperty Name="MAHALLE_ID" ColumnName="MAHALLE_ID" />
+          <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+          <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+          <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+          <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+          <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+          <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+          <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+          <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+          <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+          <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POI_INFO">
+      <EntityTypeMapping TypeName="Model.POI_INFO">
+        <MappingFragment StoreEntitySet="POI_INFO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="STANDARD_NAME" ColumnName="STANDARD_NAME" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="SUB_TYPE" ColumnName="SUB_TYPE" />
+          <ScalarProperty Name="PLACE_NAME" ColumnName="PLACE_NAME" />
+          <ScalarProperty Name="STREET_NAME" ColumnName="STREET_NAME" />
+          <ScalarProperty Name="STREET_TYPE" ColumnName="STREET_TYPE" />
+          <ScalarProperty Name="HSN" ColumnName="HSN" />
+          <ScalarProperty Name="POSTAL_CODE" ColumnName="POSTAL_CODE" />
+          <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+          <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+          <ScalarProperty Name="MAHALLE_ID" ColumnName="MAHALLE_ID" />
+          <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+          <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+          <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+          <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+          <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+          <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+          <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+          <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+          <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+          <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TOWNPOLYGONHIERARCHY">
+      <EntityTypeMapping TypeName="Model.TOWNPOLYGONHIERARCHY">
+        <MappingFragment StoreEntitySet="TOWNPOLYGONHIERARCHY">
+          <ScalarProperty Name="IL_ID" ColumnName="IL_ID" />
+          <ScalarProperty Name="ILCE_ID" ColumnName="ILCE_ID" />
+          <ScalarProperty Name="ILCE_ADI" ColumnName="ILCE_ADI" />
+          <ScalarProperty Name="SEARCH" ColumnName="SEARCH" />
+          <ScalarProperty Name="AUDIT_CREATE_DATE" ColumnName="AUDIT_CREATE_DATE" />
+          <ScalarProperty Name="AUDITCREATEDBY" ColumnName="AUDITCREATEDBY" />
+          <ScalarProperty Name="AUDITCREATEUNITID" ColumnName="AUDITCREATEUNITID" />
+          <ScalarProperty Name="AUDIT_MODIFY_DATE" ColumnName="AUDIT_MODIFY_DATE" />
+          <ScalarProperty Name="AUDITMODIFIEDBY" ColumnName="AUDITMODIFIEDBY" />
+          <ScalarProperty Name="AUDITMODIFYUNITID" ColumnName="AUDITMODIFYUNITID" />
+          <ScalarProperty Name="AUDIT_DELETED" ColumnName="AUDIT_DELETED" />
+          <ScalarProperty Name="APPLICATION_VERSION" ColumnName="APPLICATION_VERSION" />
+          <ScalarProperty Name="APPLICATIONID" ColumnName="APPLICATIONID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YOL">
+      <EntityTypeMapping TypeName="Model.YOL">
+        <MappingFragment StoreEntitySet="YOL">
+          <ScalarProperty Name="YOL_ID" ColumnName="YOL_ID" />
+          <ScalarProperty Name="YOL_ADI" ColumnName="YOL_ADI" />
+          <ScalarProperty Name="YOL_SINIFI" ColumnName="YOL_SINIFI" />
+          <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+          <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

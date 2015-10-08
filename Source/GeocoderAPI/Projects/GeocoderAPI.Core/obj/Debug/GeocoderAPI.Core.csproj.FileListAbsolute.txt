@@ -1,0 +1,5 @@
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Core\bin\Debug\GeocoderAPI.Core.dll
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Core\bin\Debug\GeocoderAPI.Core.pdb
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Core\obj\Debug\GeocoderAPI.Core.csprojResolveAssemblyReference.cache
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Core\obj\Debug\GeocoderAPI.Core.dll
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Core\obj\Debug\GeocoderAPI.Core.pdb

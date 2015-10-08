@@ -1,0 +1,4 @@
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\FuzzyString\bin\Debug\FuzzyString.dll
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\FuzzyString\bin\Debug\FuzzyString.pdb
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\FuzzyString\obj\Debug\FuzzyString.dll
+C:\Users\mustafaarslan\Desktop\EngProject\Samples\fuzzystringmatching\WpfApplication4\FuzzyString\obj\Debug\FuzzyString.pdb

@@ -1,0 +1,16 @@
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\bin\Debug\GeocoderAPI.Default.dll
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\bin\Debug\GeocoderAPI.Default.pdb
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\obj\Debug\GeocoderAPI.Default.csprojResolveAssemblyReference.cache
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\obj\Debug\GeocoderAPI.Default.dll
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\obj\Debug\GeocoderAPI.Default.pdb
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\bin\Debug\GeocoderAPI.Model.dll
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\bin\Debug\GeocoderAPI.Model.pdb
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\bin\Debug\GeocoderAPI.Default.dll.config
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\bin\Debug\EntityFramework.dll
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\bin\Debug\GeocoderAPI.Core.dll
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\bin\Debug\GeocoderAPI.DAL.dll
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\bin\Debug\GeocoderAPI.Core.pdb
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\bin\Debug\GeocoderAPI.DAL.pdb
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\bin\Debug\EntityFramework.xml
+C:\Users\mustafaarslan\Desktop\EngProject\Source\GeocoderAPI\Projects\GeocoderAPI.Default\bin\Debug\EntityFramework.SqlServer.xml

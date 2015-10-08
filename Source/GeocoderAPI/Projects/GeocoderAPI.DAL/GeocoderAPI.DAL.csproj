@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C83D0A2-12CD-42A1-883E-BFCFE76C73B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeocoderAPI.DAL</RootNamespace>
+    <AssemblyName>GeocoderAPI.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Oracle.ManagedDataAccess.12.1.022\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Oracle.ManagedDataAccess.EntityFramework.12.1.022\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CITYPOLYGONHIERARCHY.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GeocoderDatabase.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeocoderDatabase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GeocoderDatabase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GeocoderDatabase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeocoderDatabase.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="GEOLOC_IL.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GEOLOC_ILCE.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HINTCITYGEOCITYCR.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HINTERLAND_SUBFIELDS.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HINTTOWNGEOTOWNCR.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IDARI_SINIR_YOL.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IL.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ILCE.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KAPI.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOVPOLYGONLEVEL.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOVPOLYGONTYPE.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAHALLE.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAHALLEAREA.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAP_DATA30.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAP_POIINFO.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POI_ARAS.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POI_INFO.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TOWNPOLYGONHIERARCHY.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YOL.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="GeocoderDatabase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GeocoderDatabase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="GeocoderDatabase.edmx.diagram">
+      <DependentUpon>GeocoderDatabase.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GeocoderDatabase.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GeocoderDatabase.edmx</DependentUpon>
+      <LastGenOutput>GeocoderDatabase.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="GeocoderDatabase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GeocoderDatabase.edmx</DependentUpon>
+      <LastGenOutput>GeocoderDatabase.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
