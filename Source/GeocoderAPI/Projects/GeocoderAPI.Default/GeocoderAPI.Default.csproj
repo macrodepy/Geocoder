@@ -49,6 +49,8 @@
     <Compile Include="Fixer.cs" />
     <Compile Include="Geocoder.cs" />
     <Compile Include="Parse.cs" />
+    <Compile Include="Parsing.cs" />
+    <Compile Include="Parsing_old.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

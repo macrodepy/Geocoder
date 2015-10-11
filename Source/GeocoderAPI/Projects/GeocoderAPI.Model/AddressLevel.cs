@@ -8,6 +8,7 @@ namespace GeocoderAPI.Model
 {
     public class AddressLevel
     {
+        public string OriginalAddress { get; set; }
         public string Il { get; set; }
         public string Ilçe { get; set; }
         public string Mahalle { get; set; }

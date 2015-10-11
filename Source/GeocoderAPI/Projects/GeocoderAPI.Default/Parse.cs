@@ -8,6 +8,8 @@ namespace GeocoderAPI.Default
 {
     public class Parse
     {
+        public List<String> notParsedList { get; set; }
+
         private enum ParsingAdress
         {
             Il,
@@ -38,13 +40,7 @@ namespace GeocoderAPI.Default
             Bulvar_1,
             Bulvar_2,
             Bulvar_S
-        }; //Değişkenlerin listesi
-
-        private int dongu;
-        private int n;
-        private string[] Tokens;
-
-        public List<String> notParsedList { get; set; }
+        }; 
 
         private void ClearNotParsedList(string token)
         {
@@ -52,46 +48,42 @@ namespace GeocoderAPI.Default
                 notParsedList.Remove(token);
         }
 
-        public AddressLevel ParseAddress(string mEditedAddress)
+        public AddressLevel ParseAddress(string address)
         {
-            dongu = 0;
-            n = 0;
+             int counter = 0;
+             int index = 0;
 
             notParsedList = new List<string>();
 
-            Tokens = Regex.Split(mEditedAddress, " ");
+            string[] tokens = Regex.Split(address, " ");
 
             AddressLevel addressLevel = new AddressLevel();
+            addressLevel.OriginalAddress = address;
 
-            while (1 == 1)
+            while (counter < tokens.Length)
             {
-                if (dongu == Tokens.Length)
-                {
-                    break;
-                }
+                string tempAddress = " " + tokens[counter] + " ";
 
-                string tempAddress = " " + Tokens[dongu] + " ";
-
-                int type = CheckType(tempAddress);
+                int type = CheckType(tempAddress, counter, tokens);
                 string token = string.Empty;
 
                 switch (type)
                 {
                     case (int)ParsingAdress.Mahalle:
-                        for (int i = n; i < dongu; i++)
+                        for (int i = index; i < counter; i++)
                         {
-                            token += " " + Tokens[i] + " ";
+                            token += " " + tokens[i] + " ";
                         }
                         addressLevel.Mahalle = token.Replace("  ", " ").TrimStart().TrimEnd();
-                        n = dongu + 1;
+                        index = counter + 1;
                         ClearNotParsedList(token);
                         break;
                     case (int)ParsingAdress.Cadde:
                         if (addressLevel.Cadde == null)
                         {
-                            for (int i = n; i < dongu; i++)
+                            for (int i = index; i < counter; i++)
                             {
-                                token += " " + Tokens[i] + " ";
+                                token += " " + tokens[i] + " ";
                             }
                             addressLevel.Cadde = token.Replace("  ", " ").TrimStart().TrimEnd();
                             ClearNotParsedList(token);
@@ -119,14 +111,14 @@ namespace GeocoderAPI.Default
                                 }
                             }
                         }
-                        n = dongu + 1;
+                        index = counter + 1;
                         break;
                     case (int)ParsingAdress.Sokak:
                         if (addressLevel.Sokak == null)
                         {
-                            for (int i = n; i < dongu; i++)
+                            for (int i = index; i < counter; i++)
                             {
-                                token += " " + Tokens[i] + " ";
+                                token += " " + tokens[i] + " ";
                             }
                             addressLevel.Sokak = token.Replace("  ", " ").TrimStart().TrimEnd();
                             ClearNotParsedList(token);
@@ -154,14 +146,14 @@ namespace GeocoderAPI.Default
                                 }
                             }
                         }
-                        n = dongu + 1;
+                        index = counter + 1;
                         break;
                     case (int)ParsingAdress.POI:
                         if (addressLevel.Poi == null)
                         {
-                            for (int i = n; i <= dongu; i++)
+                            for (int i = index; i <= counter; i++)
                             {
-                                token += " " + Tokens[i] + " ";
+                                token += " " + tokens[i] + " ";
                             }
 
                             token = token.Replace(" İŞ.MRK. ", " İŞ MERKEZİ ");
@@ -202,32 +194,32 @@ namespace GeocoderAPI.Default
                                 }
                             }
                         }
-                        n = dongu + 1;
+                        index = counter + 1;
                         break;
                     case (int)ParsingAdress.Yolu:
-                        for (int i = n; i <= dongu; i++)
+                        for (int i = index; i <= counter; i++)
                         {
-                            token += " " + Tokens[i] + " ";
+                            token += " " + tokens[i] + " ";
                         }
                         addressLevel.Yolu = token.Replace(".GİRİŞİ", "").Replace(".KAVŞAĞI", " KAVŞAĞI").Replace("MEVKİİ", "MEVKİ").Replace(".ÜZERİ", "").Replace("  ", " ").TrimStart().TrimEnd();
                         ClearNotParsedList(token);
-                        n = dongu + 1;
+                        index = counter + 1;
                         break;
                     case (int)ParsingAdress.Köy:
-                        for (int i = n; i < dongu; i++)
+                        for (int i = index; i < counter; i++)
                         {
-                            token += " " + Tokens[i] + " ";
+                            token += " " + tokens[i] + " ";
                         }
                         addressLevel.Köy = token.Replace("  ", " ").TrimStart().TrimEnd();
                         ClearNotParsedList(token);
-                        n = dongu + 1;
+                        index = counter + 1;
                         break;
                     case (int)ParsingAdress.Bulvar:
                         if (addressLevel.Bulvar == null)
                         {
-                            for (int i = n; i < dongu; i++)
+                            for (int i = index; i < counter; i++)
                             {
-                                token += " " + Tokens[i] + " ";
+                                token += " " + tokens[i] + " ";
                             }
 
                             addressLevel.Bulvar = token.Replace("  ", " ").TrimStart().TrimEnd();
@@ -256,52 +248,52 @@ namespace GeocoderAPI.Default
                                 }
                             }
                         }
-                        n = dongu + 1;
+                        index = counter + 1;
                         break;
                     case (int)ParsingAdress.Kapı:
-                        addressLevel.Kapı = Tokens[dongu].Replace("NO:", "").Replace("  ", " ").TrimStart().TrimEnd();
+                        addressLevel.Kapı = tokens[counter].Replace("NO:", "").Replace("  ", " ").TrimStart().TrimEnd();
                         ClearNotParsedList(token);
-                        n = dongu + 1;
+                        index = counter + 1;
                         break;
                     case (int)ParsingAdress.Kat:
 
-                        Tokens[dongu] = Tokens[dongu].Replace("K:", "").Replace("  ", " ").TrimStart().TrimEnd();
+                        tokens[counter] = tokens[counter].Replace("K:", "").Replace("  ", " ").TrimStart().TrimEnd();
 
                         string patternK = @"(-)|(/)";
-                        string[] Ks = Regex.Split(Tokens[dongu], patternK);
+                        string[] Ks = Regex.Split(tokens[counter], patternK);
 
                         addressLevel.Kat = Ks[0];
                         ClearNotParsedList(Ks[0]);
-                        n = dongu + 1;
+                        index = counter + 1;
                         break;
                     case (int)ParsingAdress.Daire:
 
-                        Tokens[dongu] = Tokens[dongu].Replace("D:", "").Replace("  ", " ").TrimStart().TrimEnd();
+                        tokens[counter] = tokens[counter].Replace("D:", "").Replace("  ", " ").TrimStart().TrimEnd();
 
                         string patternD = @"(-)|(/)";
-                        string[] Ds = Regex.Split(Tokens[dongu], patternD);
+                        string[] Ds = Regex.Split(tokens[counter], patternD);
 
                         addressLevel.Daire = Ds[0];
                         ClearNotParsedList(Ds[0]);
-                        n = dongu + 1;
+                        index = counter + 1;
                         break;
                     case (int)ParsingAdress.Blok:
-                        for (int i = n; i < dongu; i++)
+                        for (int i = index; i < counter; i++)
                         {
-                            token += " " + Tokens[i] + " ";
+                            token += " " + tokens[i] + " ";
                         }
                         addressLevel.Blok = token.Replace("  ", " ").TrimStart().TrimEnd();
                         ClearNotParsedList(token);
-                        n = dongu + 1;
+                        index = counter + 1;
                         break;
                     case (int)ParsingAdress.Bina:
-                        for (int i = n; i <= dongu; i++)
+                        for (int i = index; i <= counter; i++)
                         {
-                            token += " " + Tokens[i] + " ";
+                            token += " " + tokens[i] + " ";
                         }
                         addressLevel.Bina = token.Replace("  ", " ").TrimStart().TrimEnd();
                         ClearNotParsedList(token.Replace(" APT. ", ""));
-                        n = dongu + 1;
+                        index = counter + 1;
                         break;
                     default:
                         if (!tempAddress.Equals(string.Empty))
@@ -311,13 +303,13 @@ namespace GeocoderAPI.Default
                         break;
                 }
 
-                dongu += 1;
+                counter ++;
             }
 
             return addressLevel;
         }
 
-        private int CheckType(string mTempAddress)
+        private int CheckType(string mTempAddress, int counter,  string[] tokens)
         {
             int CheckType = 0;
             if (" MAHALLESİ ".IndexOf(mTempAddress.ToUpper()) > -1)
@@ -392,9 +384,9 @@ namespace GeocoderAPI.Default
                 string kapiDigit = "";
                 kapiDigit = Regex.Replace(mTempAddress.ToUpper(), "[^0-9]", "");
 
-                if (dongu != 0)
+                if (counter != 0)
                 {
-                    if ((" " + Tokens[dongu - 1] + " ").ToUpper().IndexOf(" N ") > -1)
+                    if ((" " + tokens[counter - 1] + " ").ToUpper().IndexOf(" N ") > -1)
                     {
                         CheckType = (int)ParsingAdress.Kapı;
                     }
