@@ -36,5 +36,8 @@ namespace GeocoderAPI.Model
         public string Bulvar1 { get; set; }
         public string Bulvar2 { get; set; }
         public string BulvarS { get; set; }
+
+        public decimal IlId { get; set; }
+        public decimal IlceId { get; set; }
     }
 }

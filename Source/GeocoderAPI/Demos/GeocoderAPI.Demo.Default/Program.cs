@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GeocoderAPI.DAL;
 using GeocoderAPI.Default;
 using GeocoderAPI.Model;
@@ -11,15 +8,17 @@ namespace GeocoderAPI.Demo.Default
 {
     public class Program
     {
-
+        private static GeocoderEntities entities;
+        private static GeocoderService geocoderService;
+        public Program()
+        {
+        }
 
         static void Main(string[] args)
         {
-            GeocoderEntities entities = new GeocoderEntities();
-
-            //GEOLOC_IL il = entities.GEOLOC_IL.FirstOrDefault(x => x.IL_ADI == "İSTANBUL");
-            //string address = "inönü mahallesi atatürk caddesi birlik apt. no:55 daire:7";
-
+            entities = new GeocoderEntities();
+            geocoderService = new GeocoderService();
+         
             string address = "inönü mahallesi atatürk caddesi birlik apt. no:55 daire 7 istanbul ataşehir";
             string fixerTest = FixerTest(address);
 
@@ -27,28 +26,53 @@ namespace GeocoderAPI.Demo.Default
             AddressLevel addressLevel = parse.ParseAddress(fixerTest);
             List<string> list = parse.notParsedList;
 
-            CheckForCity(ref list, addressLevel);
+            list = CheckForCity(list, ref addressLevel);
+
+            if (!addressLevel.Il.Equals(string.Empty))
+            {
+                list = CheckForTown(list, ref addressLevel);
+            }
 
             GeocoderTest(addressLevel);
-
         }
 
-        static AddressLevel CheckForCity(ref List<string> notParsedList, AddressLevel addressLevel)
+        private static List<string> CheckForTown(IEnumerable<string> notParsedList, ref AddressLevel addressLevel)
         {
-            GeocoderEntities entities = new GeocoderEntities();
+            List<string> result = new List<string>();
+            decimal ilId = addressLevel.IlId;
 
             foreach (var item in notParsedList)
             {
+                var town = entities.HINTTOWNGEOTOWNCR.FirstOrDefault(x => x.ILCE_ADI == item.Trim() && x.IL_ID == ilId);
+
+                if (town != null)
+                    addressLevel.Ilçe = item.Trim();
+                else
+                    result.Add(item);
+            }
+
+            return result;
+        }
+
+        static List<string> CheckForCity(List<string> notParsedList, ref AddressLevel addressLevel)
+        {
+            List<string> result = new List<string>();
+
+            foreach (var item in notParsedList)
+            {
+                //var city = GetCityByName(item.Trim());
                 var city = entities.HINTCITYGEOCITYCR.FirstOrDefault(x => x.IL_ADI == item.Trim());
 
                 if (city != null)
                 {
-                    addressLevel.Il = item;
-                    notParsedList.Remove(item);
+                    addressLevel.Il = item.Trim();
+                    addressLevel.IlId = city.IL_ID;
                 }
+                else
+                    result.Add(item);
             }
-
-            return addressLevel;
+            
+            return result;
         }
 
         static void GeocoderTest(AddressLevel addressLevel)

@@ -23,13 +23,12 @@ namespace GeocoderAPI.Default
         public void Geocode(AddressLevel addressLevel)
         {
             addressLevel.Il = addressLevel.Il.ToUpper(cultureInfo);
-            addressLevel.Il = addressLevel.Il.Replace("AFYON", "AFYONKARAHİSAR");
             addressLevel.Ilçe = addressLevel.Ilçe.ToUpper(cultureInfo);
-            addressLevel.Ilçe = addressLevel.Ilçe.Replace("SAMANDAĞI", "SAMANDAĞ");
 
-            var city = GetCity(addressLevel);
-            var townList = GetTown(addressLevel, city);
-
+            if (addressLevel.Il.Equals(string.Empty))
+            {
+                return;
+            }
             
         }
 

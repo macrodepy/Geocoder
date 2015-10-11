@@ -43,22 +43,6 @@ warning 6005: The data type 'sdo_geometry' is currently not supported for the ta
     <Property Name="MI_STYLE" Type="varchar2" MaxLength="254" />
     <Property Name="ZONE" Type="number" Precision="1" Scale="0" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6005: The data type 'sdo_geometry' is currently not supported for the target Entity Framework version; the column 'GEOLOC' in the table 'MUSTAFALOCAL.GEOLOC_MAHALLE' was excluded.
-warning 6005: The data type 'sdo_geometry' is currently not supported for the target Entity Framework version; the column 'GEOMBR' in the table 'MUSTAFALOCAL.GEOLOC_MAHALLE' was excluded.
-warning 6013: The table/view 'MUSTAFALOCAL.GEOLOC_MAHALLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="GEOLOC_MAHALLE">
-          <Property Name="BELDE_ID" Type="number" Precision="16" Scale="0" />
-          <Property Name="MAHALLE_ID" Type="number" Precision="16" Scale="0" />
-          <Property Name="ILCE_ID" Type="number" Precision="16" Scale="0" />
-          <Property Name="MAHALLE_ADI" Type="varchar2" MaxLength="4000" />
-          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
-          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
-          <Property Name="POSTA_KODU" Type="number" Precision="5" Scale="0" />
-          <Property Name="TYPE" Type="number" Precision="10" Scale="0" />
-          <Property Name="MI_PRINX" Type="number" Precision="10" Scale="0" />
-          <Property Name="MI_STYLE" Type="varchar2" MaxLength="254" />
-        </EntityType>-->
   <EntityType Name="HINTCITYGEOCITYCR">
     <Key>
       <PropertyRef Name="HINTCITYID" />
@@ -252,32 +236,6 @@ warning 6013: The table/view 'MUSTAFALOCAL.GEOLOC_MAHALLE' does not have a prima
     <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
     <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'MUSTAFALOCAL.MAP_POIARAS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="MAP_POIARAS">
-          <Property Name="MAPDATAID" Type="guid raw" />
-          <Property Name="SONUC" Type="varchar2" MaxLength="4000" />
-          <Property Name="SONUC_ILCELI" Type="varchar2" MaxLength="4000" />
-          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
-          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
-          <Property Name="MAHALLE_ID" Type="number" Precision="20" Scale="0" />
-          <Property Name="YOL_ID" Type="number" Precision="38" Scale="0" />
-          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" />
-          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
-          <Property Name="POI_ID" Type="number" Precision="38" Scale="0" />
-          <Property Name="NAME" Type="varchar2" MaxLength="4000" />
-          <Property Name="NAME_FULL" Type="varchar2" MaxLength="4000" />
-          <Property Name="LOVDATAPRIORITY" Type="number" Precision="38" Scale="0" />
-          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
-          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
-          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
-          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
-          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
-          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
-          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
-          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
-          <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
-        </EntityType>-->
   <EntityType Name="MAP_POIINFO">
     <Key>
       <PropertyRef Name="MAPDATAID" />
@@ -305,20 +263,6 @@ warning 6013: The table/view 'MUSTAFALOCAL.MAP_POIARAS' does not have a primary 
     <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
     <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'MUSTAFALOCAL.MDRT_4F10$' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="MDRT_4F10$">
-          <Property Name="NODE_ID" Type="number" Precision="38" Scale="0" />
-          <Property Name="NODE_LEVEL" Type="number" Precision="38" Scale="0" />
-          <Property Name="INFO" Type="blob" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'MUSTAFALOCAL.MDRT_4F19$' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="MDRT_4F19$">
-          <Property Name="NODE_ID" Type="number" Precision="38" Scale="0" />
-          <Property Name="NODE_LEVEL" Type="number" Precision="38" Scale="0" />
-          <Property Name="INFO" Type="blob" />
-        </EntityType>-->
   <EntityType Name="POI_ARAS">
     <Key>
       <PropertyRef Name="ID" />
@@ -403,32 +347,6 @@ warning 6013: The table/view 'MUSTAFALOCAL.MDRT_4F19$' does not have a primary k
     <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
     <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'MUSTAFALOCAL.V_UNIT_SEARCH' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="V_UNIT_SEARCH">
-          <Property Name="MAPDATAID" Type="guid raw" />
-          <Property Name="SONUC" Type="varchar2" MaxLength="4000" />
-          <Property Name="SONUC_ILCELI" Type="varchar2" MaxLength="4000" />
-          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
-          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
-          <Property Name="MAHALLE_ID" Type="number" Precision="20" Scale="0" />
-          <Property Name="YOL_ID" Type="number" Precision="38" Scale="0" />
-          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" />
-          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
-          <Property Name="POI_ID" Type="number" Precision="38" Scale="0" />
-          <Property Name="NAME" Type="varchar2" MaxLength="4000" />
-          <Property Name="NAME_FULL" Type="varchar2" MaxLength="4000" />
-          <Property Name="LOVDATAPRIORITY" Type="number" Precision="38" Scale="0" />
-          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
-          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
-          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
-          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
-          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
-          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
-          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
-          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
-          <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
-        </EntityType>-->
   <EntityContainer Name="ModelStoreContainer">
     <EntitySet Name="CITYPOLYGONHIERARCHY" EntityType="Self.CITYPOLYGONHIERARCHY" Schema="MUSTAFALOCAL" store:Type="Tables" />
     <EntitySet Name="GEOLOC_IL" EntityType="Self.GEOLOC_IL" Schema="MUSTAFALOCAL" store:Type="Tables" />
