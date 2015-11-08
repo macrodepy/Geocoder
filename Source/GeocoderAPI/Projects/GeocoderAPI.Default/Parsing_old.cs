@@ -1,16 +1,11 @@
 ﻿using System.Runtime.CompilerServices;
-using Aras.Domain.Model;
-using Aras.Module.Address.Destination.Core;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Bosphorus.Container.Castle.Facade;
-using Bosphorus.Dao.Core.Dao;
 using System.Text.RegularExpressions;
-using Aras.Module.Address.LegacyParser.Core;
 
 namespace Aras.Module.Address.LegacyParser.Default
 {
@@ -1899,7 +1894,7 @@ namespace Aras.Module.Address.LegacyParser.Default
                                     }
                                     else //Mahallenin polygonu yok ise mahalle koordinatının denk geldiği şubeyi bul
                                     {
-                                        //polygonunit = new HinterlandMapProxy().GetUnitIdByCRAndPolygonType(xcoor, ycoor, 3);
+                                        //polygonunit = new HinterlandMapProxy().GetUnitIdByCRAndPolygonType(XCoor, YCoor, 3);
                                         if (xcoor != null)
                                             polygonLists = parsingService.GetXyCoorAndPolygonTypeId(xcoor, ycoor, 3).ToList();
                                     }
@@ -1921,7 +1916,7 @@ namespace Aras.Module.Address.LegacyParser.Default
 
                                 if (xcoor != "9999999")
                                 {
-                                    //polygonunit = new HinterlandMapProxy().GetUnitIdByCRAndPolygonType(xcoor, ycoor, 3);
+                                    //polygonunit = new HinterlandMapProxy().GetUnitIdByCRAndPolygonType(XCoor, YCoor, 3);
                                     if (xcoor != null)
                                         polygonLists = parsingService.GetXyCoorAndPolygonTypeId(xcoor, ycoor, 3).ToList();
 
@@ -1941,7 +1936,7 @@ namespace Aras.Module.Address.LegacyParser.Default
 
                                 if (xcoor != "9999999")
                                 {
-                                    //polygonunit = new HinterlandMapProxy().GetUnitIdByCRAndPolygonType(xcoor, ycoor, 3);
+                                    //polygonunit = new HinterlandMapProxy().GetUnitIdByCRAndPolygonType(XCoor, YCoor, 3);
                                     if (xcoor != null)
                                         polygonLists = parsingService.GetXyCoorAndPolygonTypeId(xcoor, ycoor, 3).ToList();
 
@@ -1961,7 +1956,7 @@ namespace Aras.Module.Address.LegacyParser.Default
 
                                 if (xcoor != "9999999")
                                 {
-                                    //polygonunit = new HinterlandMapProxy().GetUnitIdByCRAndPolygonType(xcoor, ycoor, 3);
+                                    //polygonunit = new HinterlandMapProxy().GetUnitIdByCRAndPolygonType(XCoor, YCoor, 3);
                                     if (xcoor != null)
                                         polygonLists = parsingService.GetXyCoorAndPolygonTypeId(xcoor, ycoor, 3).ToList();
 
@@ -1981,7 +1976,7 @@ namespace Aras.Module.Address.LegacyParser.Default
 
                                 if (xcoor != "9999999")
                                 {
-                                    //polygonunit = new HinterlandMapProxy().GetUnitIdByCRAndPolygonType(xcoor, ycoor, 3);
+                                    //polygonunit = new HinterlandMapProxy().GetUnitIdByCRAndPolygonType(XCoor, YCoor, 3);
                                     if (xcoor != null)
                                         polygonLists = parsingService.GetXyCoorAndPolygonTypeId(xcoor, ycoor, 3).ToList();
 

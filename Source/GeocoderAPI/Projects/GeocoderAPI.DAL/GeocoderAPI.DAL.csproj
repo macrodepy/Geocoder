@@ -45,6 +45,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -119,12 +120,14 @@
     <Compile Include="MAP_POIINFO.cs">
       <DependentUpon>GeocoderDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelConverter.cs" />
     <Compile Include="POI_ARAS.cs">
       <DependentUpon>GeocoderDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="POI_INFO.cs">
       <DependentUpon>GeocoderDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProcedureService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TOWNPOLYGONHIERARCHY.cs">
       <DependentUpon>GeocoderDatabase.tt</DependentUpon>

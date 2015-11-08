@@ -16,24 +16,24 @@ namespace GeocoderAPI.Demo.Default
 
         static void Main(string[] args)
         {
-            entities = new GeocoderEntities();
-            geocoderService = new GeocoderService();
+            //entities = new GeocoderEntities();
+            //geocoderService = new GeocoderService();
          
-            string address = "inönü mahallesi atatürk caddesi birlik apt. no:55 daire 7 istanbul ataşehir";
-            string fixerTest = FixerTest(address);
+            //string address = "inönü mahallesi atatürk caddesi birlik apt. no:55 daire 7 istanbul ataşehir";
+            //string fixerTest = FixerTest(address);
 
-            Parse parse = new Parse();
-            AddressLevel addressLevel = parse.ParseAddress(fixerTest);
-            List<string> list = parse.notParsedList;
+            //Parse parse = new Parse();
+            //AddressLevel addressLevel = parse.ParseAddress(fixerTest);
+            //List<string> list = parse.NotParsedList;
 
-            list = CheckForCity(list, ref addressLevel);
+            //list = CheckForCity(list, ref addressLevel);
 
-            if (!addressLevel.Il.Equals(string.Empty))
-            {
-                list = CheckForTown(list, ref addressLevel);
-            }
+            //if (!addressLevel.Il.Equals(string.Empty))
+            //{
+            //    list = CheckForTown(list, ref addressLevel);
+            //}
 
-            GeocoderTest(addressLevel);
+            //GeocoderTest(addressLevel);
         }
 
         private static List<string> CheckForTown(IEnumerable<string> notParsedList, ref AddressLevel addressLevel)

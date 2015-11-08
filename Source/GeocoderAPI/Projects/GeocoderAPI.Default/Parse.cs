@@ -8,7 +8,7 @@ namespace GeocoderAPI.Default
 {
     public class Parse
     {
-        public List<String> notParsedList { get; set; }
+        public List<String> NotParsedList { get; set; }
 
         private enum ParsingAdress
         {
@@ -44,8 +44,8 @@ namespace GeocoderAPI.Default
 
         private void ClearNotParsedList(string token)
         {
-            if (notParsedList.Any(x => x.Equals(token)))
-                notParsedList.Remove(token);
+            if (NotParsedList.Any(x => x.Equals(token)))
+                NotParsedList.Remove(token);
         }
 
         public AddressLevel ParseAddress(string address)
@@ -53,7 +53,7 @@ namespace GeocoderAPI.Default
              int counter = 0;
              int index = 0;
 
-            notParsedList = new List<string>();
+            NotParsedList = new List<string>();
 
             string[] tokens = Regex.Split(address, " ");
 
@@ -298,7 +298,7 @@ namespace GeocoderAPI.Default
                     default:
                         if (!tempAddress.Equals(string.Empty))
                         {
-                            notParsedList.Add(tempAddress);
+                            NotParsedList.Add(tempAddress);
                         }
                         break;
                 }

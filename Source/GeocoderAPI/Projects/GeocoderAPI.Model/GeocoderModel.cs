@@ -40,7 +40,8 @@ namespace GeocoderAPI.Model
         public string pYolu  { get; set; }
         public string pKat  { get; set; }
         public string pBlok  { get; set; }
-        public string textBoxMobilePhone  { get; set; }
-        public string textBoxPhone1  { get; set; }
+        public string XCoor { get; set; }
+        public string YCoor { get; set; }
+        public int TespitSeviyesi { get; set; }
     }
 }

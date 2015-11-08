@@ -337,7 +337,7 @@
     </Key>
     <Property Name="YOL_ID" Type="Int64" Nullable="false" />
     <Property Name="YOL_ADI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
-    <Property Name="YOL_SINIFI" Type="Byte" />
+    <Property Name="YOL_SINIFI" Type="Decimal" />
     <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
   </EntityType>

@@ -16,7 +16,7 @@ namespace GeocoderAPI.DAL
     {
         public long YOL_ID { get; set; }
         public string YOL_ADI { get; set; }
-        public Nullable<byte> YOL_SINIFI { get; set; }
+        public Nullable<decimal> YOL_SINIFI { get; set; }
         public string XCOOR { get; set; }
         public string YCOOR { get; set; }
     }

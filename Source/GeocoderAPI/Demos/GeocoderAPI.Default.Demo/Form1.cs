@@ -15,12 +15,16 @@ namespace GeocoderAPI.Default.Demo
         public Form1()
         {
             InitializeComponent();
-
             geocoderService = new GeocoderService();
             geocoder = new Geocoder();
             parse = new Parse();
-
+            //ProcTest();
             button1_Click(null, null);
+        }
+
+        private void ProcTest()
+        {
+            geocoderService.GetUnitSearchDataByIlAndIlceId("DUZLERKOYU", 57000014000);
         }
 
         private List<string> CheckForTown(IEnumerable<string> notParsedList, ref AddressLevel addressLevel)
@@ -74,28 +78,28 @@ namespace GeocoderAPI.Default.Demo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Trim().Equals(string.Empty))
-            {
-                MessageBox.Show("Lütfen bir adres giriniz!");
-                return;
-            }
+            //if (textBox1.Text.Trim().Equals(string.Empty))
+            //{
+            //    MessageBox.Show("Lütfen bir adres giriniz!");
+            //    return;
+            //}
 
-            string address = textBox1.Text.Trim();
+            //string address = textBox1.Text.Trim();
 
-            address = "inönü mahallesi atatürk caddesi birlik apt. no:55 daire 7 istanbul ataşehir";
-            string fixerTest = FixerTest(address);
+            //address = "inönü mahallesi atatürk caddesi birlik apt. no:55 daire 7 istanbul ataşehir";
+            //string fixerTest = FixerTest(address);
 
-            AddressLevel addressLevel = parse.ParseAddress(fixerTest);
-            List<string> list = parse.notParsedList;
+            //AddressLevel addressLevel = parse.ParseAddress(fixerTest);
+            //List<string> list = parse.NotParsedList;
 
-            list = CheckForCity(list, ref addressLevel);
+            //list = CheckForCity(list, ref addressLevel);
 
-            if (!addressLevel.Il.Equals(string.Empty))
-            {
-                list = CheckForTown(list, ref addressLevel);
-            }
+            //if (!addressLevel.Il.Equals(string.Empty))
+            //{
+            //    list = CheckForTown(list, ref addressLevel);
+            //}
 
-            GeocoderTest(addressLevel);
+            //GeocoderTest(addressLevel);
         }
     }
 }
