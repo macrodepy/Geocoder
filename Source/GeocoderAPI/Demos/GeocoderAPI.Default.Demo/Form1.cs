@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using GeocoderAPI.Core;
 using GeocoderAPI.DAL;
 using GeocoderAPI.Model;
 
@@ -9,17 +10,19 @@ namespace GeocoderAPI.Default.Demo
     public partial class Form1 : Form
     {
         private readonly GeocoderService geocoderService;
-        private readonly Geocoder geocoder;
+       // private readonly Geocoder geocoder;
         private readonly Parse parse;
+        private readonly Parsing parsing;
 
         public Form1()
         {
             InitializeComponent();
             geocoderService = new GeocoderService();
-            geocoder = new Geocoder();
+    //        geocoder = new Geocoder();
             parse = new Parse();
+            parsing = new Parsing();
             //ProcTest();
-            button1_Click(null, null);
+            //button1_Click(null, null);
         }
 
         private void ProcTest()
@@ -67,7 +70,7 @@ namespace GeocoderAPI.Default.Demo
 
         private void GeocoderTest(AddressLevel addressLevel)
         {
-            geocoder.Geocode(addressLevel);
+      //      geocoder.Geocode(addressLevel);
         }
 
         private string FixerTest(string address)
@@ -84,22 +87,24 @@ namespace GeocoderAPI.Default.Demo
             //    return;
             //}
 
-            //string address = textBox1.Text.Trim();
+            string address = textBox1.Text.Trim();
 
-            //address = "inönü mahallesi atatürk caddesi birlik apt. no:55 daire 7 istanbul ataşehir";
-            //string fixerTest = FixerTest(address);
+            address = "inönü mahallesi ilköğretmen caddesi birlik apt. no:55 daire 7 istanbul ataşehir";
+            string fixerTest = FixerTest(address);
 
-            //AddressLevel addressLevel = parse.ParseAddress(fixerTest);
-            //List<string> list = parse.NotParsedList;
+            AddressLevel addressLevel = parse.ParseAddress(fixerTest);
+            List<string> list = parse.NotParsedList;
 
-            //list = CheckForCity(list, ref addressLevel);
+            list = CheckForCity(list, ref addressLevel);
 
-            //if (!addressLevel.Il.Equals(string.Empty))
-            //{
-            //    list = CheckForTown(list, ref addressLevel);
-            //}
+            if (!addressLevel.Il.Equals(string.Empty))
+            {
+                list = CheckForTown(list, ref addressLevel);
+            }
 
-            //GeocoderTest(addressLevel);
+            string[] integrationParsing = parsing.IntegrationParsing(addressLevel);
+
+            GeocoderTest(addressLevel);
         }
     }
 }

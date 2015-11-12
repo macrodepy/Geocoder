@@ -75,11 +75,11 @@ namespace GeocoderAPI.Demo.Default
             return result;
         }
 
-        static void GeocoderTest(AddressLevel addressLevel)
-        {
-            Geocoder geocoder = new Geocoder();
-            geocoder.Geocode(addressLevel);
-        }
+        //static void GeocoderTest(AddressLevel addressLevel)
+        //{
+        //    Geocoder geocoder = new Geocoder();
+        //    geocoder.Geocode(addressLevel);
+        //}
 
         static string FixerTest(string address)
         {

@@ -96,6 +96,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Projects\GeocoderAPI.Core\GeocoderAPI.Core.csproj">
+      <Project>{BD88E9E7-7140-44A4-9A97-D3524E10AFF2}</Project>
+      <Name>GeocoderAPI.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Projects\GeocoderAPI.DAL\GeocoderAPI.DAL.csproj">
       <Project>{8c83d0a2-12cd-42a1-883e-bfcfe76c73b5}</Project>
       <Name>GeocoderAPI.DAL</Name>

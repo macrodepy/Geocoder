@@ -351,11 +351,11 @@
     <EntitySetMapping Name="YOL">
       <EntityTypeMapping TypeName="Model.YOL">
         <MappingFragment StoreEntitySet="YOL">
-          <ScalarProperty Name="YOL_ID" ColumnName="YOL_ID" />
-          <ScalarProperty Name="YOL_ADI" ColumnName="YOL_ADI" />
-          <ScalarProperty Name="YOL_SINIFI" ColumnName="YOL_SINIFI" />
-          <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
           <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+          <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+          <ScalarProperty Name="YOL_SINIFI" ColumnName="YOL_SINIFI" />
+          <ScalarProperty Name="YOL_ADI" ColumnName="YOL_ADI" />
+          <ScalarProperty Name="YOL_ID" ColumnName="YOL_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

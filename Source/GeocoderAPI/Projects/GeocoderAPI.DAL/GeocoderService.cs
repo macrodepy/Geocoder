@@ -131,6 +131,12 @@ namespace GeocoderAPI.DAL
             return result;
         }
 
+        public List<KAPI> GetKapiDataByMahalleIdandYolIdandKapiId(long mahalleId, long yolId, long kapıId)
+        {
+            var result = geocoderEntities.KAPI.Where(x => x.MAHALLE_ID == mahalleId && x.YOL_ID == yolId && x.KAPI_ID == kapıId).ToList();
+            return result;
+        }
+
         
     }
 }

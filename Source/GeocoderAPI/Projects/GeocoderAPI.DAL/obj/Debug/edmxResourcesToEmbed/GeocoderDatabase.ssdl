@@ -403,32 +403,6 @@ warning 6013: The table/view 'MUSTAFALOCAL.MDRT_4F19$' does not have a primary k
     <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
     <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'MUSTAFALOCAL.V_UNIT_SEARCH' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="V_UNIT_SEARCH">
-          <Property Name="MAPDATAID" Type="guid raw" />
-          <Property Name="SONUC" Type="varchar2" MaxLength="4000" />
-          <Property Name="SONUC_ILCELI" Type="varchar2" MaxLength="4000" />
-          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
-          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
-          <Property Name="MAHALLE_ID" Type="number" Precision="20" Scale="0" />
-          <Property Name="YOL_ID" Type="number" Precision="38" Scale="0" />
-          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" />
-          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
-          <Property Name="POI_ID" Type="number" Precision="38" Scale="0" />
-          <Property Name="NAME" Type="varchar2" MaxLength="4000" />
-          <Property Name="NAME_FULL" Type="varchar2" MaxLength="4000" />
-          <Property Name="LOVDATAPRIORITY" Type="number" Precision="38" Scale="0" />
-          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
-          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
-          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
-          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
-          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
-          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
-          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
-          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
-          <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
-        </EntityType>-->
   <EntityContainer Name="ModelStoreContainer">
     <EntitySet Name="CITYPOLYGONHIERARCHY" EntityType="Self.CITYPOLYGONHIERARCHY" Schema="MUSTAFALOCAL" store:Type="Tables" />
     <EntitySet Name="GEOLOC_IL" EntityType="Self.GEOLOC_IL" Schema="MUSTAFALOCAL" store:Type="Tables" />

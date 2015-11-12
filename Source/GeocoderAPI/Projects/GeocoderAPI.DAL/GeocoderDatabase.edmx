@@ -408,32 +408,6 @@ warning 6013: The table/view 'MUSTAFALOCAL.MDRT_4F19$' does not have a primary k
           <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
           <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'MUSTAFALOCAL.V_UNIT_SEARCH' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="V_UNIT_SEARCH">
-          <Property Name="MAPDATAID" Type="guid raw" />
-          <Property Name="SONUC" Type="varchar2" MaxLength="4000" />
-          <Property Name="SONUC_ILCELI" Type="varchar2" MaxLength="4000" />
-          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
-          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
-          <Property Name="MAHALLE_ID" Type="number" Precision="20" Scale="0" />
-          <Property Name="YOL_ID" Type="number" Precision="38" Scale="0" />
-          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" />
-          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
-          <Property Name="POI_ID" Type="number" Precision="38" Scale="0" />
-          <Property Name="NAME" Type="varchar2" MaxLength="4000" />
-          <Property Name="NAME_FULL" Type="varchar2" MaxLength="4000" />
-          <Property Name="LOVDATAPRIORITY" Type="number" Precision="38" Scale="0" />
-          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
-          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
-          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
-          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
-          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
-          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
-          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
-          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
-          <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
-        </EntityType>-->
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="CITYPOLYGONHIERARCHY" EntityType="Self.CITYPOLYGONHIERARCHY" Schema="MUSTAFALOCAL" store:Type="Tables" />
           <EntitySet Name="GEOLOC_IL" EntityType="Self.GEOLOC_IL" Schema="MUSTAFALOCAL" store:Type="Tables" />
@@ -791,16 +765,6 @@ warning 6013: The table/view 'MUSTAFALOCAL.V_UNIT_SEARCH' does not have a primar
           <Property Name="APPLICATION_VERSION" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
           <Property Name="APPLICATIONID" Type="Int16" />
         </EntityType>
-        <EntityType Name="YOL">
-          <Key>
-            <PropertyRef Name="YOL_ID" />
-          </Key>
-          <Property Name="YOL_ID" Type="Int64" Nullable="false" />
-          <Property Name="YOL_ADI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
-          <Property Name="YOL_SINIFI" Type="Decimal" />
-          <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityContainer Name="GeocoderEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CITYPOLYGONHIERARCHY" EntityType="Self.CITYPOLYGONHIERARCHY" />
           <EntitySet Name="GEOLOC_IL" EntityType="Self.GEOLOC_IL" />
@@ -821,8 +785,18 @@ warning 6013: The table/view 'MUSTAFALOCAL.V_UNIT_SEARCH' does not have a primar
           <EntitySet Name="POI_ARAS" EntityType="Self.POI_ARAS" />
           <EntitySet Name="POI_INFO" EntityType="Self.POI_INFO" />
           <EntitySet Name="TOWNPOLYGONHIERARCHY" EntityType="Self.TOWNPOLYGONHIERARCHY" />
-          <EntitySet Name="YOL" EntityType="Self.YOL" />
+          <EntitySet Name="YOL" EntityType="Model.YOL" />
         </EntityContainer>
+        <EntityType Name="YOL">
+          <Key>
+            <PropertyRef Name="YOL_ID" />
+          </Key>
+          <Property Name="YOL_ID" Type="Int64" Nullable="false" />
+          <Property Name="YOL_ADI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="YOL_SINIFI" Type="Byte" />
+          <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1179,11 +1153,11 @@ warning 6013: The table/view 'MUSTAFALOCAL.V_UNIT_SEARCH' does not have a primar
           <EntitySetMapping Name="YOL">
             <EntityTypeMapping TypeName="Model.YOL">
               <MappingFragment StoreEntitySet="YOL">
-                <ScalarProperty Name="YOL_ID" ColumnName="YOL_ID" />
-                <ScalarProperty Name="YOL_ADI" ColumnName="YOL_ADI" />
-                <ScalarProperty Name="YOL_SINIFI" ColumnName="YOL_SINIFI" />
-                <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
                 <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+                <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+                <ScalarProperty Name="YOL_SINIFI" ColumnName="YOL_SINIFI" />
+                <ScalarProperty Name="YOL_ADI" ColumnName="YOL_ADI" />
+                <ScalarProperty Name="YOL_ID" ColumnName="YOL_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

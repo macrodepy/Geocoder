@@ -8,6 +8,40 @@ namespace GeocoderAPI.Model
 {
     public class AddressLevel
     {
+
+        public AddressLevel()
+        {
+            OriginalAddress = string.Empty;
+            Il = string.Empty;
+            Ilçe = string.Empty;
+            Mahalle = string.Empty;
+            Köy = string.Empty;
+            Cadde = string.Empty;
+            Sokak = string.Empty;
+            Bulvar = string.Empty;
+            Yolu = string.Empty;
+            Poi = string.Empty;
+            PostaKodu = string.Empty;
+            Bina = string.Empty;
+            Blok = string.Empty;
+            Daire = string.Empty;
+            Kapı = string.Empty;
+            Kat = string.Empty;
+            Poi1 = string.Empty;
+            Poi2 = string.Empty;
+            Poi3 = string.Empty;
+            PoiS = string.Empty;
+            Cadde1 = string.Empty;
+            Cadde2 = string.Empty;
+            CaddeS = string.Empty;
+            Sokak1 = string.Empty;
+            Sokak2 = string.Empty;
+            SokakS = string.Empty;
+            Bulvar1 = string.Empty;
+            Bulvar2 = string.Empty;
+            BulvarS = string.Empty;
+        }
+
         public string OriginalAddress { get; set; }
         public string Il { get; set; }
         public string Ilçe { get; set; }
@@ -40,5 +74,12 @@ namespace GeocoderAPI.Model
 
         public decimal IlId { get; set; }
         public decimal IlceId { get; set; }
+        public string XCoor { get; set; }
+        public string YCoor { get; set; }
+
+        
+
+
+
     }
 }

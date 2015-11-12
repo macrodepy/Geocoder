@@ -79,7 +79,7 @@ namespace GeocoderAPI.Default
                         ClearNotParsedList(token);
                         break;
                     case (int)ParsingAdress.Cadde:
-                        if (addressLevel.Cadde == null)
+                        if (addressLevel.Cadde == "")
                         {
                             for (int i = index; i < counter; i++)
                             {
@@ -114,7 +114,7 @@ namespace GeocoderAPI.Default
                         index = counter + 1;
                         break;
                     case (int)ParsingAdress.Sokak:
-                        if (addressLevel.Sokak == null)
+                        if (addressLevel.Sokak == "")
                         {
                             for (int i = index; i < counter; i++)
                             {
@@ -149,7 +149,7 @@ namespace GeocoderAPI.Default
                         index = counter + 1;
                         break;
                     case (int)ParsingAdress.POI:
-                        if (addressLevel.Poi == null)
+                        if (addressLevel.Poi == "")
                         {
                             for (int i = index; i <= counter; i++)
                             {
@@ -215,7 +215,7 @@ namespace GeocoderAPI.Default
                         index = counter + 1;
                         break;
                     case (int)ParsingAdress.Bulvar:
-                        if (addressLevel.Bulvar == null)
+                        if (addressLevel.Bulvar == "")
                         {
                             for (int i = index; i < counter; i++)
                             {

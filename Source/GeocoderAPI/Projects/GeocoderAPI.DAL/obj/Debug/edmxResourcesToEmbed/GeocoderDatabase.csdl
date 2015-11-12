@@ -331,16 +331,6 @@
     <Property Name="APPLICATION_VERSION" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
     <Property Name="APPLICATIONID" Type="Int16" />
   </EntityType>
-  <EntityType Name="YOL">
-    <Key>
-      <PropertyRef Name="YOL_ID" />
-    </Key>
-    <Property Name="YOL_ID" Type="Int64" Nullable="false" />
-    <Property Name="YOL_ADI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
-    <Property Name="YOL_SINIFI" Type="Decimal" />
-    <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-  </EntityType>
   <EntityContainer Name="GeocoderEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CITYPOLYGONHIERARCHY" EntityType="Self.CITYPOLYGONHIERARCHY" />
     <EntitySet Name="GEOLOC_IL" EntityType="Self.GEOLOC_IL" />
@@ -361,6 +351,16 @@
     <EntitySet Name="POI_ARAS" EntityType="Self.POI_ARAS" />
     <EntitySet Name="POI_INFO" EntityType="Self.POI_INFO" />
     <EntitySet Name="TOWNPOLYGONHIERARCHY" EntityType="Self.TOWNPOLYGONHIERARCHY" />
-    <EntitySet Name="YOL" EntityType="Self.YOL" />
+    <EntitySet Name="YOL" EntityType="Model.YOL" />
   </EntityContainer>
+  <EntityType Name="YOL">
+    <Key>
+      <PropertyRef Name="YOL_ID" />
+    </Key>
+    <Property Name="YOL_ID" Type="Int64" Nullable="false" />
+    <Property Name="YOL_ADI" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="YOL_SINIFI" Type="Byte" />
+    <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>
