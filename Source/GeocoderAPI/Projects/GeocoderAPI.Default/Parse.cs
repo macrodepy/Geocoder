@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using GeocoderAPI.DAL;
 using GeocoderAPI.Model;
 
 namespace GeocoderAPI.Default
@@ -10,37 +11,7 @@ namespace GeocoderAPI.Default
     {
         public List<String> NotParsedList { get; set; }
 
-        private enum ParsingAdress
-        {
-            Il,
-            Ilçe,
-            Mahalle,
-            Köy,
-            Cadde,
-            Sokak,
-            Bulvar,
-            Yolu,
-            POI,
-            PostaKodu,
-            Bina,
-            Blok,
-            Daire,
-            Kapı,
-            Kat,
-            POI_1,
-            POI_2,
-            POI_3,
-            POI_S,
-            Cadde_1,
-            Cadde_2,
-            Cadde_S,
-            Sokak_1,
-            Sokak_2,
-            Sokak_S,
-            Bulvar_1,
-            Bulvar_2,
-            Bulvar_S
-        }; 
+        
 
         private void ClearNotParsedList(string token)
         {
@@ -69,7 +40,7 @@ namespace GeocoderAPI.Default
 
                 switch (type)
                 {
-                    case (int)ParsingAdress.Mahalle:
+                    case (int)Enums.ParsingAdress.Mahalle:
                         for (int i = index; i < counter; i++)
                         {
                             token += " " + tokens[i] + " ";
@@ -78,7 +49,7 @@ namespace GeocoderAPI.Default
                         index = counter + 1;
                         ClearNotParsedList(token);
                         break;
-                    case (int)ParsingAdress.Cadde:
+                    case (int)Enums.ParsingAdress.Cadde:
                         if (addressLevel.Cadde == "")
                         {
                             for (int i = index; i < counter; i++)
@@ -113,7 +84,7 @@ namespace GeocoderAPI.Default
                         }
                         index = counter + 1;
                         break;
-                    case (int)ParsingAdress.Sokak:
+                    case (int)Enums.ParsingAdress.Sokak:
                         if (addressLevel.Sokak == "")
                         {
                             for (int i = index; i < counter; i++)
@@ -148,7 +119,7 @@ namespace GeocoderAPI.Default
                         }
                         index = counter + 1;
                         break;
-                    case (int)ParsingAdress.POI:
+                    case (int)Enums.ParsingAdress.POI:
                         if (addressLevel.Poi == "")
                         {
                             for (int i = index; i <= counter; i++)
@@ -196,7 +167,7 @@ namespace GeocoderAPI.Default
                         }
                         index = counter + 1;
                         break;
-                    case (int)ParsingAdress.Yolu:
+                    case (int)Enums.ParsingAdress.Yolu:
                         for (int i = index; i <= counter; i++)
                         {
                             token += " " + tokens[i] + " ";
@@ -205,7 +176,7 @@ namespace GeocoderAPI.Default
                         ClearNotParsedList(token);
                         index = counter + 1;
                         break;
-                    case (int)ParsingAdress.Köy:
+                    case (int)Enums.ParsingAdress.Köy:
                         for (int i = index; i < counter; i++)
                         {
                             token += " " + tokens[i] + " ";
@@ -214,7 +185,7 @@ namespace GeocoderAPI.Default
                         ClearNotParsedList(token);
                         index = counter + 1;
                         break;
-                    case (int)ParsingAdress.Bulvar:
+                    case (int)Enums.ParsingAdress.Bulvar:
                         if (addressLevel.Bulvar == "")
                         {
                             for (int i = index; i < counter; i++)
@@ -250,12 +221,12 @@ namespace GeocoderAPI.Default
                         }
                         index = counter + 1;
                         break;
-                    case (int)ParsingAdress.Kapı:
+                    case (int)Enums.ParsingAdress.Kapı:
                         addressLevel.Kapı = tokens[counter].Replace("NO:", "").Replace("  ", " ").TrimStart().TrimEnd();
                         ClearNotParsedList(token);
                         index = counter + 1;
                         break;
-                    case (int)ParsingAdress.Kat:
+                    case (int)Enums.ParsingAdress.Kat:
 
                         tokens[counter] = tokens[counter].Replace("K:", "").Replace("  ", " ").TrimStart().TrimEnd();
 
@@ -266,7 +237,7 @@ namespace GeocoderAPI.Default
                         ClearNotParsedList(Ks[0]);
                         index = counter + 1;
                         break;
-                    case (int)ParsingAdress.Daire:
+                    case (int)Enums.ParsingAdress.Daire:
 
                         tokens[counter] = tokens[counter].Replace("D:", "").Replace("  ", " ").TrimStart().TrimEnd();
 
@@ -277,7 +248,7 @@ namespace GeocoderAPI.Default
                         ClearNotParsedList(Ds[0]);
                         index = counter + 1;
                         break;
-                    case (int)ParsingAdress.Blok:
+                    case (int)Enums.ParsingAdress.Blok:
                         for (int i = index; i < counter; i++)
                         {
                             token += " " + tokens[i] + " ";
@@ -286,7 +257,7 @@ namespace GeocoderAPI.Default
                         ClearNotParsedList(token);
                         index = counter + 1;
                         break;
-                    case (int)ParsingAdress.Bina:
+                    case (int)Enums.ParsingAdress.Bina:
                         for (int i = index; i <= counter; i++)
                         {
                             token += " " + tokens[i] + " ";
@@ -314,55 +285,55 @@ namespace GeocoderAPI.Default
             int CheckType = 0;
             if (" MAHALLESİ ".IndexOf(mTempAddress.ToUpper()) > -1)
             {
-                CheckType = (int)ParsingAdress.Mahalle;
+                CheckType = (int)Enums.ParsingAdress.Mahalle;
             }
             else if (" CADDESİ ".IndexOf(mTempAddress.ToUpper()) > -1)
             {
-                CheckType = (int)ParsingAdress.Cadde;
+                CheckType = (int)Enums.ParsingAdress.Cadde;
             }
             else if (" SOKAK ".IndexOf(mTempAddress.ToUpper()) > -1)
             {
-                CheckType = (int)ParsingAdress.Sokak;
+                CheckType = (int)Enums.ParsingAdress.Sokak;
             }
             else if (
                 " KISIM ÇARŞISI ÇARŞI GARAJI İLKOKULU ILKOKULU LİSESİ LİSE MÜD MUD MD MÜDÜRLÜĞÜ MUDURLUGU ALTI KARAKOLU KOMUTANLIĞI ORG.SAN. İÇİ ÖNÜ ARKASI KARŞISI YANI DÜK. ALAYI TUGAYI BANKASI BANK ŞB ÜSTÜ DERSANESİ CENTER SANAYİİ  İŞ.MRK. PLAZA TİC.MRK. İŞHANI ISHANI HANI HN PASAJI PSJ OTEL HOTEL OTELİ OTELI  SİTESİ SİT BLOKLARI BLOKL ECZANE ECZANESİ DEPOSU TİC.AŞ. MERKEZİ SANTRALİ KULÜBESİ CAMİSİ HAVRASI KİLİSESİ MANASTIRI MESCİDİ PATRİKHANESİ SİNAGOGU MEZARLIĞI ŞEHİTLİĞİ TÜRBESİ DERHANESİ KURSU İLKOKULU LİSESİ ANAOKULU KREŞİ ÜNİVERSİTESİ YURDU ARSASI KONUTU KOOPERATİFİ ANITI RESİDANCE RESIDANCE REZİDANSI RESİDANSI RESIDANSI KÜTÜPHANESİ GALERİSİ SALONU SİNEMASI TİYATROSU HAVUZU MEYDANI BELDESİ ADLİYESİ BAROSU MAHKEMESİ BİNASI KAYMAKAMLIĞI MUHTARLIĞI POSTANESİ VALİLİĞİ CEZAEVİ AMİRLİĞİ KARAKOLU TESİSİ KONSOLOSLUĞU PARTİSİ KURUMU BORSASI ODASI KIŞLASI KOMUTANLIĞI TESİSİ ŞUBESİ BAŞKANLIĞI ZABITASI HASTANESİ HASTAHANESİ KILİNİĞİ KLİNİĞİ LABORATUVARI LABARATUVARI LABORATUARI LABARATUARI POLİKLİNİĞİ DİSPANSERİ OCAĞI SANATORYUMU VETERİNER TERSANESİ ŞANTİYESİ FABRİKASI KESİMHANESİ RAFİNERİSİ LOJMANI LOKALİ VAKFI EVİ YETİMHANESİ HİPERMARKET MAĞAZASI SÜPERMARKET MARKET PLAZASI PLAZA ŞUBESİ BÜROSU ŞİRKETİ ACENTESİ ACENTA ACENTE BÜRO MÜŞAVİRLİĞİ MÜŞAVİRLİK MÜHENDİSLİK NOTERLİĞİ NOTERLİK AJANS AJANSI GAZİNOSU BAR KAFE CAFE KAFESİ BAHÇESİ KULÜBÜ KULÜP KAHVEHANESİ KAHVESİ KIRAATHANESİ SALONU BAYİİ BAYİSİ DÜKKANI ÇİLİNGİR AYDINLATMA MANİFATURACI MANİFATURA MOBİLYA TESİSAT KUYUMCUSU KUYUMCULUK SAAT OPTİK ANTREPO ANTREPOSU BASIMEVİ MATBAASI BERBERİ BUJİTERİ KUAFOR KUAFÖR PERFÜMERİ STÜDYOSU BAKIMEVİ RESTORANT RESTAURANT RESTORAN BÜFE BÜFESİ SALONU MODAEVİ TEMİZLEME KONFEKSİYON TERZİSİ FIRINI MANAVI MARKETİ PASTANESİ PAZARI TAVUKÇULUK BAYİ YUFKACI HALİ KONUKEVİ MOTEL OTEL OTELİ MOTELİ PANSİYON PANSİYONU MÜZESİ İSKELESİ LİMANI MARİNA MARİNASI HAVAALANI KÖPRÜSÜ GİŞESİ İSTASYONU DURAĞI KİRALAMA PARKI TÜNELİ GEÇİDİ OTOPARKI OTOPARK GARI FİRMASI LÜNAPARKI LUNAPARKI PLAJI AQUAPARK KAPLICASI SAHASI HİPODROMU STADYUMU HAVUZU SAHASI PİSTİ PARKI ORMANI ALANI RENT.A.CAR BELEDİYESİ OKULU SİTELERİ VİLLALARI VİLLALARİ GRUBU OKULLARI TEKNOPARKI EVLERİ LOJMANLARI KONUTLARI KONUTLARİ "
                     .IndexOf(mTempAddress.ToUpper()) > -1)
             {
-                CheckType = (int)ParsingAdress.POI;
+                CheckType = (int)Enums.ParsingAdress.POI;
             }
             else if (
                 " YOLU ASFALTI KAVŞAĞI KM YOLU.GİRİŞİ ÇIKMAZI KÖYÜ.KAVŞAĞI MEVKİİ YOLU.ÜZERİ ".IndexOf(
                     mTempAddress.ToUpper()) > -1)
             {
-                CheckType = (int)ParsingAdress.Yolu;
+                CheckType = (int)Enums.ParsingAdress.Yolu;
             }
             else if (" KÖYÜ ".IndexOf(mTempAddress.ToUpper()) > -1)
             {
-                CheckType = (int)ParsingAdress.Köy;
+                CheckType = (int)Enums.ParsingAdress.Köy;
             }
             else if (" BULVARI ".IndexOf(mTempAddress.ToUpper()) > -1)
             {
-                CheckType = (int)ParsingAdress.Bulvar;
+                CheckType = (int)Enums.ParsingAdress.Bulvar;
             }
             else if (mTempAddress.Replace(" NO:", " NO: ").ToUpper().IndexOf(" NO: ") > -1)
             {
-                CheckType = (int)ParsingAdress.Kapı;
+                CheckType = (int)Enums.ParsingAdress.Kapı;
             }
             else if (mTempAddress.Replace(" K:", " K: ").ToUpper().IndexOf(" K: ") > -1)
             {
-                CheckType = (int)ParsingAdress.Kat;
+                CheckType = (int)Enums.ParsingAdress.Kat;
             }
             else if (mTempAddress.Replace(" D:", " D: ").ToUpper().IndexOf(" D: ") > -1)
             {
-                CheckType = (int)ParsingAdress.Daire;
+                CheckType = (int)Enums.ParsingAdress.Daire;
             }
             else if (" BLOK -BLOK ".IndexOf(mTempAddress.ToUpper()) > -1)
             {
-                CheckType = (int)ParsingAdress.Blok;
+                CheckType = (int)Enums.ParsingAdress.Blok;
             }
             else if (" APT. ".IndexOf(mTempAddress.ToUpper()) > -1)
             {
-                CheckType = (int)ParsingAdress.Bina;
+                CheckType = (int)Enums.ParsingAdress.Bina;
             }
             else if ((mTempAddress.ToUpper().IndexOf("/") > -1) && mTempAddress.Trim().Length < 8)
             {
@@ -375,7 +346,7 @@ namespace GeocoderAPI.Default
                 {
                     if (regex.IsMatch(no[i]))
                     {
-                        CheckType = (int)ParsingAdress.Kapı;
+                        CheckType = (int)Enums.ParsingAdress.Kapı;
                     }
                 }
             }
@@ -388,7 +359,7 @@ namespace GeocoderAPI.Default
                 {
                     if ((" " + tokens[counter - 1] + " ").ToUpper().IndexOf(" N ") > -1)
                     {
-                        CheckType = (int)ParsingAdress.Kapı;
+                        CheckType = (int)Enums.ParsingAdress.Kapı;
                     }
                 }
             }

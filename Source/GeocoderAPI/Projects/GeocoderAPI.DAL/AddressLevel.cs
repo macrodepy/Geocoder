@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GeocoderAPI.Model;
 
-namespace GeocoderAPI.Model
+namespace GeocoderAPI.DAL
 {
     public class AddressLevel
     {
@@ -77,7 +73,14 @@ namespace GeocoderAPI.Model
         public string XCoor { get; set; }
         public string YCoor { get; set; }
 
-        
+        public IL ILModel { get; set; }
+        public ILCE IlceModel { get; set; }
+        public MAHALLE MahalleModel { get; set; }
+        public YolIdariDtoModel CaddeModel { get; set; }
+
+        public YolIdariDtoModel SokakModel { get; set; }
+        public KAPI KapıModel { get; set; }
+        public POI_ARAS PoiModel { get; set; }
 
 
 

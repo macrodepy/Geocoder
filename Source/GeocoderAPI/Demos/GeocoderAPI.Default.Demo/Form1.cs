@@ -102,7 +102,7 @@ namespace GeocoderAPI.Default.Demo
                 list = CheckForTown(list, ref addressLevel);
             }
 
-            string[] integrationParsing = parsing.IntegrationParsing(addressLevel);
+            addressLevel = parsing.IntegrationParsing(addressLevel);
 
             GeocoderTest(addressLevel);
         }
