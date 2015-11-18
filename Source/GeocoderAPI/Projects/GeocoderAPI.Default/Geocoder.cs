@@ -9,7 +9,7 @@ using GeocoderAPI.DAL;
 
 namespace GeocoderAPI.Default
 {
-    public class Parsing : IParsing
+    public class Geocoder : IParsing
     {
         private readonly System.Globalization.CultureInfo cultureInfo;
         private readonly GeocoderService geocoderService;
@@ -21,7 +21,7 @@ namespace GeocoderAPI.Default
         string[,] hierarchy;
         private readonly bool integrationSave;
 
-        public Parsing()
+        public Geocoder()
         {
             cultureInfo = new System.Globalization.CultureInfo("tr-TR");
             addressLevel = new AddressLevel();
@@ -40,7 +40,8 @@ namespace GeocoderAPI.Default
             }
             catch (Exception ex)
             {
-                throw;
+                //throw;
+                Log(ex);
             }
 
             for (var i = 6; i >= 0; i--)
@@ -54,6 +55,11 @@ namespace GeocoderAPI.Default
             }
 
             return addressLevel;
+        }
+
+        private void Log(Exception ex)
+        {
+            //TODO: Loglama yazılacak
         }
 
         public void AddresGeocode()

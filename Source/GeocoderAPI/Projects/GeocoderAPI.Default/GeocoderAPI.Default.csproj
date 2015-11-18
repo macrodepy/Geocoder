@@ -48,8 +48,8 @@
   <ItemGroup>
     <Compile Include="Enums.cs" />
     <Compile Include="Fixer.cs" />
-    <Compile Include="Parse.cs" />
-    <Compile Include="Parsing.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="Geocoder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

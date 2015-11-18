@@ -11,16 +11,16 @@ namespace GeocoderAPI.Default.Demo
     {
         private readonly GeocoderService geocoderService;
        // private readonly Geocoder geocoder;
-        private readonly Parse parse;
-        private readonly Parsing parsing;
+        private readonly Parser parser;
+        private readonly Geocoder geocoder;
 
         public Form1()
         {
             InitializeComponent();
             geocoderService = new GeocoderService();
     //        geocoder = new Geocoder();
-            parse = new Parse();
-            parsing = new Parsing();
+            parser = new Parser();
+            geocoder = new Geocoder();
             //ProcTest();
             //button1_Click(null, null);
         }
@@ -81,19 +81,17 @@ namespace GeocoderAPI.Default.Demo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //if (textBox1.Text.Trim().Equals(string.Empty))
-            //{
-            //    MessageBox.Show("Lütfen bir adres giriniz!");
-            //    return;
-            //}
+            if (textBox1.Text.Trim().Equals(string.Empty))
+            {
+                MessageBox.Show("Lütfen bir adres giriniz!");
+                return;
+            }
 
             string address = textBox1.Text.Trim();
-
-            address = "inönü mahallesi ilköğretmen caddesi birlik apt. no:55 daire 7 istanbul ataşehir";
             string fixerTest = FixerTest(address);
 
-            AddressLevel addressLevel = parse.ParseAddress(fixerTest);
-            List<string> list = parse.NotParsedList;
+            AddressLevel addressLevel = parser.ParseAddress(fixerTest);
+            List<string> list = parser.NotParsedList;
 
             list = CheckForCity(list, ref addressLevel);
 
@@ -102,9 +100,46 @@ namespace GeocoderAPI.Default.Demo
                 list = CheckForTown(list, ref addressLevel);
             }
 
-            addressLevel = parsing.IntegrationParsing(addressLevel);
+            addressLevel = geocoder.IntegrationParsing(addressLevel);
 
-            GeocoderTest(addressLevel);
+            FillScreen(addressLevel);
+        }
+
+        private void FillScreen(AddressLevel addressLevel)
+        {
+            if (addressLevel.XCoor == string.Empty)
+            {
+                MessageBox.Show("Adres bulunamadı");
+                return;
+            }
+
+            lblIl.Text = addressLevel.Il;
+            lblIlce.Text = addressLevel.Ilçe;
+            lblMahalle.Text = addressLevel.Mahalle;
+            lblCadde.Text = addressLevel.Cadde;
+            lblSokak.Text = addressLevel.Sokak;
+            lblBulvar.Text = addressLevel.Bulvar;
+            lblPoi.Text = addressLevel.Poi;
+            lblBina.Text = addressLevel.Bina;
+            lblBlok.Text = addressLevel.Blok;
+            lblDaire.Text = addressLevel.Daire;
+            lblKapı.Text = addressLevel.Kapı;
+            lblKat.Text = addressLevel.Kat;
+            lblKöy.Text = addressLevel.Köy;
+            lblXcoor.Text = addressLevel.XCoor;
+            lblYcoor.Text = addressLevel.YCoor;
+
+            LoadMap(addressLevel);
+
+        }
+
+        private void LoadMap(AddressLevel addressLevel)
+        {
+            //string url = string.Format("https://www.google.com.tr/maps/@{0},{1},15z", addressLevel.YCoor, addressLevel.XCoor);
+            string url = string.Format("http://www.openstreetmap.org/?30.486,-90.195#map=19/{0}/{1}", addressLevel.YCoor, addressLevel.XCoor);
+
+            webBrowser1.Url = new Uri(url);
+            webBrowser1.Show();
         }
     }
 }
