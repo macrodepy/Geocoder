@@ -10,7 +10,6 @@ namespace GeocoderAPI.Default.Demo
     public partial class Form1 : Form
     {
         private readonly GeocoderService geocoderService;
-       // private readonly Geocoder geocoder;
         private readonly Parser parser;
         private readonly Geocoder geocoder;
 
@@ -18,16 +17,8 @@ namespace GeocoderAPI.Default.Demo
         {
             InitializeComponent();
             geocoderService = new GeocoderService();
-    //        geocoder = new Geocoder();
             parser = new Parser();
             geocoder = new Geocoder();
-            //ProcTest();
-            //button1_Click(null, null);
-        }
-
-        private void ProcTest()
-        {
-            geocoderService.GetUnitSearchDataByIlAndIlceId("DUZLERKOYU", 57000014000);
         }
 
         private List<string> CheckForTown(IEnumerable<string> notParsedList, ref AddressLevel addressLevel)
@@ -68,11 +59,6 @@ namespace GeocoderAPI.Default.Demo
             return result;
         }
 
-        private void GeocoderTest(AddressLevel addressLevel)
-        {
-      //      geocoder.Geocode(addressLevel);
-        }
-
         private string FixerTest(string address)
         {
             string preparedAddress = Fixer.Prepare(address);
@@ -88,9 +74,9 @@ namespace GeocoderAPI.Default.Demo
             }
 
             string address = textBox1.Text.Trim();
-            string fixerTest = FixerTest(address);
+            string fixedAddress = FixerTest(address);
 
-            AddressLevel addressLevel = parser.ParseAddress(fixerTest);
+            AddressLevel addressLevel = parser.ParseAddress(fixedAddress);
             List<string> list = parser.NotParsedList;
 
             list = CheckForCity(list, ref addressLevel);
@@ -107,7 +93,7 @@ namespace GeocoderAPI.Default.Demo
 
         private void FillScreen(AddressLevel addressLevel)
         {
-            if (addressLevel.XCoor == string.Empty)
+            if (addressLevel.XCoor == string.Empty || addressLevel.XCoor == "0")
             {
                 MessageBox.Show("Adres bulunamadı");
                 return;
@@ -128,15 +114,40 @@ namespace GeocoderAPI.Default.Demo
             lblKöy.Text = addressLevel.Köy;
             lblXcoor.Text = addressLevel.XCoor;
             lblYcoor.Text = addressLevel.YCoor;
+            lblLevel.Text = GetLevel(addressLevel);
 
             LoadMap(addressLevel);
 
         }
 
+        private string GetLevel(AddressLevel addressLevel)
+        {
+            switch (addressLevel.CoordinateLevel)
+            {
+                case 0:
+                    return "İL";
+                case 1:
+                    return "İLÇE";
+                case 2:
+                    return "MAHALLE";
+                case 3:
+                    return "CADDE";
+                case 4:
+                    return "SOKAK";
+                case 5:
+                    return "POI";
+                case 6:
+                    return "KAPI";
+                default:
+                    return "";
+            }
+        }
+
         private void LoadMap(AddressLevel addressLevel)
         {
-            //string url = string.Format("https://www.google.com.tr/maps/@{0},{1},15z", addressLevel.YCoor, addressLevel.XCoor);
-            string url = string.Format("http://www.openstreetmap.org/?30.486,-90.195#map=19/{0}/{1}", addressLevel.YCoor, addressLevel.XCoor);
+            //string url = string.Format("https://www.google.com/maps/place//output=embed@{0},{1},15z", addressLevel.YCoor, addressLevel.XCoor);
+            string url = string.Format("http://www.openstreetmap.org/?mlat={0}&mlon={1}#map=19/{0}/{1}", addressLevel.YCoor, addressLevel.XCoor);
+            //string url = string.Format("http://www.bing.com/maps/default.aspx?sp=point.{0}_{1}_{2}_{3}_{4}_{5}", addressLevel.YCoor, addressLevel.XCoor, title, note,linkUrl,photoUrl);
 
             webBrowser1.Url = new Uri(url);
             webBrowser1.Show();

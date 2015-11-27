@@ -61,6 +61,8 @@
             this.lblXcoor = new System.Windows.Forms.Label();
             this.lblYcoor = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.lblLevel = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -201,7 +203,7 @@
             // lblIl
             // 
             this.lblIl.AutoSize = true;
-            this.lblIl.Location = new System.Drawing.Point(105, 64);
+            this.lblIl.Location = new System.Drawing.Point(118, 64);
             this.lblIl.Name = "lblIl";
             this.lblIl.Size = new System.Drawing.Size(0, 13);
             this.lblIl.TabIndex = 15;
@@ -209,7 +211,7 @@
             // lblIlce
             // 
             this.lblIlce.AutoSize = true;
-            this.lblIlce.Location = new System.Drawing.Point(105, 89);
+            this.lblIlce.Location = new System.Drawing.Point(118, 89);
             this.lblIlce.Name = "lblIlce";
             this.lblIlce.Size = new System.Drawing.Size(0, 13);
             this.lblIlce.TabIndex = 16;
@@ -217,7 +219,7 @@
             // lblMahalle
             // 
             this.lblMahalle.AutoSize = true;
-            this.lblMahalle.Location = new System.Drawing.Point(105, 113);
+            this.lblMahalle.Location = new System.Drawing.Point(118, 113);
             this.lblMahalle.Name = "lblMahalle";
             this.lblMahalle.Size = new System.Drawing.Size(0, 13);
             this.lblMahalle.TabIndex = 17;
@@ -225,7 +227,7 @@
             // lblCadde
             // 
             this.lblCadde.AutoSize = true;
-            this.lblCadde.Location = new System.Drawing.Point(105, 135);
+            this.lblCadde.Location = new System.Drawing.Point(118, 135);
             this.lblCadde.Name = "lblCadde";
             this.lblCadde.Size = new System.Drawing.Size(0, 13);
             this.lblCadde.TabIndex = 18;
@@ -233,7 +235,7 @@
             // lblSokak
             // 
             this.lblSokak.AutoSize = true;
-            this.lblSokak.Location = new System.Drawing.Point(105, 158);
+            this.lblSokak.Location = new System.Drawing.Point(118, 158);
             this.lblSokak.Name = "lblSokak";
             this.lblSokak.Size = new System.Drawing.Size(0, 13);
             this.lblSokak.TabIndex = 19;
@@ -241,7 +243,7 @@
             // lblBulvar
             // 
             this.lblBulvar.AutoSize = true;
-            this.lblBulvar.Location = new System.Drawing.Point(105, 181);
+            this.lblBulvar.Location = new System.Drawing.Point(118, 181);
             this.lblBulvar.Name = "lblBulvar";
             this.lblBulvar.Size = new System.Drawing.Size(0, 13);
             this.lblBulvar.TabIndex = 20;
@@ -249,7 +251,7 @@
             // lblPoi
             // 
             this.lblPoi.AutoSize = true;
-            this.lblPoi.Location = new System.Drawing.Point(105, 203);
+            this.lblPoi.Location = new System.Drawing.Point(118, 203);
             this.lblPoi.Name = "lblPoi";
             this.lblPoi.Size = new System.Drawing.Size(0, 13);
             this.lblPoi.TabIndex = 21;
@@ -257,7 +259,7 @@
             // lblBina
             // 
             this.lblBina.AutoSize = true;
-            this.lblBina.Location = new System.Drawing.Point(105, 227);
+            this.lblBina.Location = new System.Drawing.Point(118, 227);
             this.lblBina.Name = "lblBina";
             this.lblBina.Size = new System.Drawing.Size(0, 13);
             this.lblBina.TabIndex = 22;
@@ -265,7 +267,7 @@
             // lblBlok
             // 
             this.lblBlok.AutoSize = true;
-            this.lblBlok.Location = new System.Drawing.Point(105, 250);
+            this.lblBlok.Location = new System.Drawing.Point(118, 250);
             this.lblBlok.Name = "lblBlok";
             this.lblBlok.Size = new System.Drawing.Size(0, 13);
             this.lblBlok.TabIndex = 23;
@@ -273,7 +275,7 @@
             // lblDaire
             // 
             this.lblDaire.AutoSize = true;
-            this.lblDaire.Location = new System.Drawing.Point(105, 272);
+            this.lblDaire.Location = new System.Drawing.Point(118, 272);
             this.lblDaire.Name = "lblDaire";
             this.lblDaire.Size = new System.Drawing.Size(0, 13);
             this.lblDaire.TabIndex = 24;
@@ -281,7 +283,7 @@
             // lblKapı
             // 
             this.lblKapı.AutoSize = true;
-            this.lblKapı.Location = new System.Drawing.Point(105, 296);
+            this.lblKapı.Location = new System.Drawing.Point(118, 296);
             this.lblKapı.Name = "lblKapı";
             this.lblKapı.Size = new System.Drawing.Size(0, 13);
             this.lblKapı.TabIndex = 25;
@@ -289,7 +291,7 @@
             // lblKat
             // 
             this.lblKat.AutoSize = true;
-            this.lblKat.Location = new System.Drawing.Point(105, 321);
+            this.lblKat.Location = new System.Drawing.Point(118, 321);
             this.lblKat.Name = "lblKat";
             this.lblKat.Size = new System.Drawing.Size(0, 13);
             this.lblKat.TabIndex = 26;
@@ -297,7 +299,7 @@
             // lblKöy
             // 
             this.lblKöy.AutoSize = true;
-            this.lblKöy.Location = new System.Drawing.Point(105, 344);
+            this.lblKöy.Location = new System.Drawing.Point(118, 344);
             this.lblKöy.Name = "lblKöy";
             this.lblKöy.Size = new System.Drawing.Size(0, 13);
             this.lblKöy.TabIndex = 27;
@@ -323,7 +325,7 @@
             // lblXcoor
             // 
             this.lblXcoor.AutoSize = true;
-            this.lblXcoor.Location = new System.Drawing.Point(105, 368);
+            this.lblXcoor.Location = new System.Drawing.Point(118, 368);
             this.lblXcoor.Name = "lblXcoor";
             this.lblXcoor.Size = new System.Drawing.Size(0, 13);
             this.lblXcoor.TabIndex = 30;
@@ -331,7 +333,7 @@
             // lblYcoor
             // 
             this.lblYcoor.AutoSize = true;
-            this.lblYcoor.Location = new System.Drawing.Point(105, 390);
+            this.lblYcoor.Location = new System.Drawing.Point(118, 390);
             this.lblYcoor.Name = "lblYcoor";
             this.lblYcoor.Size = new System.Drawing.Size(0, 13);
             this.lblYcoor.TabIndex = 31;
@@ -344,11 +346,30 @@
             this.webBrowser1.Size = new System.Drawing.Size(679, 508);
             this.webBrowser1.TabIndex = 32;
             // 
+            // lblLevel
+            // 
+            this.lblLevel.AutoSize = true;
+            this.lblLevel.Location = new System.Drawing.Point(118, 416);
+            this.lblLevel.Name = "lblLevel";
+            this.lblLevel.Size = new System.Drawing.Size(0, 13);
+            this.lblLevel.TabIndex = 34;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(9, 416);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(99, 13);
+            this.label17.TabIndex = 33;
+            this.label17.Text = "TESPİT SEVİYESİ:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 584);
+            this.Controls.Add(this.lblLevel);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.lblYcoor);
             this.Controls.Add(this.lblXcoor);
@@ -424,6 +445,8 @@
         private System.Windows.Forms.Label lblXcoor;
         private System.Windows.Forms.Label lblYcoor;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Label lblLevel;
+        private System.Windows.Forms.Label label17;
     }
 }
 

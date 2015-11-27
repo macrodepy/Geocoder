@@ -81,6 +81,7 @@ namespace GeocoderAPI.DAL
         public YolIdariDtoModel SokakModel { get; set; }
         public KAPI KapıModel { get; set; }
         public POI_ARAS PoiModel { get; set; }
+        public int CoordinateLevel { get; set; }
 
 
 

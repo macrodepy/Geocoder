@@ -50,6 +50,7 @@ namespace GeocoderAPI.Default
                 {
                     addressLevel.XCoor = hierarchy[i, 0];
                     addressLevel.YCoor = hierarchy[i, 1];
+                    addressLevel.CoordinateLevel = i;
                     break;
                 }
             }
