@@ -171,7 +171,7 @@ namespace GeocoderAPI.Default
                                                 vUnitSearches = vUnitSearches.Where(x => x.YolId != null && x.PoiId == null).ToList();
                                                 break;
                                             case (int)Enums.VeriTipi.POI: //Parser'dan gelen bilgi POI ise POI'lerde ara
-                                                vUnitSearches = vUnitSearches.Where(x => x.YolId == null && x.PoiId != null).ToList();
+                                                vUnitSearches = vUnitSearches.Where(x => (x.YolId == null || x.YolId == -1 ) && x.PoiId != null).ToList();
 
                                                 break;
                                         }
@@ -283,7 +283,8 @@ namespace GeocoderAPI.Default
                                             vUnitSearches = vUnitSearches.Where(x => x.YolId != null && x.PoiId == null).ToList();
                                             break;
                                         case (int)Enums.VeriTipi.POI:
-                                            vUnitSearches = vUnitSearches.Where(x => x.YolId == null && x.PoiId != null).ToList();
+                                            vUnitSearches = vUnitSearches.Where(x => (x.YolId == null || x.YolId == -1) && x.PoiId != null).ToList();
+
                                             break;
                                     }
 
@@ -700,8 +701,8 @@ namespace GeocoderAPI.Default
                 {
                     addressLevel.PoiModel = poi;
 
-                    hierarchy[5, 0] = poi.XCOOR;
-                    hierarchy[5, 1] = poi.YCOOR;
+                    hierarchy[5, 0] = poi.XCOOR.Replace(',', '.');
+                    hierarchy[5, 1] = poi.YCOOR.Replace(',', '.');
                 }
                 else
                 {

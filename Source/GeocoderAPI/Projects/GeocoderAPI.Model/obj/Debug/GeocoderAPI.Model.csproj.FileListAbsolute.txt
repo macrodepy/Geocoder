@@ -6,3 +6,4 @@ C:\Users\mustafaarslan\Desktop\EngProject\GitHub\Geocoder\Source\GeocoderAPI\Pro
 C:\Users\mustafaarslan\Desktop\EngProject\GitHub\Geocoder\Source\GeocoderAPI\Projects\GeocoderAPI.Model\bin\Debug\GeocoderAPI.Model.pdb
 C:\Users\mustafaarslan\Desktop\EngProject\GitHub\Geocoder\Source\GeocoderAPI\Projects\GeocoderAPI.Model\obj\Debug\GeocoderAPI.Model.dll
 C:\Users\mustafaarslan\Desktop\EngProject\GitHub\Geocoder\Source\GeocoderAPI\Projects\GeocoderAPI.Model\obj\Debug\GeocoderAPI.Model.pdb
+C:\Users\mustafaarslan\Desktop\EngProject\GitHub\Geocoder\Source\GeocoderAPI\Projects\GeocoderAPI.Model\obj\Debug\GeocoderAPI.Model.csprojResolveAssemblyReference.cache

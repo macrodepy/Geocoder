@@ -145,9 +145,17 @@ namespace GeocoderAPI.Default.Demo
 
         private void LoadMap(AddressLevel addressLevel)
         {
-            //string url = string.Format("https://www.google.com/maps/place//output=embed@{0},{1},15z", addressLevel.YCoor, addressLevel.XCoor);
+            string geocoderSampleName = "Sample";
+
+            //string url = string.Format("https://www.google.com/maps/place//@{0},{1},15z", addressLevel.YCoor, addressLevel.XCoor);
             string url = string.Format("http://www.openstreetmap.org/?mlat={0}&mlon={1}#map=19/{0}/{1}", addressLevel.YCoor, addressLevel.XCoor);
-            //string url = string.Format("http://www.bing.com/maps/default.aspx?sp=point.{0}_{1}_{2}_{3}_{4}_{5}", addressLevel.YCoor, addressLevel.XCoor, title, note,linkUrl,photoUrl);
+            //string url = string.Format("http://www.bing.com/maps/default.aspx?sp=point.{0}_{1}_{2}_{3}_{4}_{5}",
+            //    addressLevel.YCoor,
+            //    addressLevel.XCoor,
+            //    "MUSTAFA", //title, 
+            //    "NOT", //note,
+            //    "www.google.com", //linkUrl,
+            //    "");  //photoUrl);
 
             webBrowser1.Url = new Uri(url);
             webBrowser1.Show();
