@@ -359,5 +359,34 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="SAMPLEADDRESS">
+      <EntityTypeMapping TypeName="Model.SAMPLEADDRESS">
+        <MappingFragment StoreEntitySet="SAMPLEADDRESS">
+          <ScalarProperty Name="TOWN" ColumnName="TOWN" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="LOVPOLYGONLEVELID" ColumnName="LOVPOLYGONLEVELID" />
+          <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+          <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAMPLEADDRESSRESULT">
+      <EntityTypeMapping TypeName="Model.SAMPLEADDRESSRESULT">
+        <MappingFragment StoreEntitySet="SAMPLEADDRESSRESULT">
+          <ScalarProperty Name="MYTIME" ColumnName="MYTIME" />
+          <ScalarProperty Name="YCOORMY" ColumnName="YCOORMY" />
+          <ScalarProperty Name="XCOORMY" ColumnName="XCOORMY" />
+          <ScalarProperty Name="GOOGLETIME" ColumnName="GOOGLETIME" />
+          <ScalarProperty Name="YCOORGOOGLE" ColumnName="YCOORGOOGLE" />
+          <ScalarProperty Name="XCOORGOOGLE" ColumnName="XCOORGOOGLE" />
+          <ScalarProperty Name="YANDEXTIME" ColumnName="YANDEXTIME" />
+          <ScalarProperty Name="YCOORYANDEX" ColumnName="YCOORYANDEX" />
+          <ScalarProperty Name="XCOORYANDEX" ColumnName="XCOORYANDEX" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

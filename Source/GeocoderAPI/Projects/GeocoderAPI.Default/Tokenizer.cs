@@ -7,7 +7,7 @@ using GeocoderAPI.Model;
 
 namespace GeocoderAPI.Default
 {
-    public class Parser
+    public class Tokenizer
     {
         public List<String> NotParsedList { get; set; }
 

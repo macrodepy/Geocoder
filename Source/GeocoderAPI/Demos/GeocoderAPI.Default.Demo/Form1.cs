@@ -10,56 +10,19 @@ namespace GeocoderAPI.Default.Demo
     public partial class Form1 : Form
     {
         private readonly GeocoderService geocoderService;
-        private readonly Parser parser;
+        private readonly Tokenizer tokenizer;
         private readonly Geocoder geocoder;
 
         public Form1()
         {
             InitializeComponent();
             geocoderService = new GeocoderService();
-            parser = new Parser();
+            tokenizer = new Tokenizer();
             geocoder = new Geocoder();
         }
 
-        private List<string> CheckForTown(IEnumerable<string> notParsedList, ref AddressLevel addressLevel)
-        {
-            List<string> result = new List<string>();
-            decimal ilId = addressLevel.IlId;
 
-            foreach (var item in notParsedList)
-            {
-                var town = geocoderService.GetTownByNameAndCityId(item.Trim(), addressLevel.IlId);
-
-                if (town != null)
-                    addressLevel.Ilçe = item.Trim();
-                else
-                    result.Add(item);
-            }
-
-            return result;
-        }
-
-        private List<string> CheckForCity(IEnumerable<string> notParsedList, ref AddressLevel addressLevel)
-        {
-            List<string> result = new List<string>();
-
-            foreach (var item in notParsedList)
-            {
-                var city = geocoderService.GetCityByName(item.Trim());
-
-                if (city != null)
-                {
-                    addressLevel.Il = item.Trim();
-                    addressLevel.IlId = city.IL_ID;
-                }
-                else
-                    result.Add(item);
-            }
-            
-            return result;
-        }
-
-        private string FixerTest(string address)
+        private string FixAddress(string address)
         {
             string preparedAddress = Fixer.Prepare(address);
             return preparedAddress;
@@ -74,19 +37,19 @@ namespace GeocoderAPI.Default.Demo
             }
 
             string address = textBox1.Text.Trim();
-            string fixedAddress = FixerTest(address);
+            string fixedAddress = FixAddress(address);
 
-            AddressLevel addressLevel = parser.ParseAddress(fixedAddress);
-            List<string> list = parser.NotParsedList;
+            AddressLevel addressLevel = tokenizer.ParseAddress(fixedAddress);
+            List<string> list = tokenizer.NotParsedList;
 
-            list = CheckForCity(list, ref addressLevel);
+            list = geocoder.CheckForCity(list, ref addressLevel);
 
             if (!addressLevel.Il.Equals(string.Empty))
             {
-                list = CheckForTown(list, ref addressLevel);
+                list = geocoder.CheckForTown(list, ref addressLevel);
             }
 
-            addressLevel = geocoder.IntegrationParsing(addressLevel);
+            addressLevel = geocoder.Geocode(addressLevel);
 
             FillScreen(addressLevel);
         }

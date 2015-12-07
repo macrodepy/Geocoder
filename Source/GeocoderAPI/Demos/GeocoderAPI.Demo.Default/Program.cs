@@ -22,7 +22,7 @@ namespace GeocoderAPI.Demo.Default
             //string address = "inönü mahallesi atatürk caddesi birlik apt. no:55 daire 7 istanbul ataşehir";
             //string fixerTest = FixerTest(address);
 
-            //Parser parse = new Parser();
+            //Tokenizer parse = new Tokenizer();
             //AddressLevel addressLevel = parse.ParseAddress(fixerTest);
             //List<string> list = parse.NotParsedList;
 
@@ -89,8 +89,8 @@ namespace GeocoderAPI.Demo.Default
 
         static AddressLevel ParseTest(string address)
         {
-            Parser parser = new Parser();
-            AddressLevel addressLevel = parser.ParseAddress(address);
+            Tokenizer tokenizer = new Tokenizer();
+            AddressLevel addressLevel = tokenizer.ParseAddress(address);
             return addressLevel;
         }
     }

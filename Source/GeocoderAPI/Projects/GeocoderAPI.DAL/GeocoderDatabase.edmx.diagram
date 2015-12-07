@@ -25,6 +25,8 @@
         <EntityTypeShape EntityType="Model.POI_INFO" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.TOWNPOLYGONHIERARCHY" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.YOL" Width="1.5" PointX="7.375" PointY="12.75" />
+        <EntityTypeShape EntityType="Model.SAMPLEADDRESS" Width="1.5" PointX="13.375" PointY="5.75" />
+        <EntityTypeShape EntityType="Model.SAMPLEADDRESSRESULT" Width="1.5" PointX="13.375" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

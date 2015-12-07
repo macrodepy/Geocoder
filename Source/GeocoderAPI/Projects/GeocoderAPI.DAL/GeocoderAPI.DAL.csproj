@@ -130,6 +130,12 @@
     </Compile>
     <Compile Include="ProcedureService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SAMPLEADDRESS.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAMPLEADDRESSRESULT.cs">
+      <DependentUpon>GeocoderDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="TOWNPOLYGONHIERARCHY.cs">
       <DependentUpon>GeocoderDatabase.tt</DependentUpon>
     </Compile>

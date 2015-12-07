@@ -241,32 +241,6 @@ warning 6005: The data type 'sdo_geometry' is currently not supported for the ta
           <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
           <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'MUSTAFALOCAL.MAP_POIARAS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="MAP_POIARAS">
-          <Property Name="MAPDATAID" Type="guid raw" />
-          <Property Name="SONUC" Type="varchar2" MaxLength="4000" />
-          <Property Name="SONUC_ILCELI" Type="varchar2" MaxLength="4000" />
-          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
-          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
-          <Property Name="MAHALLE_ID" Type="number" Precision="20" Scale="0" />
-          <Property Name="YOL_ID" Type="number" Precision="38" Scale="0" />
-          <Property Name="ILCE_ID" Type="number" Precision="20" Scale="0" />
-          <Property Name="IL_ID" Type="number" Precision="20" Scale="0" />
-          <Property Name="POI_ID" Type="number" Precision="38" Scale="0" />
-          <Property Name="NAME" Type="varchar2" MaxLength="4000" />
-          <Property Name="NAME_FULL" Type="varchar2" MaxLength="4000" />
-          <Property Name="LOVDATAPRIORITY" Type="number" Precision="38" Scale="0" />
-          <Property Name="AUDIT_CREATE_DATE" Type="timestamp" Precision="6" />
-          <Property Name="AUDITCREATEDBY" Type="number" Precision="6" Scale="0" />
-          <Property Name="AUDITCREATEUNITID" Type="number" Precision="5" Scale="0" />
-          <Property Name="AUDIT_MODIFY_DATE" Type="timestamp" Precision="6" />
-          <Property Name="AUDITMODIFIEDBY" Type="number" Precision="6" Scale="0" />
-          <Property Name="AUDITMODIFYUNITID" Type="number" Precision="5" Scale="0" />
-          <Property Name="AUDIT_DELETED" Type="char" MaxLength="1" />
-          <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
-          <Property Name="APPLICATIONID" Type="number" Precision="4" Scale="0" />
-        </EntityType>-->
         <EntityType Name="MAP_POIINFO">
           <Key>
             <PropertyRef Name="MAPDATAID" />
@@ -350,6 +324,37 @@ warning 6013: The table/view 'MUSTAFALOCAL.MAP_POIARAS' does not have a primary 
           <Property Name="APPLICATION_VERSION" Type="varchar2" MaxLength="16" />
           <Property Name="APPLICATIONID" Type="number" Precision="6" Scale="0" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MUSTAFALOCAL.SAMPLEADDRESS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SAMPLEADDRESS">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="CITY" />
+            <PropertyRef Name="TOWN" />
+          </Key>
+          <Property Name="ID" Type="guid raw" Nullable="false" />
+          <Property Name="ADDRESS" Type="nvarchar2" MaxLength="256" />
+          <Property Name="XCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOOR" Type="varchar2" MaxLength="40" />
+          <Property Name="LOVPOLYGONLEVELID" Type="number" Precision="4" Scale="0" />
+          <Property Name="CITY" Type="nvarchar2" MaxLength="64" Nullable="false" />
+          <Property Name="TOWN" Type="nvarchar2" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SAMPLEADDRESSRESULT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="guid raw" Nullable="false" />
+          <Property Name="XCOORYANDEX" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOORYANDEX" Type="varchar2" MaxLength="40" />
+          <Property Name="YANDEXTIME" Type="varchar2" MaxLength="40" />
+          <Property Name="XCOORGOOGLE" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOORGOOGLE" Type="varchar2" MaxLength="40" />
+          <Property Name="GOOGLETIME" Type="varchar2" MaxLength="40" />
+          <Property Name="XCOORMY" Type="varchar2" MaxLength="40" />
+          <Property Name="YCOORMY" Type="varchar2" MaxLength="40" />
+          <Property Name="MYTIME" Type="varchar2" MaxLength="40" />
+        </EntityType>
         <EntityType Name="TOWNPOLYGONHIERARCHY">
           <Key>
             <PropertyRef Name="ILCE_ID" />
@@ -397,8 +402,20 @@ warning 6013: The table/view 'MUSTAFALOCAL.MAP_POIARAS' does not have a primary 
           <EntitySet Name="MAP_POIINFO" EntityType="Self.MAP_POIINFO" Schema="MUSTAFALOCAL" store:Type="Tables" />
           <EntitySet Name="POI_ARAS" EntityType="Self.POI_ARAS" Schema="MUSTAFALOCAL" store:Type="Tables" />
           <EntitySet Name="POI_INFO" EntityType="Self.POI_INFO" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="SAMPLEADDRESSRESULT" EntityType="Self.SAMPLEADDRESSRESULT" Schema="MUSTAFALOCAL" store:Type="Tables" />
           <EntitySet Name="TOWNPOLYGONHIERARCHY" EntityType="Self.TOWNPOLYGONHIERARCHY" Schema="MUSTAFALOCAL" store:Type="Tables" />
           <EntitySet Name="YOL" EntityType="Self.YOL" Schema="MUSTAFALOCAL" store:Type="Tables" />
+          <EntitySet Name="SAMPLEADDRESS" EntityType="Self.SAMPLEADDRESS" store:Type="Tables" store:Schema="MUSTAFALOCAL">
+            <DefiningQuery>SELECT 
+"SAMPLEADDRESS"."ID" AS "ID", 
+"SAMPLEADDRESS"."ADDRESS" AS "ADDRESS", 
+"SAMPLEADDRESS"."XCOOR" AS "XCOOR", 
+"SAMPLEADDRESS"."YCOOR" AS "YCOOR", 
+"SAMPLEADDRESS"."LOVPOLYGONLEVELID" AS "LOVPOLYGONLEVELID", 
+"SAMPLEADDRESS"."CITY" AS "CITY", 
+"SAMPLEADDRESS"."TOWN" AS "TOWN"
+FROM "MUSTAFALOCAL"."SAMPLEADDRESS" "SAMPLEADDRESS"</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -756,6 +773,8 @@ warning 6013: The table/view 'MUSTAFALOCAL.MAP_POIARAS' does not have a primary 
           <EntitySet Name="POI_INFO" EntityType="Self.POI_INFO" />
           <EntitySet Name="TOWNPOLYGONHIERARCHY" EntityType="Self.TOWNPOLYGONHIERARCHY" />
           <EntitySet Name="YOL" EntityType="Model.YOL" />
+          <EntitySet Name="SAMPLEADDRESS" EntityType="Model.SAMPLEADDRESS" />
+          <EntitySet Name="SAMPLEADDRESSRESULT" EntityType="Model.SAMPLEADDRESSRESULT" />
         </EntityContainer>
         <EntityType Name="YOL">
           <Key>
@@ -766,6 +785,35 @@ warning 6013: The table/view 'MUSTAFALOCAL.MAP_POIARAS' does not have a primary 
           <Property Name="YOL_SINIFI" Type="Byte" />
           <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SAMPLEADDRESS">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="CITY" />
+            <PropertyRef Name="TOWN" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="LOVPOLYGONLEVELID" Type="Int16" />
+          <Property Name="CITY" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="TOWN" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SAMPLEADDRESSRESULT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="XCOORYANDEX" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOORYANDEX" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YANDEXTIME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="XCOORGOOGLE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOORGOOGLE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="GOOGLETIME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="XCOORMY" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YCOORMY" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="MYTIME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1128,6 +1176,35 @@ warning 6013: The table/view 'MUSTAFALOCAL.MAP_POIARAS' does not have a primary 
                 <ScalarProperty Name="YOL_SINIFI" ColumnName="YOL_SINIFI" />
                 <ScalarProperty Name="YOL_ADI" ColumnName="YOL_ADI" />
                 <ScalarProperty Name="YOL_ID" ColumnName="YOL_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAMPLEADDRESS">
+            <EntityTypeMapping TypeName="Model.SAMPLEADDRESS">
+              <MappingFragment StoreEntitySet="SAMPLEADDRESS">
+                <ScalarProperty Name="TOWN" ColumnName="TOWN" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="LOVPOLYGONLEVELID" ColumnName="LOVPOLYGONLEVELID" />
+                <ScalarProperty Name="YCOOR" ColumnName="YCOOR" />
+                <ScalarProperty Name="XCOOR" ColumnName="XCOOR" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAMPLEADDRESSRESULT">
+            <EntityTypeMapping TypeName="Model.SAMPLEADDRESSRESULT">
+              <MappingFragment StoreEntitySet="SAMPLEADDRESSRESULT">
+                <ScalarProperty Name="MYTIME" ColumnName="MYTIME" />
+                <ScalarProperty Name="YCOORMY" ColumnName="YCOORMY" />
+                <ScalarProperty Name="XCOORMY" ColumnName="XCOORMY" />
+                <ScalarProperty Name="GOOGLETIME" ColumnName="GOOGLETIME" />
+                <ScalarProperty Name="YCOORGOOGLE" ColumnName="YCOORGOOGLE" />
+                <ScalarProperty Name="XCOORGOOGLE" ColumnName="XCOORGOOGLE" />
+                <ScalarProperty Name="YANDEXTIME" ColumnName="YANDEXTIME" />
+                <ScalarProperty Name="YCOORYANDEX" ColumnName="YCOORYANDEX" />
+                <ScalarProperty Name="XCOORYANDEX" ColumnName="XCOORYANDEX" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

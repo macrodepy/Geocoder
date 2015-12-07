@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeocoderAPI.Default.Demo", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeocoderAPI.Default.WebService", "Demos\GeocoderAPI.Default.WebService\GeocoderAPI.Default.WebService.csproj", "{7B186662-5023-4D89-A567-F78CC597142D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeocoderAPI.Tester", "Demos\GeocoderAPI.Tester\GeocoderAPI.Tester.csproj", "{1BE37853-DD6B-435B-B122-033FC755E3F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{7B186662-5023-4D89-A567-F78CC597142D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B186662-5023-4D89-A567-F78CC597142D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B186662-5023-4D89-A567-F78CC597142D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BE37853-DD6B-435B-B122-033FC755E3F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BE37853-DD6B-435B-B122-033FC755E3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BE37853-DD6B-435B-B122-033FC755E3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BE37853-DD6B-435B-B122-033FC755E3F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,5 +89,6 @@ Global
 		{977E0C70-EB1B-4E00-9E1B-5A34D5D76D75} = {7D21B979-73A8-49BE-B95F-1BBF02817482}
 		{F6A9F8E2-DE05-4D9C-83AF-CFCA3EC4E0E6} = {7D21B979-73A8-49BE-B95F-1BBF02817482}
 		{7B186662-5023-4D89-A567-F78CC597142D} = {7D21B979-73A8-49BE-B95F-1BBF02817482}
+		{1BE37853-DD6B-435B-B122-033FC755E3F8} = {7D21B979-73A8-49BE-B95F-1BBF02817482}
 	EndGlobalSection
 EndGlobal

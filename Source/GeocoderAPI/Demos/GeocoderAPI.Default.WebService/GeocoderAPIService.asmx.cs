@@ -17,7 +17,7 @@ namespace GeocoderAPI.Default.WebService
     // [System.Web.Script.Services.ScriptService]
     public class GeocoderAPIService : System.Web.Services.WebService
     {
-        private readonly Parser parser = new Parser();
+        private readonly Tokenizer tokenizer = new Tokenizer();
         private readonly Geocoder geocoder = new Geocoder();
         private readonly GeocoderService geocoderService = new GeocoderService();
 
@@ -36,13 +36,13 @@ namespace GeocoderAPI.Default.WebService
         [WebMethod]
         public AddressLevel Parser(string address)
         {
-            return parser.ParseAddress(address);
+            return tokenizer.ParseAddress(address);
         }
 
         [WebMethod]
         public AddressLevel Geocoder(AddressLevel addressLevel)
         {
-            return geocoder.IntegrationParsing(addressLevel);
+            return geocoder.Geocode(addressLevel);
         }
 
         [WebMethod]
@@ -50,8 +50,8 @@ namespace GeocoderAPI.Default.WebService
         {
             string fixedAddress = Default.Fixer.Prepare(address);
 
-            AddressLevel addressLevel = parser.ParseAddress(fixedAddress);
-            List<string> list = parser.NotParsedList;
+            AddressLevel addressLevel = tokenizer.ParseAddress(fixedAddress);
+            List<string> list = tokenizer.NotParsedList;
 
             list = CheckForCity(list, ref addressLevel);
 
@@ -60,7 +60,7 @@ namespace GeocoderAPI.Default.WebService
                 list = CheckForTown(list, ref addressLevel);
             }
 
-            addressLevel = geocoder.IntegrationParsing(addressLevel);
+            addressLevel = geocoder.Geocode(addressLevel);
 
             return addressLevel;
         }

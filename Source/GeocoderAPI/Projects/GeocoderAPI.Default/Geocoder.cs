@@ -30,7 +30,45 @@ namespace GeocoderAPI.Default
             integrationSave = false;
         }
 
-        public AddressLevel IntegrationParsing(AddressLevel addressLevel)
+        public List<string> CheckForTown(IEnumerable<string> notParsedList, ref AddressLevel addressLevel)
+        {
+            List<string> result = new List<string>();
+            decimal ilId = addressLevel.IlId;
+
+            foreach (var item in notParsedList)
+            {
+                var town = geocoderService.GetTownByNameAndCityId(item.Trim(), addressLevel.IlId);
+
+                if (town != null)
+                    addressLevel.Ilçe = item.Trim();
+                else
+                    result.Add(item);
+            }
+
+            return result;
+        }
+
+        public List<string> CheckForCity(IEnumerable<string> notParsedList, ref AddressLevel addressLevel)
+        {
+            List<string> result = new List<string>();
+
+            foreach (var item in notParsedList)
+            {
+                var city = geocoderService.GetCityByName(item.Trim());
+
+                if (city != null)
+                {
+                    addressLevel.Il = item.Trim();
+                    addressLevel.IlId = city.IL_ID;
+                }
+                else
+                    result.Add(item);
+            }
+
+            return result;
+        }
+
+        public AddressLevel Geocode(AddressLevel addressLevel)
         {
             this.addressLevel = addressLevel;
 
@@ -161,16 +199,16 @@ namespace GeocoderAPI.Default
                                     {
                                         switch (veriTipiId)
                                         {
-                                            case (int)Enums.VeriTipi.Mahalle:  //Parser'dan gelen bilgi mahalle ise mahallelerde ara
+                                            case (int)Enums.VeriTipi.Mahalle:  //Tokenizer'dan gelen bilgi mahalle ise mahallelerde ara
                                                 vUnitSearches = vUnitSearches.Where(x => x.MahalleId != null && x.YolId == null && x.PoiId == null).ToList();
                                                 break;
-                                            case (int)Enums.VeriTipi.Cadde:  //Parser'dan gelen bilgi Cadde ise caddelerde ara
+                                            case (int)Enums.VeriTipi.Cadde:  //Tokenizer'dan gelen bilgi Cadde ise caddelerde ara
                                                 vUnitSearches = vUnitSearches.Where(x => x.YolId != null && x.PoiId == null).ToList();
                                                 break;
-                                            case (int)Enums.VeriTipi.Sokak:  //Parser'dan gelen bilgi Sokak ise sokaklarda ara
+                                            case (int)Enums.VeriTipi.Sokak:  //Tokenizer'dan gelen bilgi Sokak ise sokaklarda ara
                                                 vUnitSearches = vUnitSearches.Where(x => x.YolId != null && x.PoiId == null).ToList();
                                                 break;
-                                            case (int)Enums.VeriTipi.POI: //Parser'dan gelen bilgi POI ise POI'lerde ara
+                                            case (int)Enums.VeriTipi.POI: //Tokenizer'dan gelen bilgi POI ise POI'lerde ara
                                                 vUnitSearches = vUnitSearches.Where(x => (x.YolId == null || x.YolId == -1 ) && x.PoiId != null).ToList();
 
                                                 break;

@@ -45,5 +45,7 @@ namespace GeocoderAPI.DAL
         public virtual DbSet<POI_INFO> POI_INFO { get; set; }
         public virtual DbSet<TOWNPOLYGONHIERARCHY> TOWNPOLYGONHIERARCHY { get; set; }
         public virtual DbSet<YOL> YOL { get; set; }
+        public virtual DbSet<SAMPLEADDRESS> SAMPLEADDRESS { get; set; }
+        public virtual DbSet<SAMPLEADDRESSRESULT> SAMPLEADDRESSRESULT { get; set; }
     }
 }

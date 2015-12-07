@@ -18,6 +18,28 @@ namespace GeocoderAPI.DAL
             procedureService = new ProcedureService();
         }
 
+        public void InsertSampleAddressResult(SAMPLEADDRESSRESULT model)
+        {
+            geocoderEntities.SAMPLEADDRESSRESULT.Add(model);
+            geocoderEntities.SaveChanges();
+        }
+
+        public bool CheckIfExist(SAMPLEADDRESS model)
+        {
+            int count = geocoderEntities.SAMPLEADDRESSRESULT.Count(x => x.ID == model.ID);
+            if (count == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public List<SAMPLEADDRESS> GetSampleaddresss()
+        {
+            var result = geocoderEntities.SAMPLEADDRESS.ToList();
+            return result;
+        } 
+
         public List<HINTCITYGEOCITYCR> GetIL_IDDataByHintCityGeoCityCR(string ilAdı)
         {
             var result = geocoderEntities.HINTCITYGEOCITYCR.Where(x => x.IL_ADI == ilAdı && x.ACTIVE == "1" && x.AUDIT_DELETED == "0").ToList();

@@ -352,6 +352,8 @@
     <EntitySet Name="POI_INFO" EntityType="Self.POI_INFO" />
     <EntitySet Name="TOWNPOLYGONHIERARCHY" EntityType="Self.TOWNPOLYGONHIERARCHY" />
     <EntitySet Name="YOL" EntityType="Model.YOL" />
+    <EntitySet Name="SAMPLEADDRESS" EntityType="Model.SAMPLEADDRESS" />
+    <EntitySet Name="SAMPLEADDRESSRESULT" EntityType="Model.SAMPLEADDRESSRESULT" />
   </EntityContainer>
   <EntityType Name="YOL">
     <Key>
@@ -362,5 +364,34 @@
     <Property Name="YOL_SINIFI" Type="Byte" />
     <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SAMPLEADDRESS">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="CITY" />
+      <PropertyRef Name="TOWN" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="XCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="YCOOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="LOVPOLYGONLEVELID" Type="Int16" />
+    <Property Name="CITY" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="TOWN" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SAMPLEADDRESSRESULT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="XCOORYANDEX" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="YCOORYANDEX" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="YANDEXTIME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="XCOORGOOGLE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="YCOORGOOGLE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="GOOGLETIME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="XCOORMY" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="YCOORMY" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="MYTIME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

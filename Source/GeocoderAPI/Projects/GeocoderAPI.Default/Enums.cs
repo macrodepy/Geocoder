@@ -14,7 +14,6 @@
             Bulvar,
             Yolu,
             POI,
-            PostaKodu,
             Bina,
             Blok,
             Daire,
@@ -32,7 +31,8 @@
             Sokak_S,
             Bulvar_1,
             Bulvar_2,
-            Bulvar_S
+            Bulvar_S,
+            PostaKodu
         }; 
     }
 }
