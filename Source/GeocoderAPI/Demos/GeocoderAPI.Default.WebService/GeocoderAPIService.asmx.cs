@@ -34,7 +34,7 @@ namespace GeocoderAPI.Default.WebService
         }
 
         [WebMethod]
-        public AddressLevel Parser(string address)
+        public AddressLevel Tokenizer(string address)
         {
             return tokenizer.ParseAddress(address);
         }

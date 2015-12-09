@@ -28,9 +28,7 @@ namespace GeocoderAPI.DAL
         {
             int count = geocoderEntities.SAMPLEADDRESSRESULT.Count(x => x.ID == model.ID);
             if (count == 0)
-            {
                 return false;
-            }
             return true;
         }
 
@@ -81,8 +79,11 @@ namespace GeocoderAPI.DAL
         private List<HINTTOWNGEOTOWNCR> GetTown(AddressLevel addressLevel, HINTCITYGEOCITYCR city)
         {
             var townList =
-                 geocoderEntities.HINTTOWNGEOTOWNCR.Where(
-                     x => x.ILCE_ADI == addressLevel.Ilçe && x.IL_ID == city.IL_ID).ToList();
+                 geocoderEntities.
+                 HINTTOWNGEOTOWNCR.
+                 Where( x => 
+                     x.ILCE_ADI == addressLevel.Ilçe 
+                     && x.IL_ID == city.IL_ID).ToList();
 
             return townList;
         }

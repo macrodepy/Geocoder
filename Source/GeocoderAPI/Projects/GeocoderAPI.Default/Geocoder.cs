@@ -19,7 +19,6 @@ namespace GeocoderAPI.Default
         private IList<KAPI> kapiList;
         int veriTipiId = -1;
         string[,] hierarchy;
-        private readonly bool integrationSave;
 
         public Geocoder()
         {
@@ -27,8 +26,8 @@ namespace GeocoderAPI.Default
             addressLevel = new AddressLevel();
             geocoderService = new GeocoderService();
             hierarchy = new string[7, 2];
-            integrationSave = false;
         }
+
 
         public List<string> CheckForTown(IEnumerable<string> notParsedList, ref AddressLevel addressLevel)
         {
@@ -47,6 +46,7 @@ namespace GeocoderAPI.Default
 
             return result;
         }
+
 
         public List<string> CheckForCity(IEnumerable<string> notParsedList, ref AddressLevel addressLevel)
         {
@@ -74,7 +74,7 @@ namespace GeocoderAPI.Default
 
             try
             {
-                AddresGeocode();
+                AddressGeocode();
             }
             catch (Exception ex)
             {
@@ -101,7 +101,7 @@ namespace GeocoderAPI.Default
             //TODO: Loglama yazılacak
         }
 
-        public void AddresGeocode()
+        public void AddressGeocode()
         {
             for (int i = 0; i < 7; i++)
             {
@@ -117,7 +117,7 @@ namespace GeocoderAPI.Default
             if (ilIdDataByHintCityGeoCityCr.Count > 0)
             {
                 var hintCityGeoCity = ilIdDataByHintCityGeoCityCr.FirstOrDefault();
-                if (hintCityGeoCity.GEOLOC_IL_ID != null)  //tabloda geoloc_il_id adında kolon var ise
+                if (hintCityGeoCity.GEOLOC_IL_ID != null)   
                 {
                     var cityId = hintCityGeoCity.GEOLOC_IL_ID.Value;  //İl ID'si atanıyor
 
@@ -146,7 +146,7 @@ namespace GeocoderAPI.Default
                         var hintTownGeoTown = hintTownGeoTownCrs.FirstOrDefault();
                         if (hintTownGeoTown.GEOLOC_ILCE_ID.Value != null)  //Tabloda geoloc_ilce_id adında kolon var ise
                         {
-                            var townId = hintTownGeoTown.GEOLOC_ILCE_ID.Value;  //İlçe Id'si combodan seçiliyor
+                            var townId = hintTownGeoTown.GEOLOC_ILCE_ID.Value;  //İlçe Id'si seçiliyor
 
                             #region İlçe Seçilirse ilçenin koordinat bilgisi alnır
                             var ilce = geocoderService.GetIlceDataByILCE_ID(townId).FirstOrDefault();
@@ -172,7 +172,7 @@ namespace GeocoderAPI.Default
 
                                 searchText = SearchAddressType(flag);
 
-                                if (flag == 29)
+                                if (flag == 23)
                                 {
                                     break;
                                 }
@@ -268,7 +268,7 @@ namespace GeocoderAPI.Default
 
                             searchText = SearchAddressType(flag);
 
-                            if (flag == 29)
+                            if (flag == 23)
                                 break;
 
                             if (searchText == "999999999")  //Eğer birşey dönmedi ise döngüye devam et
@@ -456,21 +456,21 @@ namespace GeocoderAPI.Default
                     }
                     break;
 
-                case 10:
+                case 4:
                     if (addressLevel.Yolu.Trim() != "")
                     {
                         returntext = addressLevel.Yolu.Trim();
                         veriTipiId = (int)Enums.VeriTipi.Cadde;
                     }
                     break;
-                case 11:
+                case 5:
                     if (addressLevel.Sokak.Trim() != "")
                     {
                         returntext = addressLevel.Sokak.Trim() + "SOKAK";
                         veriTipiId = (int)Enums.VeriTipi.Sokak;
                     }
                     break;
-                case 12:
+                case 6:
                     if (addressLevel.Sokak1.Trim() != "" && addressLevel.Sokak2.Trim() != "")
                     {
                         returntext = addressLevel.Sokak1.Trim() + " ";
@@ -478,14 +478,14 @@ namespace GeocoderAPI.Default
                         veriTipiId = (int)Enums.VeriTipi.Sokak;
                     }
                     break;
-                case 13:
+                case 7:
                     if (addressLevel.Cadde.Trim() != "")
                     {
                         returntext = addressLevel.Cadde.Trim() + "CADDESİ";
                         veriTipiId = (int)Enums.VeriTipi.Cadde;
                     }
                     break;
-                case 14:
+                case 8:
                     if (addressLevel.Cadde1.Trim() != "" && addressLevel.Cadde2.Trim() != "")
                     {
                         returntext = addressLevel.Cadde1.Trim() + " ";
@@ -493,14 +493,14 @@ namespace GeocoderAPI.Default
                         veriTipiId = (int)Enums.VeriTipi.Cadde;
                     }
                     break;
-                case 15:
+                case 9:
                     if (addressLevel.Bulvar.Trim() != "")
                     {
                         returntext = addressLevel.Bulvar.Trim() + "BULVARI";
                         veriTipiId = (int)Enums.VeriTipi.Cadde;
                     }
                     break;
-                case 16:
+                case 10:
                     if (addressLevel.Bulvar1.Trim() != "" && addressLevel.Bulvar2.Trim() != "")
                     {
                         returntext = addressLevel.Bulvar1.Trim() + " ";
@@ -508,7 +508,7 @@ namespace GeocoderAPI.Default
                         veriTipiId = (int)Enums.VeriTipi.Cadde;
                     }
                     break;
-                case 17:
+                case 11:
                     if (addressLevel.Mahalle.Trim() != "" && addressLevel.Yolu.Trim() != "")
                     {
                         returntext = addressLevel.Mahalle.Trim() + "MAHALLESİ";
@@ -516,7 +516,7 @@ namespace GeocoderAPI.Default
                         veriTipiId = (int)Enums.VeriTipi.Cadde;
                     }
                     break;
-                case 18:
+                case 12:
                     if (addressLevel.Mahalle.Trim() != "" && addressLevel.Sokak.Trim() != "")
                     {
                         returntext = addressLevel.Mahalle.Trim() + "MAHALLESİ";
@@ -524,7 +524,7 @@ namespace GeocoderAPI.Default
                         veriTipiId = (int)Enums.VeriTipi.Sokak;
                     }
                     break;
-                case 19:
+                case 13:
                     if (addressLevel.Mahalle.Trim() != "" && addressLevel.Sokak.Trim() != "")
                     {
                         returntext = addressLevel.Mahalle.Trim() + "MAHALLESİ";
@@ -532,7 +532,7 @@ namespace GeocoderAPI.Default
                         veriTipiId = (int)Enums.VeriTipi.Sokak;
                     }
                     break;
-                case 20:
+                case 14:
                     if (addressLevel.Mahalle.Trim() != "" && addressLevel.Sokak1.Trim() != "" && addressLevel.Sokak2.Trim() != "")
                     {
                         returntext = addressLevel.Mahalle.Trim() + "MAHALLESİ";
@@ -541,7 +541,7 @@ namespace GeocoderAPI.Default
                         veriTipiId = (int)Enums.VeriTipi.Sokak;
                     }
                     break;
-                case 21:
+                case 15:
                     if (addressLevel.Mahalle.Trim() != "" && addressLevel.Cadde.Trim() != "")
                     {
                         returntext = addressLevel.Mahalle.Trim() + "MAHALLESİ";
@@ -549,7 +549,7 @@ namespace GeocoderAPI.Default
                         veriTipiId = (int)Enums.VeriTipi.Cadde;
                     }
                     break;
-                case 22:
+                case 16:
                     if (addressLevel.Mahalle.Trim() != "" && addressLevel.Cadde.Trim() != "")
                     {
                         returntext = addressLevel.Mahalle.Trim() + "MAHALLESİ";
@@ -558,7 +558,7 @@ namespace GeocoderAPI.Default
                     }
                     break;
 
-                case 23:
+                case 17:
                     if (addressLevel.Mahalle.Trim() != "" && addressLevel.Cadde1.Trim() != "" && addressLevel.Cadde2.Trim() != "")
                     {
                         returntext = addressLevel.Mahalle.Trim() + "MAHALLESİ";
@@ -567,7 +567,7 @@ namespace GeocoderAPI.Default
                         veriTipiId = (int)Enums.VeriTipi.Cadde;
                     }
                     break;
-                case 24:
+                case 18:
                     if (addressLevel.Mahalle.Trim() != "" && addressLevel.Bulvar.Trim() != "")
                     {
                         returntext = addressLevel.Mahalle.Trim() + "MAHALLESİ";
@@ -575,7 +575,7 @@ namespace GeocoderAPI.Default
                         veriTipiId = (int)Enums.VeriTipi.Cadde;
                     }
                     break;
-                case 25:
+                case 19:
                     if (addressLevel.Mahalle.Trim() != "" && addressLevel.Bulvar.Trim() != "")
                     {
                         returntext = addressLevel.Mahalle.Trim() + "MAHALLESİ";
@@ -583,7 +583,7 @@ namespace GeocoderAPI.Default
                         veriTipiId = (int)Enums.VeriTipi.Cadde;
                     }
                     break;
-                case 26:
+                case 20:
                     if (addressLevel.Mahalle.Trim() != "" && addressLevel.Bulvar1.Trim() != "" && addressLevel.Bulvar2.Trim() != "")
                     {
                         returntext = addressLevel.Mahalle.Trim() + "MAHALLESİ";
@@ -592,14 +592,14 @@ namespace GeocoderAPI.Default
                         veriTipiId = (int)Enums.VeriTipi.Cadde;
                     }
                     break;
-                case 27:
+                case 21:
                     if (addressLevel.Köy.Trim() != "")
                     {
                         returntext = addressLevel.Köy.Trim() + "KÖYÜ";
                         veriTipiId = (int)Enums.VeriTipi.Mahalle;
                     }
                     break;
-                case 28:
+                case 22:
                     if (addressLevel.Mahalle.Trim() != "")
                     {
                         returntext = addressLevel.Mahalle.Trim() + "MAHALLESİ";
@@ -858,46 +858,30 @@ namespace GeocoderAPI.Default
 
         private int DoorNumberSelect(int result)
         {
-            //eğer girilen tek kapı numarası ise ve kapı combobox'ında tek kapı yoksa veya
-            //eğer girilen çift kapı numarası ise ve kapı combobox'ında çift kapı yoksa kontrolünü yapmak için
-            int cntr = 0;
-
-            int r = 1;
-
-            int endKapi = 0;
+            int counter = 0;
             long endKapiId = 0;
 
             string[,] doorDistance = new string[kapiList.Count, 2];
-
             for (int i = 0; i < kapiList.Count; i++)  //kapı combobox'ında bulunan kapı numaralarında geziyoruz
             {
                 string patternK = @"(-)|(/)";
                 string[] Ks = Regex.Split(kapiList[i].KAPI_NO, patternK);
-
-                string no = Ks[0];
-
-                int selectedKapi = Convert.ToInt32((Regex.Replace(no, "[^0-9]", "") == "") ? "0" : Regex.Replace(no, "[^0-9]", ""));
-
+                string doorNumber = Ks[0];
+                int selectedKapi = Convert.ToInt32((Regex.Replace(doorNumber, "[^0-9]", "") == "") ? "0" : Regex.Replace(doorNumber, "[^0-9]", ""));
                 long selectedKapiId = Convert.ToInt64(kapiList[i].KAPI_ID);
 
-                if (result % 2 == 0)  //girdiğimiz kapı numarası çift ise
+                if (result % 2 == 0)  
                 {
-                    //kapı combobox'ındaki kapı numarası çift ise
                     if (selectedKapi % 2 == 0)
                     {
-                        endKapi = selectedKapi;
                         endKapiId = selectedKapiId;
 
                         if ((result == selectedKapi) || ((result + 2) == selectedKapi) || ((result - 2) == selectedKapi))
                         {
                             var kapi = geocoderService.GetKapiDataByMahalleIdandYolIdandKapiId(vUnitSearches[0].MahalleId.Value, vUnitSearches[0].YolId.Value, selectedKapiId).FirstOrDefault();
-
-                            #region kapı seçildi ise koordinat bilgisini almak için
-
                             if (kapi.XCOOR != "0" && kapi.XCOOR != null)
                             {
                                 addressLevel.KapıModel = kapi;
-
                                 hierarchy[6, 0] = kapi.XCOOR;
                                 hierarchy[6, 1] = kapi.YCOOR;
                             }
@@ -906,13 +890,10 @@ namespace GeocoderAPI.Default
                                 hierarchy[6, 0] = "9999999";
                                 hierarchy[6, 1] = "9999999";
                             }
-                            #endregion
-                            cntr = 1;
+                            counter = 1;
                             break;
                         }
 
-
-                        #region uzaklık alma
                         if (selectedKapi > result)
                         {
                             doorDistance[i, 0] = (selectedKapi - result).ToString();
@@ -928,14 +909,12 @@ namespace GeocoderAPI.Default
                             doorDistance[i, 0] = "0";
                             doorDistance[i, 1] = selectedKapiId.ToString();
                         }
-                        #endregion
                     }
                 }
                 else
                 {
                     if (selectedKapi % 2 == 1)
                     {
-                        endKapi = selectedKapi;
                         endKapiId = selectedKapiId;
 
                         if ((result == selectedKapi) || ((result + 2) == selectedKapi) || ((result - 2) == selectedKapi))
@@ -956,7 +935,7 @@ namespace GeocoderAPI.Default
                             }
                             #endregion
 
-                            cntr = 1;
+                            counter = 1;
                             break;
                         }
 
@@ -985,7 +964,7 @@ namespace GeocoderAPI.Default
 
             int enKucuk = 9999999;
 
-            if (cntr != 1)
+            if (counter != 1)
             {
                 for (int i = 0; i < kapiList.Count; i++)
                 {
@@ -1030,10 +1009,10 @@ namespace GeocoderAPI.Default
 
                 }
 
-                cntr = 1;
+                counter = 1;
             }
 
-            return cntr;  // en yakın kapı seçiminin yapılıp yapılmadığı bilgisi geri döndürülüyor (eğer yapılamamış ise fonksiyon tekrar çağırılacak)
+            return counter;  // en yakın kapı seçiminin yapılıp yapılmadığı bilgisi geri döndürülüyor (eğer yapılamamış ise fonksiyon tekrar çağırılacak)
         }
 
         public static string SearchStringFixer(string searchText)

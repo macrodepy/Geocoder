@@ -5,28 +5,28 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a590ce146634400d8fb04a1df06f01cc" Name="Diagram1" ZoomLevel="82">
-        <EntityTypeShape EntityType="Model.CITYPOLYGONHIERARCHY" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.GEOLOC_IL" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.GEOLOC_ILCE" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.HINTCITYGEOCITYCR" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.HINTERLAND_SUBFIELDS" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.HINTTOWNGEOTOWNCR" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.IDARI_SINIR_YOL" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.IL" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ILCE" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.KAPI" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.LOVPOLYGONLEVEL" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.LOVPOLYGONTYPE" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.MAHALLE" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.MAHALLEAREA" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CITYPOLYGONHIERARCHY" Width="1.5" PointX="18.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.GEOLOC_IL" Width="1.5" PointX="0.625" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.GEOLOC_ILCE" Width="1.5" PointX="2.625" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HINTCITYGEOCITYCR" Width="1.5" PointX="15.375" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HINTERLAND_SUBFIELDS" Width="1.5" PointX="10.625" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HINTTOWNGEOTOWNCR" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.IDARI_SINIR_YOL" Width="1.5" PointX="6.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.IL" Width="1.5" PointX="17.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ILCE" Width="1.5" PointX="19.125" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.KAPI" Width="1.5" PointX="10.75" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LOVPOLYGONLEVEL" Width="1.5" PointX="16.375" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LOVPOLYGONTYPE" Width="1.5" PointX="5.375" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MAHALLE" Width="1.5" PointX="4.625" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MAHALLEAREA" Width="1.5" PointX="5.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.MAP_DATA30" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.MAP_POIINFO" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.POI_ARAS" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.POI_INFO" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.TOWNPOLYGONHIERARCHY" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.YOL" Width="1.5" PointX="7.375" PointY="12.75" />
-        <EntityTypeShape EntityType="Model.SAMPLEADDRESS" Width="1.5" PointX="13.375" PointY="5.75" />
-        <EntityTypeShape EntityType="Model.SAMPLEADDRESSRESULT" Width="1.5" PointX="13.375" PointY="9.75" />
+        <EntityTypeShape EntityType="Model.MAP_POIINFO" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.POI_ARAS" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.POI_INFO" Width="1.5" PointX="8.75" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TOWNPOLYGONHIERARCHY" Width="1.5" PointX="13.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.YOL" Width="1.5" PointX="6.75" PointY="0.625" />
+        <EntityTypeShape EntityType="Model.SAMPLEADDRESS" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Model.SAMPLEADDRESSRESULT" Width="1.5" PointX="0.875" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
