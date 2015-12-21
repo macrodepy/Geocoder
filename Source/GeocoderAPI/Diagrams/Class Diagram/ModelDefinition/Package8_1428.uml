@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="88e70bd0-353d-43b7-a598-1e7dcd7998cd"
+  name="Core"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="97bad74d-db87-45c7-878c-19254588c9fa"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DGeocoderAPI.Core"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="9b85b288-5cd1-40e7-b2c6-844d8c8f438b"
+        name="IParsing"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="1032ef0f-d5a7-4db6-a6ca-06b4204d8b5b"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmustafaarslan%2FDesktop%2FEngProject%2FGitHub%2FGeocoder%2FSource%2FGeocoderAPI%2FProjects%2FGeocoderAPI.Core%2Fbin%2FDebug%2FGeocoderAPI.Core.dll Namespace%3DGeocoderAPI.Core Type%3DIParsing"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="36638a74-c7e9-45c5-ab82-ce3a90b44243"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8bbf7e9a-af64-4b5b-bbe3-0aff8df90b05">
+                <propertyInstance
+                  Id="5f992692-d861-4b5c-8ca8-7a65965558a5"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="06d5c0a1-1124-4cba-a966-4298fe83cc19">
+                <propertyInstance
+                  Id="07ee6dcd-fab3-4576-84bb-8d3798dbdfff"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="28f7845c-53e2-449f-9862-57ec962e5aca">
+                <propertyInstance
+                  Id="482a14e4-9d70-4b58-b6ef-a1260958225e"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7b677eea-ce7e-4516-a3be-12bf7e667979">
+                <propertyInstance
+                  Id="dac09556-b314-42bf-82fb-05a4e8184f78"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

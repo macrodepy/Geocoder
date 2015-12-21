@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="444145d8-6d40-4c57-8fe6-ab9c43a985a4"
+  name="GeocoderAPI"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="d1e1b217-2ee8-4716-9a2a-9f1312582bf1"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DGeocoderAPI"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="caa3f4e8-fb79-437b-b03c-b6fb57203b76"
+        LastKnownName="Default"
+        LastKnownLocation="Package1_1428.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d62796a4-498a-4955-abd5-1f77bba7741b"
+        LastKnownName="DAL"
+        LastKnownLocation="Package6_1428.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d4c1ccd3-18b2-4b92-bf02-3705aeda68b3"
+        LastKnownName="Model"
+        LastKnownLocation="Package7_1428.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="88e70bd0-353d-43b7-a598-1e7dcd7998cd"
+        LastKnownName="Core"
+        LastKnownLocation="Package8_1428.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

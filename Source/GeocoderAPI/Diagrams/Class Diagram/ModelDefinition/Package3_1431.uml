@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="3b242d30-fbdf-4859-b3e3-96ab6f1642e2"
+  name="Client"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="7f6ac58e-03f6-4910-93ab-d3eea11d46ba"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DOracle.ManagedDataAccess.Client"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="1d30b5d7-37fb-4e68-8123-2d9f0b0af063"
+        name="OracleCommand"
+        isAbstract="false"
+        isLeaf="true"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="b3f046da-675d-4101-8bb5-d60778016657"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmustafaarslan%2FDesktop%2FEngProject%2FGitHub%2FGeocoder%2FSource%2FGeocoderAPI%2Fpackages%2FOracle.ManagedDataAccess.12.1.022%2Flib%2Fnet40%2FOracle.ManagedDataAccess.dll Namespace%3DOracle.ManagedDataAccess.Client Type%3DOracleCommand"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="384370b4-3569-479e-9aed-a0f2aac69ba3"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="48e118fb-988a-4d24-acba-5ad3f4812f4e">
+                <propertyInstance
+                  Id="8a513a28-6a7f-44b7-994b-bdbdca190416"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a6274ce6-9504-4c56-adb4-8bb83c9ecffd">
+                <propertyInstance
+                  Id="1b962704-2e34-4b38-a014-ce8817694721"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="345b893d-a7ef-4484-bcd2-8c48e0aeac56">
+                <propertyInstance
+                  Id="19e87aa0-b4c4-454e-9f87-0e69e6b2805a"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4a83f79d-3835-4d18-8752-fb37388da258">
+                <propertyInstance
+                  Id="effbde3e-0701-42f6-a8b5-db8b17b6c334"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3d00a796-a5f7-42eb-b7d3-c5ebf1d1d938">
+                <propertyInstance
+                  Id="79d6aafa-2158-4c0b-9969-7f33af91d5d8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4d0bcff7-0616-44d8-92b3-c5162a988ee4"
+        name="OracleConnection"
+        isAbstract="false"
+        isLeaf="true"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="ad279234-1c7d-4c0e-99af-d923b067c134"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmustafaarslan%2FDesktop%2FEngProject%2FGitHub%2FGeocoder%2FSource%2FGeocoderAPI%2Fpackages%2FOracle.ManagedDataAccess.12.1.022%2Flib%2Fnet40%2FOracle.ManagedDataAccess.dll Namespace%3DOracle.ManagedDataAccess.Client Type%3DOracleConnection"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d990a0e9-fc18-4814-97fc-2b80ff4fb2c9"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="165e8890-9f4c-458f-bb83-228541f3c884">
+                <propertyInstance
+                  Id="b3e64fc0-a36e-4bba-a32d-becae99dfc6f"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="34a445f3-1ea3-4c6c-af73-cd509266f707">
+                <propertyInstance
+                  Id="bf25ad8b-075c-4f1d-b126-ff6c3fb30578"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0afb4447-ae15-4659-b8c6-232ebf223bd8">
+                <propertyInstance
+                  Id="4bda8df0-3807-437c-8a90-f0ef68f8facd"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6c0ae878-d383-4276-ad33-f7e8e971b550">
+                <propertyInstance
+                  Id="038d68d0-0711-4ea4-8da9-1ed9a556f8bc"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4fed15a5-70a0-4eeb-bb1e-9ccdc36962bc">
+                <propertyInstance
+                  Id="8442fcd1-1df0-4815-8bc6-129e5c73650f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="807218fe-7c20-4792-82ec-fa2c338e8ca4"
+        name="OracleDataAdapter"
+        isAbstract="false"
+        isLeaf="true"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="bd3c8bb6-eb3c-4a1d-9d5a-08823c3b3955"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmustafaarslan%2FDesktop%2FEngProject%2FGitHub%2FGeocoder%2FSource%2FGeocoderAPI%2Fpackages%2FOracle.ManagedDataAccess.12.1.022%2Flib%2Fnet40%2FOracle.ManagedDataAccess.dll Namespace%3DOracle.ManagedDataAccess.Client Type%3DOracleDataAdapter"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="f67e67a0-b496-4360-a0e5-10c84cd711eb"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="33737e93-1168-4c0f-a476-d663456ecd60">
+                <propertyInstance
+                  Id="cd81e2ab-74da-48a3-9319-c861c0109779"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2f5dbac2-614a-48c7-ac22-619d35aaea09">
+                <propertyInstance
+                  Id="467be04d-d533-4368-b257-9da98ff6c185"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3420c001-cfd4-4398-a102-2c2bd6cc4ef9">
+                <propertyInstance
+                  Id="5364e788-3ac0-494c-8219-96ab609d0f9a"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cd56b925-da78-414b-a687-3bd7f563a709">
+                <propertyInstance
+                  Id="55c2cf89-0686-4c51-a8e7-70780434559f"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="47c0a208-cf6a-491f-95d7-0de9e086753c">
+                <propertyInstance
+                  Id="6d0f0dfb-b8b6-4161-a938-3cfdfc73074f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

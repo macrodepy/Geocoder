@@ -88,6 +88,18 @@ namespace GeocoderAPI.DAL
             return townList;
         }
 
+        private List<ILCE> GetTown(AddressLevel addressLevel, IL city)
+        {
+            var townList =
+                 geocoderEntities.
+                 ILCE.
+                 Where(x =>
+                     x.ILCE_ADI == addressLevel.Ilçe
+                     && x.IL_ID == city.IL_ID).ToList();
+
+            return townList;
+        }
+
         private HINTCITYGEOCITYCR GetCity(AddressLevel addressLevel)
         {
             var city = geocoderEntities.HINTCITYGEOCITYCR.FirstOrDefault(x => x.IL_ADI == addressLevel.Il);
@@ -114,6 +126,30 @@ namespace GeocoderAPI.DAL
         {
             IList<KAPI> result = geocoderEntities.KAPI.Where(x => x.YOL_ID == yolId && x.MAHALLE_ID == mahalleId).ToList();
             return result;
+        }
+
+        public List<TestResultModel> GetSampleAddressResult()
+        {
+            var result = from sa in geocoderEntities.SAMPLEADDRESS
+                from sar in geocoderEntities.SAMPLEADDRESSRESULT
+                where sa.ID == sar.ID
+                select new TestResultModel()
+                {
+                    ActualXCoor = sa.XCOOR,
+                    ActualYCoor = sa.YCOOR,
+                    Address = sa.ADDRESS,
+                    GoogleTime = sar.GOOGLETIME,
+                    GoogleXCoor = sar.XCOORGOOGLE,
+                    GoogleYCoor = sar.YCOORGOOGLE,
+                    MyTime = sar.MYTIME,
+                    MyXCoor = sar.XCOORMY,
+                    MyYCoor = sar.YCOORMY,
+                    YandexTime = sar.YANDEXTIME,
+                    YandexXCoor = sar.XCOORYANDEX,
+                    YandexYCoor = sar.YCOORYANDEX
+                };
+
+            return result.ToList();
         }
 
         public List<YolIdariDtoModel> GetIdariYolDataByMahalleAndYolId(long yolId, long mahalleId)
@@ -147,7 +183,6 @@ namespace GeocoderAPI.DAL
             return result;
         }
 
-        //TODO: POI TABLOSU DB YE EKLENECEK
         public List<POI_ARAS> GetPOIDataByPOI_ID(long poiId)
         {
             var result = geocoderEntities.POI_ARAS.Where(x => x.ID == poiId).ToList();

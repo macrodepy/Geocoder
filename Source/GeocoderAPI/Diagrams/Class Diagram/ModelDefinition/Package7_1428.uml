@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="d4c1ccd3-18b2-4b92-bf02-3705aeda68b3"
+  name="Model"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="7a7eff9e-2759-44f1-b755-c50617a33a42"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DGeocoderAPI.Model"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="e95d44a5-6503-44e6-8fab-93b8fa47ac64"
+        name="VUnitSearch"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="31c53791-3faa-437e-b2e9-aaf60f9fcc96"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmustafaarslan%2FDesktop%2FEngProject%2FGitHub%2FGeocoder%2FSource%2FGeocoderAPI%2FProjects%2FGeocoderAPI.Model%2Fbin%2FDebug%2FGeocoderAPI.Model.dll Namespace%3DGeocoderAPI.Model Type%3DVUnitSearch"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="27bb42b6-4eb0-43c4-9bf6-559cd2c4502a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b88e8a5e-5487-4b50-b4d5-4b91032e916d">
+                <propertyInstance
+                  Id="ea995eb5-7919-4830-a87a-8f6975f1589a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="31f91aa8-93bc-44d9-8721-2a515e7f7fba">
+                <propertyInstance
+                  Id="2d72c22c-64c1-49ca-a399-da5848e9bece"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a26fe46e-aee2-4db0-a626-3a43ff85a1bd">
+                <propertyInstance
+                  Id="4618d68f-9c9b-424a-8a73-1765e7666071"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7f6a13c0-bd5a-4fd9-8402-b11619010f11">
+                <propertyInstance
+                  Id="99273b57-6b21-441c-acb5-4ed2f5a6683a"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="156743f8-2ad1-4b73-8a83-c8fb3d4d28c8">
+                <propertyInstance
+                  Id="64f838f8-d940-43c0-a939-bf93d64bd124"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4f065696-d381-42d6-8d48-8688e09343f2"
+        name="YolIdariDtoModel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="a5f5c499-477f-42fc-b72b-a5a8f10f8095"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmustafaarslan%2FDesktop%2FEngProject%2FGitHub%2FGeocoder%2FSource%2FGeocoderAPI%2FProjects%2FGeocoderAPI.Model%2Fbin%2FDebug%2FGeocoderAPI.Model.dll Namespace%3DGeocoderAPI.Model Type%3DYolIdariDtoModel"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="deae60e0-4a1f-4d8f-87b4-fe05c6378206"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d72522cf-9ce5-4805-8da1-41dc16698ac9">
+                <propertyInstance
+                  Id="6dadf300-cf54-477e-83f9-015fa05d175e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a02282f4-650a-4e3c-8195-b65c951dd521">
+                <propertyInstance
+                  Id="5303ed54-0cfd-412e-8dfc-0b9a5c65a8df"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6ed290d8-e5e5-4004-987b-f09e2d2f6373">
+                <propertyInstance
+                  Id="7031a5e8-36ac-485e-bc50-74bb5b38b8e6"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="eee35dfb-8c6d-4188-8a9e-733abe12873f">
+                <propertyInstance
+                  Id="10eb02dc-3d4c-43c9-a2fd-63c362ce2e96"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ebfbd96e-1d10-48c7-99e9-05f15e0dab13">
+                <propertyInstance
+                  Id="ec41919e-c833-4234-bd53-f170ba1f1d1f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
