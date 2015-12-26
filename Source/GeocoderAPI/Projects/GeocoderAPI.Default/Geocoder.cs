@@ -192,7 +192,7 @@ namespace GeocoderAPI.Default
                                 {
                                     if (vUnitSearches.Count > 0 && vUnitSearches.Count < 2) //Eğer adresin karşılığı tek kayıt ise
                                     {
-                                        SearchAddress();  //Gelen adresi ayrıştır ve VM tespiti yapmaya çalış
+                                        SearchAddress();  //Gelen adresi ayrıştır ve  tespiti yapmaya çalış
                                         flag += 1;
                                     }
                                     else if (vUnitSearches.Count > 1)  //Eğer birden fazla kayıt dönerse tipe göre filtre kullan
@@ -210,13 +210,12 @@ namespace GeocoderAPI.Default
                                                 break;
                                             case (int)Enums.VeriTipi.POI: //Tokenizer'dan gelen bilgi POI ise POI'lerde ara
                                                 vUnitSearches = vUnitSearches.Where(x => (x.YolId == null || x.YolId == -1 ) && x.PoiId != null).ToList();
-
                                                 break;
                                         }
 
-                                        if (vUnitSearches.Count > 0 && vUnitSearches.Count < 2) //Eğer adresin karşılığı tek kayıt ise
+                                        if (vUnitSearches.Count ==  1) //Eğer adresin karşılığı tek kayıt ise
                                         {
-                                            SearchAddress();  //Gelen adresi ayrıştır ve VM tespiti yapmaya çalış
+                                            SearchAddress();  //Gelen adresi ayrıştır ve  tespiti yapmaya çalış
                                             flag += 1;
                                         }
                                         else if (vUnitSearches.Count > 1)  //Eğer adresin karşılığı birden fazla kaıt ise
@@ -304,7 +303,7 @@ namespace GeocoderAPI.Default
                                     }
                                     #endregion
 
-                                    SearchAddress();  //Gelen adresi ayrıştır ve VM tespiti yapmaya çalış
+                                    SearchAddress();  //Gelen adresi ayrıştır ve  tespiti yapmaya çalış
                                     flag += 1;
                                 }
                                 else if (vUnitSearches.Count > 1)  //Eğer birden fazla kayıt dönerse tipe göre filtre kullan
@@ -349,7 +348,7 @@ namespace GeocoderAPI.Default
                                         }
                                         #endregion
 
-                                        SearchAddress();  //Gelen adresi ayrıştır ve VM tespiti yapmaya çalış
+                                        SearchAddress();  //Gelen adresi ayrıştır ve tespiti yapmaya çalış
                                         flag += 1;
                                     }
                                     else if (vUnitSearches.Count > 1)
@@ -388,7 +387,7 @@ namespace GeocoderAPI.Default
                                             }
                                             #endregion
 
-                                            SearchAddress();  //Gelen adresi ayrıştır ve VM tespiti yapmaya çalış
+                                            SearchAddress();  //Gelen adresi ayrıştır ve tespiti yapmaya çalış
                                             flag += 1;
                                         }
                                         else
