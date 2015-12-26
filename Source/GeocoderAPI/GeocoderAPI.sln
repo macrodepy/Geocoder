@@ -29,8 +29,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeocoderAPI.Default.WebServ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeocoderAPI.Tester", "Demos\GeocoderAPI.Tester\GeocoderAPI.Tester.csproj", "{1BE37853-DD6B-435B-B122-033FC755E3F8}"
 EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Class Diagram", "Diagrams\Class Diagram\Class Diagram.modelproj", "{80893449-3C19-493D-B2DE-8B83EC69218E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeocoderAPI.Charts", "Demos\GeocoderAPI.Charts\GeocoderAPI.Charts.csproj", "{7BC47385-6910-40D8-AFBB-E2DAC4A43AE3}"
 EndProject
 Global
@@ -79,10 +77,6 @@ Global
 		{1BE37853-DD6B-435B-B122-033FC755E3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BE37853-DD6B-435B-B122-033FC755E3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BE37853-DD6B-435B-B122-033FC755E3F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{80893449-3C19-493D-B2DE-8B83EC69218E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80893449-3C19-493D-B2DE-8B83EC69218E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80893449-3C19-493D-B2DE-8B83EC69218E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80893449-3C19-493D-B2DE-8B83EC69218E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7BC47385-6910-40D8-AFBB-E2DAC4A43AE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7BC47385-6910-40D8-AFBB-E2DAC4A43AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BC47385-6910-40D8-AFBB-E2DAC4A43AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
