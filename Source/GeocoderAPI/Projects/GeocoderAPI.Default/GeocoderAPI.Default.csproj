@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Enums.cs" />
     <Compile Include="Fixer.cs" />
+    <Compile Include="ResultConverter.cs" />
     <Compile Include="Tokenizer.cs" />
     <Compile Include="Geocoder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

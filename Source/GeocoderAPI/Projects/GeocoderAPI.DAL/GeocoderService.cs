@@ -88,17 +88,20 @@ namespace GeocoderAPI.DAL
             return townList;
         }
 
+
         private List<ILCE> GetTown(AddressLevel addressLevel, IL city)
         {
             var townList =
                  geocoderEntities.
-                 ILCE.
-                 Where(x =>
-                     x.ILCE_ADI == addressLevel.Ilçe
-                     && x.IL_ID == city.IL_ID).ToList();
+                    ILCE.
+                        Where(x =>
+                            x.ILCE_ADI == addressLevel.Ilçe
+                            && x.IL_ID == city.IL_ID)
+                                .ToList();
 
             return townList;
         }
+
 
         private HINTCITYGEOCITYCR GetCity(AddressLevel addressLevel)
         {

@@ -68,6 +68,8 @@ namespace GeocoderAPI.Default
             return result;
         }
 
+
+
         public AddressLevel Geocode(AddressLevel addressLevel)
         {
             this.addressLevel = addressLevel;

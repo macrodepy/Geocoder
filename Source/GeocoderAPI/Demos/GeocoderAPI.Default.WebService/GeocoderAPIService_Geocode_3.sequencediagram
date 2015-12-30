@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" dslVersion="1.0.0.0" Id="ec6050c8-eebe-4bee-b253-1f094c6d5994" name="GeocoderAPIService_Geocode" mode="DotNet" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="5e4a07e7-ae8b-4aa8-8a29-747f61496c9f" name="GeocoderAPIService_Geocode" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification Id="ac80729b-1df3-494b-b6f0-a26f28c3401d" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="c8f45f1a-e3f4-4b8a-b161-bee885583651" LastKnownName="Demo Application" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="0c09ba07-50f9-48ba-874c-6b004331aacc" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="45d8a8e5-9c27-4636-b45a-0d3dadbbb697" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="f4639041-af83-4a47-9fba-c7d705b19e22" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="4bd2f86c-d841-45f5-87c5-cf3700279646" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="94785704-d0c7-492b-a408-0ec37f164e55" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="57d143a8-576d-4888-bc09-835a36c86b41" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="0139b137-e4d0-41af-9ecc-d082daff039a" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="4099f44f-2abe-4866-b327-5d2bdb64293f" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="feab2338-123a-459f-bbe4-baebdfde5c6f" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="33606751-965e-4574-b3aa-f6a627a8e8ef" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="ed3d5140-c7ec-4fcf-afa5-ffaa98c12124" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="45d8a8e5-9c27-4636-b45a-0d3dadbbb697" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="dc02b2d1-6c81-4745-b6f5-26dcd31b78bb" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="c8f45f1a-e3f4-4b8a-b161-bee885583651" LastKnownName="Demo Application" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <lostFoundTarget Id="f85f75b6-ce29-43bf-b34e-601a54d30ebe" name="LostFoundTarget" />
+          <messageOccurrenceSpecification Id="f4639041-af83-4a47-9fba-c7d705b19e22" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c8f45f1a-e3f4-4b8a-b161-bee885583651" LastKnownName="Demo Application" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="7f1703fd-0676-4c73-822c-735b62739686" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="88abc7bd-8b9b-4012-8913-0bba333094ce" LastKnownName="Fixer" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="2893204f-68c2-4609-b60d-49f389a2d672" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="1489a814-ca18-4f33-8882-506d3f03c81e" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="77b97faf-5b12-4030-9a90-3f4b10cfc1e1" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="b70ffe70-f708-4e94-a434-173237dd5f1f" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="1489a814-ca18-4f33-8882-506d3f03c81e" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="6c681bf9-1aba-41bf-b556-f79975f90b01" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="88abc7bd-8b9b-4012-8913-0bba333094ce" LastKnownName="Fixer" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="4bd2f86c-d841-45f5-87c5-cf3700279646" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c8f45f1a-e3f4-4b8a-b161-bee885583651" LastKnownName="Demo Application" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="77b97faf-5b12-4030-9a90-3f4b10cfc1e1" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="88abc7bd-8b9b-4012-8913-0bba333094ce" LastKnownName="Fixer" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="b70ffe70-f708-4e94-a434-173237dd5f1f" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="88abc7bd-8b9b-4012-8913-0bba333094ce" LastKnownName="Fixer" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="94785704-d0c7-492b-a408-0ec37f164e55" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c8f45f1a-e3f4-4b8a-b161-bee885583651" LastKnownName="Demo Application" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="2893204f-68c2-4609-b60d-49f389a2d672" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="45f11407-1999-40ea-90f0-5a84f96f8c74" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="88abc7bd-8b9b-4012-8913-0bba333094ce" LastKnownName="Fixer" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="c9f2757b-c9db-4732-9a45-80bb6afb41c1" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="d0ef92e4-49a4-48fa-a5b0-f313ba6552f2" LastKnownName="Tokenizer" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="d3fc671c-c86b-4a52-a7ac-7e77f8bc033d" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="cf45b8e9-e943-471d-af7c-7f449ff0fd75" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="a98934b6-6713-4062-8aad-2ca1f16d9917" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="e99adbab-83fc-4948-bde1-09961bcad54b" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="cf45b8e9-e943-471d-af7c-7f449ff0fd75" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="45fb6be5-b40f-47df-bd61-b2b3bbc57c1d" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d0ef92e4-49a4-48fa-a5b0-f313ba6552f2" LastKnownName="Tokenizer" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="a98934b6-6713-4062-8aad-2ca1f16d9917" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="d0ef92e4-49a4-48fa-a5b0-f313ba6552f2" LastKnownName="Tokenizer" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="57d143a8-576d-4888-bc09-835a36c86b41" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c8f45f1a-e3f4-4b8a-b161-bee885583651" LastKnownName="Demo Application" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="0139b137-e4d0-41af-9ecc-d082daff039a" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c8f45f1a-e3f4-4b8a-b161-bee885583651" LastKnownName="Demo Application" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="e99adbab-83fc-4948-bde1-09961bcad54b" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="d0ef92e4-49a4-48fa-a5b0-f313ba6552f2" LastKnownName="Tokenizer" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="d3fc671c-c86b-4a52-a7ac-7e77f8bc033d" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="2754da3f-4db3-42b4-8a03-94a95e901c99" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d0ef92e4-49a4-48fa-a5b0-f313ba6552f2" LastKnownName="Tokenizer" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="d20bc91f-2aae-48e8-a9cd-b76be909eedd" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="5f02a3a1-8623-41a1-b136-f24d36ac285f" LastKnownName="Geocoder" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="b68e4247-5fbe-4c01-b9ac-4a98bed115f1" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="b53a8ab2-6b1f-4442-881a-d39862bacb04" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="06cf2e16-cd81-4252-a01c-61d561b6bb00" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="f5c852fb-a17e-408a-9e91-63d608736880" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="b53a8ab2-6b1f-4442-881a-d39862bacb04" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="38ea9752-cefd-4720-b224-f71aa616deab" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="5f02a3a1-8623-41a1-b136-f24d36ac285f" LastKnownName="Geocoder" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="4099f44f-2abe-4866-b327-5d2bdb64293f" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c8f45f1a-e3f4-4b8a-b161-bee885583651" LastKnownName="Demo Application" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="06cf2e16-cd81-4252-a01c-61d561b6bb00" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="5f02a3a1-8623-41a1-b136-f24d36ac285f" LastKnownName="Geocoder" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="feab2338-123a-459f-bbe4-baebdfde5c6f" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c8f45f1a-e3f4-4b8a-b161-bee885583651" LastKnownName="Demo Application" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="f5c852fb-a17e-408a-9e91-63d608736880" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="5f02a3a1-8623-41a1-b136-f24d36ac285f" LastKnownName="Geocoder" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="b68e4247-5fbe-4c01-b9ac-4a98bed115f1" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="1fa2ef9f-1e0c-4837-a994-315006d1c318" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="5f02a3a1-8623-41a1-b136-f24d36ac285f" LastKnownName="Geocoder" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="f27fd8cf-2e58-4bfc-aee5-0eb0eed123a5" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="c7e65df8-f925-4860-9a64-b57376e39082" LastKnownName="ResultConverter" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="b86a8a19-7667-425a-baa4-a84a2cbf155d" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="834e571b-b6f7-4f56-906d-9cf9c8710dba" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="b1504ede-f9fc-4baf-a8ec-afef15116960" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="49a7e185-a0ce-477c-9475-4f9777b821a4" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="4332c75d-6b2d-486d-b0eb-644b071e5750" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="834e571b-b6f7-4f56-906d-9cf9c8710dba" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="e1cea4c3-aabc-4f82-9c45-cb21f1c4fc07" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="c7e65df8-f925-4860-9a64-b57376e39082" LastKnownName="ResultConverter" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="33606751-965e-4574-b3aa-f6a627a8e8ef" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c8f45f1a-e3f4-4b8a-b161-bee885583651" LastKnownName="Demo Application" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="b1504ede-f9fc-4baf-a8ec-afef15116960" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c7e65df8-f925-4860-9a64-b57376e39082" LastKnownName="ResultConverter" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="49a7e185-a0ce-477c-9475-4f9777b821a4" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c7e65df8-f925-4860-9a64-b57376e39082" LastKnownName="ResultConverter" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <lostFoundTarget Id="516c60be-feee-40b7-a038-e16c7892696b" name="LostFoundTarget" />
+          <messageOccurrenceSpecification Id="4332c75d-6b2d-486d-b0eb-644b071e5750" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c7e65df8-f925-4860-9a64-b57376e39082" LastKnownName="ResultConverter" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="ed3d5140-c7ec-4fcf-afa5-ffaa98c12124" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="c8f45f1a-e3f4-4b8a-b161-bee885583651" LastKnownName="Demo Application" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="b86a8a19-7667-425a-baa4-a84a2cbf155d" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="5b1bfb01-6fb7-4390-a33e-c8a5d5c32c39" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="c7e65df8-f925-4860-9a64-b57376e39082" LastKnownName="ResultConverter" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="0c09ba07-50f9-48ba-874c-6b004331aacc" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="49994f74-9ae4-4a97-82bc-3488827f8acd" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="c8f45f1a-e3f4-4b8a-b161-bee885583651" LastKnownName="Demo Application" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline Id="c8f45f1a-e3f4-4b8a-b161-bee885583651" name="Demo Application" isActor="false" lifelineDisplayName="Demo Application" referencedInstance="(Assembly=$(7b186662-5023-4d89-a567-f78cc597142d.OutputPathUri) Namespace=GeocoderAPI.Default.WebService Type=GeocoderAPIService ObjectInstance=&quot;Object instance 2&quot;)" referencedType="GeocoderAPI‎.Default‎.WebService‎.GeocoderAPIService">
+            <referencesInternal>
+              <reference Id="cc4251e7-c280-4d28-a372-363f797edc63" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=GeocoderAPI.Default.WebService)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(7b186662-5023-4d89-a567-f78cc597142d.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Default.WebService Type=GeocoderAPIService)&quot;)" tag="DGQL" />
+              <reference Id="18e6002a-f856-4d95-9f52-f9eb128f3a57" handle="(Assembly=&quot;$(7b186662-5023-4d89-a567-f78cc597142d.OutputPathUri)&quot; Namespace=GeocoderAPI.Default.WebService Type=GeocoderAPIService)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="45d8a8e5-9c27-4636-b45a-0d3dadbbb697" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="0c09ba07-50f9-48ba-874c-6b004331aacc" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="88abc7bd-8b9b-4012-8913-0bba333094ce" name="Fixer" isActor="false" lifelineDisplayName="Fixer" referencedType="GeocoderAPI‎.Default‎.Fixer">
+            <referencesInternal>
+              <reference Id="3cb2da8d-0d63-4c7b-a083-0d20b8e725c0" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=GeocoderAPI.Default)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Default Type=Fixer)&quot;)" tag="DGQL" />
+              <reference Id="ad14d189-8b75-484f-b7a7-7b4271bc12d3" handle="(Assembly=&quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&quot; Namespace=GeocoderAPI.Default Type=Fixer)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="1489a814-ca18-4f33-8882-506d3f03c81e" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="2893204f-68c2-4609-b60d-49f389a2d672" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="d0ef92e4-49a4-48fa-a5b0-f313ba6552f2" name="Tokenizer" isActor="false" lifelineDisplayName="Tokenizer" referencedInstance="(Assembly=$(7b186662-5023-4d89-a567-f78cc597142d.OutputPathUri) Namespace=GeocoderAPI.Default.WebService Type=GeocoderAPIService Member=tokenizer ObjectInstance=&quot;Object instance 981&quot;)" referencedType="GeocoderAPI‎.Default‎.Tokenizer">
+            <referencesInternal>
+              <reference Id="a404a49e-35f5-42dc-a0bd-cc368d433d12" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=GeocoderAPI.Default)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Default Type=Tokenizer)&quot;)" tag="DGQL" />
+              <reference Id="f91d2d1f-e8e7-4d6b-88d2-be3124b91490" handle="(Assembly=&quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&quot; Namespace=GeocoderAPI.Default Type=Tokenizer)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="cf45b8e9-e943-471d-af7c-7f449ff0fd75" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="d3fc671c-c86b-4a52-a7ac-7e77f8bc033d" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="5f02a3a1-8623-41a1-b136-f24d36ac285f" name="Geocoder" isActor="false" lifelineDisplayName="Geocoder" referencedInstance="(Assembly=$(7b186662-5023-4d89-a567-f78cc597142d.OutputPathUri) Namespace=GeocoderAPI.Default.WebService Type=GeocoderAPIService Member=geocoder ObjectInstance=&quot;Object instance 1437&quot;)" referencedType="GeocoderAPI‎.Default‎.Geocoder">
+            <referencesInternal>
+              <reference Id="467e5c50-c9ae-43d2-bb02-6c031b938ed8" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=GeocoderAPI.Default)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Default Type=Geocoder)&quot;)" tag="DGQL" />
+              <reference Id="2616d6bd-7217-4b61-b273-1c6e7067335b" handle="(Assembly=&quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&quot; Namespace=GeocoderAPI.Default Type=Geocoder)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="b53a8ab2-6b1f-4442-881a-d39862bacb04" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="b68e4247-5fbe-4c01-b9ac-4a98bed115f1" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="c7e65df8-f925-4860-9a64-b57376e39082" name="ResultConverter" isActor="false" lifelineDisplayName="ResultConverter" referencedType="GeocoderAPI‎.Default‎.ResultConverter">
+            <referencesInternal>
+              <reference Id="abb2fe6b-f8fd-486c-9dcc-4e2a7e9fd736" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=GeocoderAPI.Default)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Default Type=ResultConverter)&quot;)" tag="DGQL" />
+              <reference Id="1ce8390b-3ac8-4edc-a720-5fe720fb846b" handle="(Assembly=&quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&quot; Namespace=GeocoderAPI.Default Type=ResultConverter)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="834e571b-b6f7-4f56-906d-9cf9c8710dba" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="b86a8a19-7667-425a-baa4-a84a2cbf155d" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message Id="bfc5e3aa-e24e-4451-a4a3-8ebdcd4897aa" name="Geocode" messageKind="Found" messageSort="AsynchCall" createSelfMessage="false">
+            <referencesInternal>
+              <reference Id="9f5e4722-589c-4240-9642-ed37729db318" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=GeocoderAPI.Default.WebService)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(7b186662-5023-4d89-a567-f78cc597142d.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Default.WebService Type=GeocoderAPIService)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(7b186662-5023-4d89-a567-f78cc597142d.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Default.WebService Type=GeocoderAPIService Member=(Name=Geocode OverloadingParameters=[(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&amp;quot; Namespace=System Type=String)]))&quot;)" tag="DGQL" />
+              <reference Id="88656390-650e-44ba-9519-3f5313da52cd" handle="(Assembly=&quot;$(7b186662-5023-4d89-a567-f78cc597142d.OutputPathUri)&quot; Namespace=GeocoderAPI.Default.WebService Type=GeocoderAPIService Member=(Name=Geocode OverloadingParameters=[(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System Type=String)]))" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <lostFoundTargetMoniker Id="f85f75b6-ce29-43bf-b34e-601a54d30ebe" LastKnownName="LostFoundTarget" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="f4639041-af83-4a47-9fba-c7d705b19e22" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="1b1b6027-732f-49d5-a29d-8d63752bf87f" name="Prepare" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="Default.Fixer.Prepare(address)">
+            <referencesInternal>
+              <reference Id="14a7e520-55c5-4a5d-9c32-a3975ad78d2d" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=GeocoderAPI.Default)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Default Type=Fixer)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Default Type=Fixer Member=(Name=Prepare OverloadingParameters=[(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&amp;quot; Namespace=System Type=String)]))&quot;)" tag="DGQL" />
+              <reference Id="f1ed32e0-0fdd-4fd9-8cb3-a2c4a281789f" handle="(Assembly=&quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&quot; Namespace=GeocoderAPI.Default Type=Fixer Member=(Name=Prepare OverloadingParameters=[(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System Type=String)]))" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="4bd2f86c-d841-45f5-87c5-cf3700279646" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="77b97faf-5b12-4030-9a90-3f4b10cfc1e1" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="c4c9b375-4288-45c7-af75-a16d0b587a28" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="b70ffe70-f708-4e94-a434-173237dd5f1f" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="94785704-d0c7-492b-a408-0ec37f164e55" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="dfc97cd8-0277-4f7c-9e24-8a4358b199bb" name="ParseAddress" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="tokenizer.ParseAddress(fixedAddress)">
+            <referencesInternal>
+              <reference Id="dbc4b455-83bd-4b58-a9a8-92f159f4aa74" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=GeocoderAPI.Default)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Default Type=Tokenizer)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Default Type=Tokenizer Member=(Name=ParseAddress OverloadingParameters=[(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&amp;quot; Namespace=System Type=String)]))&quot;)" tag="DGQL" />
+              <reference Id="e344eeac-da36-4408-beee-bdbbc1bf4483" handle="(Assembly=&quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&quot; Namespace=GeocoderAPI.Default Type=Tokenizer Member=(Name=ParseAddress OverloadingParameters=[(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System Type=String)]))" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="57d143a8-576d-4888-bc09-835a36c86b41" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="a98934b6-6713-4062-8aad-2ca1f16d9917" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="29956fa8-91dc-40eb-a85b-133bf1fc6a62" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="e99adbab-83fc-4948-bde1-09961bcad54b" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="0139b137-e4d0-41af-9ecc-d082daff039a" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="638b4217-d015-487c-8cf6-815b29302f96" name="Geocode" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="geocoder.Geocode(addressLevel)">
+            <referencesInternal>
+              <reference Id="0f335e23-cd94-455f-88f9-33c4b712993b" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=GeocoderAPI.Default)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Default Type=Geocoder)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Default Type=Geocoder Member=(Name=Geocode OverloadingParameters=[(Assembly=&amp;quot;$(8c83d0a2-12cd-42a1-883e-bfcfe76c73b5.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.DAL Type=AddressLevel)]))&quot;)" tag="DGQL" />
+              <reference Id="04c3b092-155c-4eb2-aa68-45c82175b58b" handle="(Assembly=&quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&quot; Namespace=GeocoderAPI.Default Type=Geocoder Member=(Name=Geocode OverloadingParameters=[(Assembly=&quot;$(8c83d0a2-12cd-42a1-883e-bfcfe76c73b5.OutputPathUri)&quot; Namespace=GeocoderAPI.DAL Type=AddressLevel)]))" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="4099f44f-2abe-4866-b327-5d2bdb64293f" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="06cf2e16-cd81-4252-a01c-61d561b6bb00" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="21eedca1-4bbf-4daf-bea6-55d657914b54" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="f5c852fb-a17e-408a-9e91-63d608736880" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="feab2338-123a-459f-bbe4-baebdfde5c6f" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="a206065b-d909-4a92-8655-4695fd6e8859" name="ConvertAddressLevelToGeocoderAPIResultModel" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false" signatureText="ResultConverter.ConvertAddressLevelToGeocoderAPIResultModel(addressLevel)">
+            <referencesInternal>
+              <reference Id="aa8f182d-cfa6-41e0-8818-9496213bad70" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=GeocoderAPI.Default)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Default Type=ResultConverter)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Default Type=ResultConverter Member=(Name=ConvertAddressLevelToGeocoderAPIResultModel OverloadingParameters=[(Assembly=&amp;quot;$(8c83d0a2-12cd-42a1-883e-bfcfe76c73b5.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.DAL Type=AddressLevel)]))&quot;)" tag="DGQL" />
+              <reference Id="42e8d172-d085-43c6-b73e-98991a07f9e1" handle="(Assembly=&quot;$(a7080045-0c15-4701-8d76-5c22b6f42adf.OutputPathUri)&quot; Namespace=GeocoderAPI.Default Type=ResultConverter Member=(Name=ConvertAddressLevelToGeocoderAPIResultModel OverloadingParameters=[(Assembly=&quot;$(8c83d0a2-12cd-42a1-883e-bfcfe76c73b5.OutputPathUri)&quot; Namespace=GeocoderAPI.DAL Type=AddressLevel)]))" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="33606751-965e-4574-b3aa-f6a627a8e8ef" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="b1504ede-f9fc-4baf-a8ec-afef15116960" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="0cd89fd5-5b46-4637-b940-4a8851306a1e" name="Create GeocoderAPIResultModel" messageKind="Lost" messageSort="AsynchCall" createSelfMessage="false">
+            <referencesInternal>
+              <reference Id="98b84375-fc27-4c98-993d-fd58d8f8a019" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=GeocoderAPI.Model)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(323942e4-2e05-4502-b4ad-2665b81aa15b.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Model Type=GeocoderAPIResultModel)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(323942e4-2e05-4502-b4ad-2665b81aa15b.OutputPathUri)&amp;quot; Namespace=GeocoderAPI.Model Type=GeocoderAPIResultModel Member=.ctor)&quot;)" tag="DGQL" />
+              <reference Id="b2509096-800f-4be4-9047-12ae63095f18" handle="(Assembly=&quot;$(323942e4-2e05-4502-b4ad-2665b81aa15b.OutputPathUri)&quot; Namespace=GeocoderAPI.Model Type=GeocoderAPIResultModel Member=.ctor)" tag="DGML" />
+            </referencesInternal>
+            <generationState>H4sIAAAAAAAEAO2WS0/CQBSFz08hrHRDY9SNAROCIiSKBnRtWp5qaUlbFvjr/ea2jYCS4MqQkKadzrnnPjpnejN1DTRWojf5Cnl+MhupZbNQbSy+5mDXqutZMxip+oq5MlXUhdtQVSdqgqfw5grwW4FO4IYgV/Lsatnbi7ESnh7cJWNGhgm3b2jIGGG7gZXqA2usBfNb0Kme4MR6xzbE4umOHJk6xAlsNsY65B5ZDo9vi7ElYONf7E3idcE3o6Y7mTU9FEgIJyB3WWlAlulefjVGt7IV9YqVTfk+3yps7OFfQYUVHrvZfYu5hJut+Z2i0rdvr8CP+h2mfu7/zBin2BOwUsdWwR8QdWZq+noFdao4fV2Me94Di+k8/lJD1f74FE4EFpF3bvqkFqltPcPtjqp1iy6MfHdEtjrHbnGou+3YLQ5bv//rFo/4liu93Q/KKs50oUudFxW7KhZWp2+1buZ/Bltah8k7UYd3H/56nk2e60TleSXFyzPE+1FNjm6fcHJ03xPSF4LorONMCQAA
+(Assembly=$(323942e4-2e05-4502-b4ad-2665b81aa15b.OutputPathUri) Namespace=GeocoderAPI.Model Type=GeocoderAPIResultModel ObjectInstance="Object instance 1453")
+result : GeocoderAPIResultModel
+new GeocoderAPIResultModel()</generationState>
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="49a7e185-a0ce-477c-9475-4f9777b821a4" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <lostFoundTargetMoniker Id="516c60be-feee-40b7-a038-e16c7892696b" LastKnownName="LostFoundTarget" />
+            </receiveEvent>
+          </message>
+          <message Id="d2bffbd0-38d4-4fd5-9fc3-0e247f548634" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="4332c75d-6b2d-486d-b0eb-644b071e5750" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="ed3d5140-c7ec-4fcf-afa5-ffaa98c12124" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="dc02b2d1-6c81-4745-b6f5-26dcd31b78bb" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="49994f74-9ae4-4a97-82bc-3488827f8acd" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="6c681bf9-1aba-41bf-b556-f79975f90b01" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="45f11407-1999-40ea-90f0-5a84f96f8c74" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="45fb6be5-b40f-47df-bd61-b2b3bbc57c1d" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="2754da3f-4db3-42b4-8a03-94a95e901c99" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="38ea9752-cefd-4720-b224-f71aa616deab" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="1fa2ef9f-1e0c-4837-a994-315006d1c318" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="e1cea4c3-aabc-4f82-9c45-cb21f1c4fc07" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="5b1bfb01-6fb7-4390-a33e-c8a5d5c32c39" name="ExecutionEvent" />
+    </packageHasNamedElement>
+  </packagedElements>
+</SequenceDesignerModel>

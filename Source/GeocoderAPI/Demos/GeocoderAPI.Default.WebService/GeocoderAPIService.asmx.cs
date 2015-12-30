@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using GeocoderAPI.DAL;
+using GeocoderAPI.Model;
 
 namespace GeocoderAPI.Default.WebService
 {
@@ -34,9 +35,10 @@ namespace GeocoderAPI.Default.WebService
         }
 
         [WebMethod]
-        public AddressLevel Tokenizer(string address)
+        public GeocoderAPIResultModel Tokenizer(string address)
         {
-            return tokenizer.ParseAddress(address);
+            AddressLevel addressLevel = tokenizer.ParseAddress(address);
+            return ResultConverter.ConvertAddressLevelToGeocoderAPIResultModel(addressLevel);
         }
 
         [WebMethod]
@@ -46,7 +48,7 @@ namespace GeocoderAPI.Default.WebService
         }
 
         [WebMethod]
-        public AddressLevel Geocode(string address)
+        public GeocoderAPIResultModel Geocode(string address)
         {
             string fixedAddress = Default.Fixer.Prepare(address);
 
@@ -61,8 +63,9 @@ namespace GeocoderAPI.Default.WebService
             }
 
             addressLevel = geocoder.Geocode(addressLevel);
+            GeocoderAPIResultModel result = ResultConverter.ConvertAddressLevelToGeocoderAPIResultModel(addressLevel);
 
-            return addressLevel;
+            return result;
         }
 
 
