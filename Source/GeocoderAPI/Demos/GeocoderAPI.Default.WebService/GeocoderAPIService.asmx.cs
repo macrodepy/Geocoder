@@ -22,12 +22,7 @@ namespace GeocoderAPI.Default.WebService
         private readonly Geocoder geocoder = new Geocoder();
         private readonly GeocoderService geocoderService = new GeocoderService();
 
-        [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hello World";
-        }
-
+     
         [WebMethod]
         public string Fixer(string address)
         {
@@ -48,7 +43,7 @@ namespace GeocoderAPI.Default.WebService
         }
 
         [WebMethod]
-        public GeocoderAPIResultModel Geocode(string address)
+        public GeocoderAPIResultModel CompleteGeocoding(string address)
         {
             string fixedAddress = Default.Fixer.Prepare(address);
 

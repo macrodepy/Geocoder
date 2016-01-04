@@ -31,6 +31,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeocoderAPI.Tester", "Demos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeocoderAPI.Charts", "Demos\GeocoderAPI.Charts\GeocoderAPI.Charts.csproj", "{7BC47385-6910-40D8-AFBB-E2DAC4A43AE3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{DDE46791-9329-4B2D-94D2-DF5ABBF6BE17}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Engineering Project - Mustafa Arslan - ver 2.docx = Documents\Engineering Project - Mustafa Arslan - ver 2.docx
+		Documents\engineering project.pptx = Documents\engineering project.pptx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

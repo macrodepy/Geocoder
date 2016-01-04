@@ -74,10 +74,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="GeocoderAPIService_Geocode.sequencediagram" />
-    <Content Include="GeocoderAPIService_Geocode_1.sequencediagram" />
-    <Content Include="GeocoderAPIService_Geocode_2.sequencediagram" />
-    <Content Include="GeocoderAPIService_Geocode_3.sequencediagram" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -113,20 +109,6 @@
       <Project>{323942e4-2e05-4502-b4ad-2665b81aa15b}</Project>
       <Name>GeocoderAPI.Model</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="GeocoderAPIService_Geocode.sequencediagram.layout">
-      <DependentUpon>GeocoderAPIService_Geocode.sequencediagram</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GeocoderAPIService_Geocode_1.sequencediagram.layout">
-      <DependentUpon>GeocoderAPIService_Geocode_1.sequencediagram</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GeocoderAPIService_Geocode_2.sequencediagram.layout">
-      <DependentUpon>GeocoderAPIService_Geocode_2.sequencediagram</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GeocoderAPIService_Geocode_3.sequencediagram.layout">
-      <DependentUpon>GeocoderAPIService_Geocode_3.sequencediagram</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
